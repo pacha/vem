@@ -1,0 +1,3 @@
+#!/bin/sh
+vim -u "VEMPATH/vemrc" "$@"
+

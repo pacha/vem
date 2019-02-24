@@ -1,0 +1,5 @@
+*~
+*.orig
+.DS_Store
+/tags
+/backup

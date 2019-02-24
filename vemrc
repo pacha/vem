@@ -1,0 +1,73 @@
+" Vem text editor
+" Entry point script
+
+" check that Vim is modern enough
+if v:version <= 703
+    echoerr "Error: Vem requires Vim version 7 or above to work. Vim default configuration used."
+    finish
+endif
+
+" first things first
+set nocompatible
+
+" tell everybody Vem is being used
+let g:loaded_vem = 1
+
+" Vem directory
+let g:vem_dir = expand("<sfile>:p:h") . '/'
+
+" source directories
+let s:vem_src_dir = g:vem_dir . 'src/'
+let s:vem_mappings_dir = s:vem_src_dir . 'mappings/'
+let s:vem_plugin_conf_dir = s:vem_src_dir . 'plugin-conf/'
+
+""" load Vem
+""""""""""""
+
+" user directories and runtime
+exec 'source ' . s:vem_src_dir . 'user-dirs.vim'
+exec 'source ' . s:vem_src_dir . 'runtime.vim'
+
+" settings
+exec 'source ' . s:vem_src_dir . 'settings.vim'
+exec 'source ' . s:vem_src_dir . 'settings-gui.vim'
+
+" mappings
+exec 'source ' . s:vem_mappings_dir . 'undo.vim'
+exec 'source ' . s:vem_mappings_dir . 'move.vim'
+exec 'source ' . s:vem_mappings_dir . 'scroll.vim'
+exec 'source ' . s:vem_mappings_dir . 'replace.vim'
+exec 'source ' . s:vem_mappings_dir . 'format.vim'
+exec 'source ' . s:vem_mappings_dir . 'select.vim'
+exec 'source ' . s:vem_mappings_dir . 'select-objects.vim'
+exec 'source ' . s:vem_mappings_dir . 'delete.vim'
+exec 'source ' . s:vem_mappings_dir . 'surround.vim'
+exec 'source ' . s:vem_mappings_dir . 'search.vim'
+exec 'source ' . s:vem_mappings_dir . 'comments.vim'
+exec 'source ' . s:vem_mappings_dir . 'marks.vim'
+exec 'source ' . s:vem_mappings_dir . 'modes.vim'
+exec 'source ' . s:vem_mappings_dir . 'insert.vim'
+exec 'source ' . s:vem_mappings_dir . 'tabpages.vim'
+exec 'source ' . s:vem_mappings_dir . 'windows.vim'
+exec 'source ' . s:vem_mappings_dir . 'buffers.vim'
+exec 'source ' . s:vem_mappings_dir . 'clipboard.vim'
+exec 'source ' . s:vem_mappings_dir . 'macros.vim'
+exec 'source ' . s:vem_mappings_dir . 'misc.vim'
+exec 'source ' . s:vem_mappings_dir . 'quickfix.vim'
+exec 'source ' . s:vem_mappings_dir . 'spelling.vim'
+exec 'source ' . s:vem_src_dir . 'mappings.vim'
+
+" pluggin configuration
+exec 'source ' . s:vem_plugin_conf_dir . 'netrw.vim'
+exec 'source ' . s:vem_plugin_conf_dir . 'vim-filebeagle.vim'
+exec 'source ' . s:vem_plugin_conf_dir . 'ctrlp.vim'
+exec 'source ' . s:vem_plugin_conf_dir . 'wildfire.vim'
+exec 'source ' . s:vem_plugin_conf_dir . 'enhancedjumps.vim'
+exec 'source ' . s:vem_plugin_conf_dir . 'nerdcommenter.vim'
+exec 'source ' . s:vem_plugin_conf_dir . 'vim-surround.vim'
+
+" system & user configuration
+exec 'source ' . s:vem_src_dir . 'custom-conf.vim'
+
+" And that's all!
+
