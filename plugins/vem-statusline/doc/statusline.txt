@@ -1,0 +1,231 @@
+*vem-statusline.txt* A simple and fast statusline for Vim
+
+                      Vem Statusline by Andrés Sopeña
+
+==============================================================================
+CONTENTS                                                        *vem-statusline*
+
+        Description ........................... |vem-statusline-description|
+        Installation .......................... |vem-statusline-installation|
+        Colors ................................ |vem-statusline-colors|
+        Settings .............................. |vem-statusline-settings|
+        Source ................................ |vem-statusline-source|
+
+==============================================================================
+DESCRIPTION                                         *vem-statusline-description*
+
+Vem Statusline shows the following information in Vim's statusline:
+ >
+ | mode ~ branch:filename        indent|encoding|newline  position  progress |
+<
+That is:
+
+    * Current active mode.
+
+    * Current branch. (Requires a Git plugin. See |vem-statusline-branch|).
+
+    * Current filename.
+
+    * Indentation type and size: `tabs`, `spaces`, `tabs+spaces`.
+
+    * File enconding. Eg. `utf-8`, `latin-1`  or `cp1251`.
+
+    * Newline type: Unix: `LF`, Windows: `CRLF`, Mac pre-OSX: `CR`
+
+    * Position in the file (`line:column`) and progress through the file.
+
+Vem Statusline is designed to be a very fast, small plugin and oriented to
+people that want a bit more information in the statusline than the one
+provided by default but that don't want to install a complex plugin for that.
+
+Note: Vem Statusline is a component of a bigger Vim configuration setup named
+Vem -still in the works-. Hence the plugin name. In any case, Vem Statusline
+can be used totally independently from the Vem project. Other components of
+the project are:
+
+Vem Tabline: A plugin to display your buffers in the tabline.
+(https://github.com/pacha/vem-tabline).
+
+Vem Colors: A dark color scheme for Vim based on Wombat
+(https://github.com/pacha/vem-colors).
+
+==============================================================================
+INSTALLATION                                       *vem-statusline-installation*
+
+You can use Vem Statusline straight away after installation. However, by
+default Vim only shows the statusline if there are at least two windows. So if
+you always want to have the statusline displayed, add this to your |.vimrc|
+file:
+>
+    set laststatus=2
+<
+Also, since the mode can be shown now in the statusline, you may also avoid
+displaying the mode messages like:
+>
+    -- INSERT --
+<
+at the bottom of the screen by also setting:
+>
+    set noshowmode
+<
+==============================================================================
+COLORS                                                   *vem-statusline-colors*
+
+By default, Vem Statusline uses the standard |StatusLine| and |StatusLineNC|
+highlighting groups, which means that the statusline colors will automatically
+adapt to your currently active color scheme.
+
+However, you can also define specific colors for different parts of the
+statusline:
+
+    Highlighting Group         Default     Color for~
+    *VemStatusLineMode*          StatusLine  Mode indicator
+    *VemStatusLineBranch*        StatusLine  Current Git Branch
+    *VemStatusLineFileModified*  StatusLine  File modified indicator (`*`) 
+    *VemStatusLineFileRO*        StatusLine  Read-only file indicator (`[RO]`)
+    *VemStatusLinePosition*      StatusLine  Position indicator (`line:col`)
+    *VemStatusLineSeparator*     StatusLine  Symbols to separate elements (`|`)
+
+For example, for a dark themed statusline, you can add this to your
+configuration:
+>
+    highlight VemStatusLineMode         guifg=#cae682 guibg=#373737 gui=bold
+    highlight VemStatusLineBranch       guifg=#999999 guibg=#373737 gui=none
+    highlight VemStatusLineFileModified guifg=#cae682 guibg=#373737 gui=bold
+    highlight VemStatusLineFileRO       guifg=#e5786d guibg=#373737 gui=bold
+    highlight VemStatusLineSeparator    guifg=#999999 guibg=#373737 gui=none
+    highlight VemStatusLinePosition     guifg=#f6f3e8 guibg=#373737 gui=bold
+<
+
+For a light themed statusline, the configuration could be something like:
+>
+    highlight StatusLine                guifg=#272727 guibg=#e8e8e8 gui=none
+    highlight VemStatusLineMode         guifg=#228080 guibg=#e8e8e8 gui=bold
+    highlight VemStatusLineBranch       guifg=#777777 guibg=#e8e8e8 gui=none
+    highlight VemStatusLineFileModified guifg=#8ac6f2 guibg=#e8e8e8 gui=bold
+    highlight VemStatusLineFileRO       guifg=#e5786d guibg=#e8e8e8 gui=bold
+    highlight VemStatusLineSeparator    guifg=#777777 guibg=#e8e8e8 gui=none
+    highlight VemStatusLinePosition     guifg=#202020 guibg=#e8e8e8 gui=bold
+<
+==============================================================================
+DISPLAYING CURRENT GIT BRANCH                            *vem-statusline-branch*
+
+
+Vem Statusline can optionally display the current branch of the repository
+you're working on. To do so you need a Git Vim plugin.
+
+If you don't have any Git Vim plugin and just want to display the name of
+the branch, install:
+
+    * vim-gitbranch: https://github.com/itchyny/vim-gitbranch
+
+This plugin by itchyny provides just the functionality to retrieve the
+branch name.
+
+You can also install (if you don't have it already installed):
+
+    * fugitive.vim: https://github.com/tpope/vim-fugitive
+
+by Tim Pope, which is a larger plugin to use Git from Vim.
+
+If you have any of these two plugins, Vem Statusline will then automatically
+display the current Git branch every time you edit a file within a repository.
+
+If you have any other control version system or a different plugin to
+integrate Vim with Git, you can also provide the name of a function that Vem
+Statusline should use to display the name of the branch. (See
+|g:vem_statusline_branch_function| for more details).
+
+*Note*: If you don't see the name of the branch and you have configured the
+plugin to do so, make sure that the value of the `g:vem_statusline_parts`
+variable contains a letter `b` (which is the value to display the branch name
+as explained in the next section).
+
+==============================================================================
+SETTINGS                                               *vem-statusline-settings*
+
+You can set these variables to configure Vem Statusline in your |.vimrc| file:
+
+*g:vem_statusline_parts*             string (default: 'mbfienpP')
+
+    The value of this option specifies which elements of the statusline
+    have to be displayed. There's a letter per element and the plugin
+    will only diplay those elements whose letter is in this variable.
+
+    For instance, if `g:vem_statusline_parts = 'mf'` then only the
+    current mode and the current filename will be displayed.
+
+    The meaning of the letters is:
+
+        m: current mode
+        b: current branch name
+        f: current filename
+        i: indent type and size (tabs, spaces, tabs+spaces)
+        e: file encoding
+        n: newline type (Unix: LF, Windows: CRLF, Mac pre-OSX: CR)
+        p: position in the file (line:column)
+        P: progress in percentage through the file
+
+*g:vem_statusline_filename_format*   string (default: 'P')
+
+    Format in which the current filename should be displayed:
+
+    t: only the filename without its path (tail)
+    p: full path (path)
+    .: path relative to the current directory
+    P: relative to the root of the current project directory. For example,
+       if your project is in a Git repository the name of the filename will
+       be shown relative to the folder where the '.git' directory is. To
+       configure how to detect the root directory of the project use the
+       option `g:vem_statusline_project_marker`. If the file is not within
+       a project, the relative path to the current directory will be used.
+
+*g:vem_statusline_project_marker*    string (default: '.git')
+
+    Name of a file or directory that can be used to define the root
+    directory of your project. To be used with the 'P' option of
+    |g:vem_statusline_filename_format|.
+
+    For example, for projects in Mercurial repositories you can use
+    `.hg` and for Bazaar, `.bzr`. Many projects have a `setup.cfg`
+    file at the root too.
+
+*g:vem_statusline_branch_function*   string (default: '')
+
+    Name of the function to execute to retrieve the current Git branch name. By
+    default, Vem Statusline will detect one of the following functions provided
+    by the following external plugins to display the current branch name:
+
+    `gitbranch#name` for [vim-gitbranch](https://github.com/itchyny/vim-gitbranch)
+    `fugitive#head`  for [fugitive.vim](https://github.com/tpope/vim-fugitive)
+
+    If you don't want to use any of those plugins or you use a control version
+    system different from Git (such as Mercurial or Bazaar), then you can use
+    this variable to specify the function that Vem Statusline should execute to
+    retrieve the branch name. For example, if the function that returns the
+    name of the branch is GetBranchName() you can add the following to your
+    .vimrc file:
+
+        `let g:vem_statusline_branch_function = 'GetBranchName'`
+
+*g:vem_statusline_mode_separator*    string (default: ' ~ ')
+
+    Symbol separator between the current mode and the branch/filename
+    elements. Not shown if the branch and filename are not displayed.
+
+*g:vem_statusline_branch_separator*  string (default: ':')
+
+    Symbol separator between the current branch and the filename.
+    Not shown if the filename is not displayed.
+
+*g:vem_statusline_right_separator*   string (default: '|')
+
+    Symbol separator between the indent, encoding and newline elements.
+
+
+==============================================================================
+SOURCE                                                   *vem-statusline-source*
+
+https://github.com/pacha/vem-statusline
+
+vim:tw=78:et:ft=help:norl:
