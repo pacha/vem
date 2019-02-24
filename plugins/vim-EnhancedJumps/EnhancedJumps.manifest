@@ -1,0 +1,5 @@
+autoload/EnhancedJumps/Common.vim
+autoload/EnhancedJumps/Changes.vim
+autoload/EnhancedJumps.vim
+plugin/EnhancedJumps.vim
+doc/EnhancedJumps.txt
