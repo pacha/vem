@@ -1,0 +1,218 @@
+*smartword.txt*	Smart motions on words
+
+Version 0.1.1
+Script ID: 2470
+Copyright (C) 2008-2015 Kana Natsuno <http://whileimautomaton.net/>
+License: MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+CONTENTS					*smartword-contents*
+
+Introduction		|smartword-introduction|
+Interface		|smartword-interface|
+  Mappings		  |smartword-mappings|
+Examples		|smartword-examples|
+Bugs			|smartword-bugs|
+Changelog		|smartword-changelog|
+
+
+
+
+==============================================================================
+INTRODUCTION					*smartword-introduction*
+
+*smartword* is a Vim plugin to provide {motion}s on |word|s which are smarter
+than the built-in ones in some sense.  For example, |w| moves the cursor to
+the next word as follows (here "#" means a position to which |w| moves the
+cursor for each time):
+
+	<a href="http://www.vim.org/">www.vim.org</a>
+	 # #   # #   #  #  ##  ##  #  #  ##  ##  # #
+
+Because there are two types of words and |w| moves to the next word which can
+be the both types.  Let's call "L" for a type of words and "P" for another
+type of words, where "L" means a word which consists of a sequence of letters
+(which are defined by 'iskeyword' option) and "P" means a word which consists
+of a sequence of other non-blank characters.
+
+In many cases, you might want to move to the next "L", not "P".  This plugin
+provides {motion}s to behave so.  For example, |<Plug>(smartword-w)| which is
+corresponding to |w| moves the cursor as follows:
+
+	<a href="http://www.vim.org/">www.vim.org</a>
+	 # #     #      #   #   #     #   #   #    #
+
+See also |smartword-examples| for customization.
+
+See also the following image if the above figures aren't correctly displayed:
+http://gyazo.com/bc7887d9bb0f6aa3eee1e67b0d756b2e.png
+
+
+Requirements:
+- Vim 7.2 or later
+
+Latest version:
+https://github.com/kana/vim-smartword
+
+
+
+
+==============================================================================
+INTERFACE					*smartword-interface*
+
+------------------------------------------------------------------------------
+MAPPINGS					*smartword-mappings*
+
+<Plug>(smartword-w)				*<Plug>(smartword-w)*
+<Plug>(smartword-b)				*<Plug>(smartword-b)*
+<Plug>(smartword-e)				*<Plug>(smartword-e)*
+<Plug>(smartword-ge)				*<Plug>(smartword-ge)*
+			Smart versions of |w|, |b|, |e| and |ge|.
+			These mappings are defined in Normal mode, Visual mode
+			and Operator-pending mode.
+
+<Plug>(smartword-basic-w)			 *<Plug>(smartword-basic-w)*
+<Plug>(smartword-basic-b)			 *<Plug>(smartword-basic-b)*
+<Plug>(smartword-basic-e)		         *<Plug>(smartword-basic-e)*
+<Plug>(smartword-basic-ge)		         *<Plug>(smartword-basic-ge)*
+			Basic motions on words.  These are equivalent to |w|,
+			|b|, |e| and |ge| by default.  These are used to
+			implement smart motions such as |<Plug>(smartword-w)|.
+			These mappings are defined in Normal mode, Visual mode
+			and Operator-pending mode.
+
+			You can customize these mappings to tweak smartword to
+			behave based on custom motions.  See also
+			|smartword-examples|.
+
+
+
+
+==============================================================================
+EXAMPLES					*smartword-examples*
+
+(A) Replace |w| and others with |smartword-mappings|:
+>
+	map w  <Plug>(smartword-w)
+	map b  <Plug>(smartword-b)
+	map e  <Plug>(smartword-e)
+	map ge  <Plug>(smartword-ge)
+<
+
+(B) Use other key sequences for smart version:
+>
+	map ,w  <Plug>(smartword-w)
+	map ,b  <Plug>(smartword-b)
+	map ,e  <Plug>(smartword-e)
+	map ,ge  <Plug>(smartword-ge)
+<
+
+(C) Keep the default meanings of |w| and others in other key sequences:
+>
+	noremap ,w  w
+	noremap ,b  b
+	noremap ,e  e
+	noremap ,ge  ge
+<
+
+(D) Use CamelCaseMotion https://github.com/bkad/CamelCaseMotion as basic
+wordwise motions, but skip uninteresting punctuations as smartword does:
+>
+	map <Plug>(smartword-basic-w)  <Plug>CamelCaseMotion_w
+	map <Plug>(smartword-basic-b)  <Plug>CamelCaseMotion_b
+	map <Plug>(smartword-basic-e)  <Plug>CamelCaseMotion_e
+<
+You also have to define key mappings to use smartword like example (A) or (B).
+Note that CamelCaseMotion does not provide a custom motion behaves like |ge|.
+
+
+
+
+==============================================================================
+BUGS						*smartword-bugs*
+
+						*smartword-w-over-lines*
+- `dw` is equivalent to `vwhd` in most of situations.  But there is an
+  exception.  If `w` moves the cursor to another line, it acts as `$`.
+  Suppose that the current buffer contains the following text:
+>
+      1|foo bar
+      2|  baz
+      3|qux
+<
+  Typing `w` on "bar" moves the cursor to "baz".  But `dw` on "bar" deletes
+  only "bar" instead of "bar\n  ".  The same can be said for other operators.
+
+  |<Plug>(smartword-w)| tries emulating this exceptional behavior of |w|.  But
+  this emulation is a bit tricky.  If you notice that something goes wrong,
+  please report it via: https://github.com/kana/vim-smartword/issues
+
+- Don't consider about special cases such as |cw|.
+
+- |o_v| and others don't work for |<Plug>(smartword-e)| and
+  |<Plug>(smartword-ge)| because of the limitation of Vim script.
+
+  Note that if the following patch is applied to Vim, |o_v| and others work
+  for both motions.  But |o_v| with empty selection still doesn't work.
+  https://github.com/kana/vim/commit/06472e0ebb7c9919d90157f4a6edd17a1376b81c
+
+
+
+
+==============================================================================
+CHANGELOG					*smartword-changelog*
+
+0.1.1	2015-04-25T00:19:40+09:00		*smartword-changelog-0.1.1*
+	- Fix to recognize count given to |smartword-mappings| in Visual mode
+	  and Operator-pending mode.
+
+0.1.0	2014-09-06T13:35:58+09:00		*smartword-changelog-0.1.0*
+	- Add |<Plug>(smartword-basic-w)| and others to customize basic
+	  wordwise motions used by smaratword.  See also |smartword-examples|
+	  (D).  https://github.com/kana/vim-smartword/pull/5
+
+0.0.4	2014-06-21T11:54:02+09:00		*smartword-changelog-0.0.4*
+	- Fix |<Plug>(smartword-w)| to emulate an exceptional behavior of |w|.
+	  See also |smartword-w-over-lines|.
+
+0.0.3	2012-03-24T14:26:01+09:00		*smartword-changelog-0.0.3*
+	- Add missing tests.
+	- Fix a bug on smartword movement with a count.
+	- Fix wrong movement if 'selection' == "exclusive".
+
+0.0.2	2009-01-23T19:13:29+09:00		*smartword-changelog-0.0.2*
+	- Fix the document a bit.
+	- Revise the treatment on 'iskeyword'.
+	- Fix 2 bugs on |<Plug>(smartword-e)| and |<Plug>(smartword-ge)| with
+	  |o_v|.  These bugs are appeared only in Vim with the patch (*).
+
+0.0.1	2008-12-06T01:21:37+09:00		*smartword-changelog-0.0.1*
+	- Fix |<Plug>(smartword-e)| and |<Plug>(smartword-ge)| to be
+	  |inclusive| as same as |e| and |ge|.
+
+0.0.0	2008-12-03T01:44:30+09:00		*smartword-changelog-0.0.0*
+	- Initial version.
+
+
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:fen:fdl=0:fdm=marker:noet:
