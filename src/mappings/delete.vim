@@ -14,7 +14,7 @@ nnoremap <Plug>vem_delete_eol- d$
 nnoremap <Plug>vem_delete_bol- d^
 
 " Delete current word and go into insert mode
-nnoremap <Plug>vem_change_word- diwi
+nnoremap <Plug>vem_change_word- ciw
 
 " Delete selection and go into insert mode
 nnoremap <Plug>vem_change- cc

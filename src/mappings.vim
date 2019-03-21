@@ -578,8 +578,8 @@ map! <C-Space> <Plug>vem_space-
 
 " setting paste mode disables all key mappings
 " this is necessary so it can be toggled with the given key map
-inoremap <silent> <C-]> <C-o>:set paste!<CR>
-set pastetoggle=<C-]>
+inoremap <silent> <C-^> <C-o>:set paste!<CR>
+set pastetoggle=<C-^>
 
 cmap <C-Tab> <Plug>vem_wildmenu_next-
 cmap <S-Tab> <Plug>vem_wildmenu_prev-

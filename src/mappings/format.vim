@@ -15,7 +15,7 @@ nnoremap <Plug>vem_indent- >>
 vnoremap <Plug>vem_indent- >><Esc>gv
 
 " Enter
-nnoremap <silent> <Plug>vem_enter- i<CR><Esc>
+nnoremap <silent> <Plug>vem_enter- i<CR><Esc>^
 
 " Format lines
 nnoremap <Plug>vem_format_text- gqip
