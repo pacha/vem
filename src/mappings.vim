@@ -24,10 +24,10 @@ nmap <silent> <Space> <Plug>vem_jump-
 xmap <silent> <Space> <Plug>vem_jump-
 nmap <silent> ! <Plug>vem_alt-
 xmap <silent> ! <Plug>vem_alt-
-nmap b <Plug>vem_z_prefix-
-xmap b <Plug>vem_z_prefix-
-nmap B <Plug>vem_g_prefix-
-xmap B <Plug>vem_g_prefix-
+nmap B <Plug>vem_z_prefix-
+xmap B <Plug>vem_z_prefix-
+nmap <C-b> <Plug>vem_g_prefix-
+xmap <C-b> <Plug>vem_g_prefix-
 
 
 """ Undo
@@ -73,9 +73,7 @@ xmap { <Plug>vem_shift_buffer_left-
 nmap } <Plug>vem_shift_buffer_right-
 xmap } <Plug>vem_shift_buffer_right-
 
-map <Plug>vem_alt-! <Plug>vem_switch_buffer-
-map <Plug>vem_alt-t <Plug>vem_switch_buffer-
-map <Plug>vem_alt-T <Plug>vem_switch_buffer-
+map b <Plug>vem_switch_buffer-
 nmap <BS> <Plug>vem_alternate_buffer-
 xmap <BS> <Plug>vem_alternate_buffer-
 
@@ -604,5 +602,4 @@ xmap C <Plug>vem_nop-
 nmap <C-e> <Plug>vem_nop-
 nmap <C-d> <Plug>vem_nop-
 nmap <C-v> <Plug>vem_nop-
-nmap <C-b> <Plug>vem_nop-
 
