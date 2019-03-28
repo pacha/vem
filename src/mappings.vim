@@ -601,6 +601,7 @@ nmap C <Plug>vem_nop-
 xmap C <Plug>vem_nop-
 
 " ctrl
+nmap <C-x> <Plug>vem_nop-
 nmap <C-e> <Plug>vem_nop-
 nmap <C-d> <Plug>vem_nop-
 nmap <C-v> <Plug>vem_nop-
