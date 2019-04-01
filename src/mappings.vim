@@ -203,6 +203,8 @@ nmap <Plug>vem_alt-p <Plug>vem_select_last_pasted_text-
 
 xmap H <Plug>vem_increase_word_selection_left-
 xmap L <Plug>vem_increase_word_selection_right-
+vmap  <S-Left> <Plug>vem_increase_word_selection_left-
+vmap  <S-Right> <Plug>vem_increase_word_selection_right-
 
 
 """ Select objects
@@ -374,6 +376,9 @@ xmap U <Plug>vem_page_up-
 nmap M <Plug>vem_page_down-
 xmap M <Plug>vem_page_down-
 
+map <PageUp> <Plug>vem_page_up-
+map <PageDown> <Plug>vem_page_down-
+
 nmap h <Plug>vem_left-
 xmap h <Plug>vem_left-
 nmap l <Plug>vem_right-
@@ -383,6 +388,11 @@ xmap j <Plug>vem_down-
 nmap k <Plug>vem_up-
 xmap k <Plug>vem_up-
 
+map  <Left> <Plug>vem_left-
+map  <Right> <Plug>vem_right-
+map  <Up> <Plug>vem_up-
+map  <Down> <Plug>vem_down-
+
 nmap H <Plug>vem_word_left-
 nmap L <Plug>vem_word_right-
 nmap J <Plug>vem_paragraph_down-
@@ -390,10 +400,8 @@ xmap J <Plug>vem_paragraph_down-
 nmap K <Plug>vem_paragraph_up-
 xmap K <Plug>vem_paragraph_up-
 
-nmap <PageUp> <Plug>vem_page_up-
-xmap <PageUp> <Plug>vem_page_up-
-nmap <PageDown> <Plug>vem_page_down-
-xmap <PageDown> <Plug>vem_page_down-
+map  <S-Down> <Plug>vem_paragraph_down-
+map  <S-Up> <Plug>vem_paragraph_up-
 
 nmap <Plug>vem_jump-u <Plug>vem_goto_win_top-
 xmap <Plug>vem_jump-u <Plug>vem_goto_win_top-
@@ -421,9 +429,13 @@ nmap o <Plug>vem_insert_right-
 
 map <C-h> <Plug>vem_insert_start-
 map <C-l> <Plug>vem_insert_end-
+map <C-Left> <Plug>vem_insert_start-
+map <C-Right> <Plug>vem_insert_end-
 
 nmap <C-j> <Plug>vem_insert_below-
 nmap <C-k> <Plug>vem_insert_above-
+nmap <C-Down> <Plug>vem_insert_below-
+nmap <C-Up> <Plug>vem_insert_above-
 
 map <C-o> <Plug>vem_normal_mode-
 imap <C-o> <Plug>vem_normal_mode-
