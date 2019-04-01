@@ -1,8 +1,8 @@
 " Vem: format
 
 " Add line above/below
-nnoremap <silent> <Plug>vem_add_line_above- :set paste<CR>mxO<Esc>`x:set nopaste<CR>
-nnoremap <silent> <Plug>vem_add_line_below- :set paste<CR>mxo<Esc>`x:set nopaste<CR>
+noremap <silent> <Plug>vem_add_line_above- :<C-u>set paste<CR>mxO<Esc>`x:set nopaste<CR>
+noremap <silent> <Plug>vem_add_line_below- :<C-u>set paste<CR>mxo<Esc>`x:set nopaste<CR>
 
 " Join lines
 noremap <Plug>vem_join_lines- J

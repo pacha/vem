@@ -35,7 +35,7 @@ function! vem#buffers#smart_close() abort
 endfunction
 
 " display next buffer (in buffer list or tabline)
-function vem#buffers#goto_next_buffer() abort
+function! vem#buffers#goto_next_buffer() abort
     " check if the mapping from vem-tabline is available
     if !empty(maparg('<Plug>vem_next_buffer-', 'n'))
         return "\<Plug>vem_next_buffer-"
@@ -45,7 +45,7 @@ function vem#buffers#goto_next_buffer() abort
 endfunction
 
 " display previous buffer (in buffer list or tabline)
-function vem#buffers#goto_prev_buffer() abort
+function! vem#buffers#goto_prev_buffer() abort
     " check if the mapping from vem-tabline is available
     if !empty(maparg('<Plug>vem_prev_buffer-', 'n'))
         return "\<Plug>vem_prev_buffer-"
