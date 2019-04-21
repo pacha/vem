@@ -190,16 +190,17 @@ xmap O <Plug>vem_delete-
 """"""""""
 
 nmap g <Plug>vem_inner_select_word-
-xmap g <Plug>vem_change_selection_mode-
 nmap G <Plug>vem_start_char_selection-
-xmap G <Plug>vem_change_selection_mode-
+
+xmap b <Plug>vem_change_selection_mode-
+xmap B <Plug>vem_change_selection_mode-
 
 map <C-g> <Plug>vem_increase_selection-
 
 xmap <Space> <Plug>vem_deselect-
 xmap <S-Space> <Plug>vem_deselect-
-nmap <Space><Space> <Plug>vem_reselect-
-nmap <Plug>vem_alt-p <Plug>vem_select_last_pasted_text-
+nmap <Space>g <Plug>vem_reselect-
+nmap <Space>p <Plug>vem_select_last_pasted_text-
 
 xmap H <Plug>vem_increase_word_selection_left-
 xmap L <Plug>vem_increase_word_selection_right-
