@@ -17,6 +17,9 @@ let &runtimepath = pathogen#join(s:new_runtimepath)
 let s:vem_plugin_dir = g:vem_dir . 'plugins/'
 exec pathogen#infect(s:vem_plugin_dir . '{}')
 
-" append user directory at the beginning of the runtimepath
+" append user directory to the beginning of the runtimepath
 let &runtimepath = g:vem_user_dir . ',' . &runtimepath
+
+" append 'after' user directory to the end of the runtimepath
+let &runtimepath = &runtimepath . ',' . g:vem_user_dir . 'after/'
 
