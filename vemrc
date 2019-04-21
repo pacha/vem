@@ -13,6 +13,9 @@ set nocompatible
 " tell everybody Vem is being used
 let g:loaded_vem = 1
 
+" use querty by default (possible values 'querty', 'qwertz')
+let g:vem_layout = 'qwerty'
+
 " Vem directory
 let g:vem_dir = expand("<sfile>:p:h") . '/'
 

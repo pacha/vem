@@ -45,8 +45,8 @@ map <Plug>vem_alt-q <Plug>vem_undo_line-
 
 nmap A <Plug>vem_scroll_up-
 xmap A <Plug>vem_scroll_up-
-nmap Z <Plug>vem_scroll_down-
-xmap Z <Plug>vem_scroll_down-
+nmap <expr> Z vem#layouts#dispatch(g:vem_layout, 'Z', 'n')
+xmap <expr> Z vem#layouts#dispatch(g:vem_layout, 'Z', 'x')
 nmap = <Plug>vem_scroll_to_middle-
 xmap = <Plug>vem_scroll_to_middle-
 map <Plug>vem_alt-a <Plug>vem_scroll_to_top-
@@ -204,6 +204,8 @@ nmap <Space>p <Plug>vem_select_last_pasted_text-
 
 xmap H <Plug>vem_increase_word_selection_left-
 xmap L <Plug>vem_increase_word_selection_right-
+vmap  <S-Left> <Plug>vem_increase_word_selection_left-
+vmap  <S-Right> <Plug>vem_increase_word_selection_right-
 
 
 """ Select objects
@@ -294,10 +296,14 @@ map <C-r> <Plug>vem_redraw-
 """ Quickfix
 """"""""""""
 
-nmap Y <Plug>vem_quickfix_prev_result-
+nmap <expr> Y vem#layouts#dispatch(g:vem_layout, 'Y', 'n')
+xmap <expr> Y vem#layouts#dispatch(g:vem_layout, 'Y', 'x')
 nmap N <Plug>vem_quickfix_next_result-
+xmap N <Plug>vem_quickfix_next_result-
+nmap <C-y> <Plug>vem_location_prev_result-
 nmap <C-y> <Plug>vem_location_prev_result-
 nmap <C-n> <Plug>vem_location_next_result-
+xmap <C-n> <Plug>vem_location_next_result-
 
 
 """ Spelling
@@ -347,8 +353,9 @@ xmap <C-v> <Plug>vem_repeat_search_char-
 
 nmap a <Plug>vem_top-
 xmap a <Plug>vem_top-
-nmap z <Plug>vem_bottom-
-xmap z <Plug>vem_bottom-
+nmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z', 'n')
+xmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z', 'x')
+
 
 nmap 0 <Plug>vem_goto_first_column-
 xmap 0 <Plug>vem_goto_first_column-
@@ -375,6 +382,9 @@ xmap U <Plug>vem_page_up-
 nmap M <Plug>vem_page_down-
 xmap M <Plug>vem_page_down-
 
+map <PageUp> <Plug>vem_page_up-
+map <PageDown> <Plug>vem_page_down-
+
 nmap h <Plug>vem_left-
 xmap h <Plug>vem_left-
 nmap l <Plug>vem_right-
@@ -384,6 +394,11 @@ xmap j <Plug>vem_down-
 nmap k <Plug>vem_up-
 xmap k <Plug>vem_up-
 
+map  <Left> <Plug>vem_left-
+map  <Right> <Plug>vem_right-
+map  <Up> <Plug>vem_up-
+map  <Down> <Plug>vem_down-
+
 nmap H <Plug>vem_word_left-
 nmap L <Plug>vem_word_right-
 nmap J <Plug>vem_paragraph_down-
@@ -391,10 +406,8 @@ xmap J <Plug>vem_paragraph_down-
 nmap K <Plug>vem_paragraph_up-
 xmap K <Plug>vem_paragraph_up-
 
-nmap <PageUp> <Plug>vem_page_up-
-xmap <PageUp> <Plug>vem_page_up-
-nmap <PageDown> <Plug>vem_page_down-
-xmap <PageDown> <Plug>vem_page_down-
+map  <S-Down> <Plug>vem_paragraph_down-
+map  <S-Up> <Plug>vem_paragraph_up-
 
 nmap <Plug>vem_jump-u <Plug>vem_goto_win_top-
 xmap <Plug>vem_jump-u <Plug>vem_goto_win_top-
@@ -422,9 +435,13 @@ nmap o <Plug>vem_insert_right-
 
 map <C-h> <Plug>vem_insert_start-
 map <C-l> <Plug>vem_insert_end-
+map <C-Left> <Plug>vem_insert_start-
+map <C-Right> <Plug>vem_insert_end-
 
 nmap <C-j> <Plug>vem_insert_below-
 nmap <C-k> <Plug>vem_insert_above-
+nmap <C-Down> <Plug>vem_insert_below-
+nmap <C-Up> <Plug>vem_insert_above-
 
 map <C-o> <Plug>vem_normal_mode-
 imap <C-o> <Plug>vem_normal_mode-
@@ -511,7 +528,8 @@ xmap > <Plug>vem_indent-
 nmap <Tab> <Plug>vem_indent-
 xmap <Tab> <Plug>vem_indent-
 
-nmap y <Plug>vem_add_line_above-
+nmap <expr> y vem#layouts#dispatch(g:vem_layout, 'y', 'n')
+xmap <expr> y vem#layouts#dispatch(g:vem_layout, 'y', 'x')
 nmap n <Plug>vem_add_line_below-
 
 nmap <Enter> <Plug>vem_enter-

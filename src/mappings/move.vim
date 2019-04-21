@@ -73,19 +73,3 @@ noremap <Plug>vem_goto_win_top- H
 noremap <Plug>vem_goto_win_middle- M
 noremap <Plug>vem_goto_win_bottom- L
 
-" Arrow keys behave exactly the same as hjkl
-map  <Up> k
-map  <Down> j
-map  <Left> k
-map  <Right> l
-map  <S-Up> U
-map  <S-Down> J
-map  <S-Left> K
-map  <S-Right> L
-map  <C-Up> <C-u>
-map  <C-Down> <C-j>
-map  <C-Left> <C-k>
-map  <C-Right> <C-l>
-map  <PageUp> U
-map  <PageDown> J
-
