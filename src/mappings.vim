@@ -56,8 +56,10 @@ map <Plug>vem_alt-z <Plug>vem_scroll_to_bottom-
 """ Buffers
 """""""""""
 
-nmap w <Plug>vem_fuzzy_finder-
-xmap w <Plug>vem_fuzzy_finder-
+map w <Plug>vem_switch_buffer-
+map <C-t> <Plug>vem_fuzzy_finder-
+map <C-a> <Plug>vem_new_buffer-
+
 nmap W <Plug>vem_file_browser-
 xmap W <Plug>vem_file_browser-
 map <Plug>vem_alt-w <Plug>vem_mru-
@@ -67,13 +69,11 @@ nmap t <Plug>vem_goto_next_buffer-
 xmap t <Plug>vem_goto_next_buffer-
 nmap T <Plug>vem_goto_prev_buffer-
 xmap T <Plug>vem_goto_prev_buffer-
-map <C-t> <Plug>vem_new_buffer-
 nmap { <Plug>vem_shift_buffer_left-
 xmap { <Plug>vem_shift_buffer_left-
 nmap } <Plug>vem_shift_buffer_right-
 xmap } <Plug>vem_shift_buffer_right-
 
-map b <Plug>vem_switch_buffer-
 nmap <BS> <Plug>vem_alternate_buffer-
 xmap <BS> <Plug>vem_alternate_buffer-
 
@@ -148,10 +148,10 @@ nmap e <Plug>vem_copy-
 xmap e <Plug>vem_copy-
 nmap E <Plug>vem_copy_aux-
 xmap E <Plug>vem_copy_aux-
-nmap d <Plug>vem_cut-
-xmap d <Plug>vem_cut-
-nmap D <Plug>vem_cut_aux-
-xmap D <Plug>vem_cut_aux-
+nmap c <Plug>vem_cut-
+xmap c <Plug>vem_cut-
+nmap C <Plug>vem_cut_aux-
+xmap C <Plug>vem_cut_aux-
 
 
 """ Replace
@@ -160,14 +160,14 @@ xmap D <Plug>vem_cut_aux-
 nmap r <Plug>vem_replace_char-
 xmap r <Plug>vem_replace_char-
 map <Plug>vem_alt-r <Plug>vem_replace_mode-
-map <C-a> <Plug>vem_replace_again-
+" map <C-a> <Plug>vem_replace_again-
 
 
 """ Delete and change
 """""""""""""""""""""
 
-nmap c <Plug>vem_delete_line-
-xmap c <Plug>vem_delete-
+nmap d <Plug>vem_delete_line-
+xmap d <Plug>vem_delete-
 
 nmap <DEL> <Plug>vem_delete-
 xmap <DEL> <Plug>vem_delete-
@@ -191,6 +191,7 @@ xmap O <Plug>vem_delete-
 
 nmap g <Plug>vem_inner_select_word-
 nmap G <Plug>vem_start_char_selection-
+xmap g <Plug>vem_toggle_selection_end-
 
 xmap b <Plug>vem_change_selection_mode-
 xmap B <Plug>vem_change_selection_mode-
@@ -204,8 +205,8 @@ nmap <Space>p <Plug>vem_select_last_pasted_text-
 
 xmap H <Plug>vem_increase_word_selection_left-
 xmap L <Plug>vem_increase_word_selection_right-
-vmap  <S-Left> <Plug>vem_increase_word_selection_left-
-vmap  <S-Right> <Plug>vem_increase_word_selection_right-
+vmap <S-Left> <Plug>vem_increase_word_selection_left-
+vmap <S-Right> <Plug>vem_increase_word_selection_right-
 
 
 """ Select objects
@@ -368,7 +369,6 @@ nmap % <Plug>vem_goto_matching_pair-
 xmap % <Plug>vem_goto_matching_pair-
 
 nmap * <Plug>vem_changed_text_end-
-xmap * <Plug>vem_toggle_selection_end-
 
 nmap R <Plug>vem_jump_history_back-
 xmap R <Plug>vem_jump_history_back-
@@ -614,8 +614,8 @@ nmap ~ <Plug>vem_nop-
 xmap ~ <Plug>vem_nop-
 
 " shift
-nmap C <Plug>vem_nop-
-xmap C <Plug>vem_nop-
+" nmap C <Plug>vem_nop-
+" xmap C <Plug>vem_nop-
 
 " ctrl
 nmap <C-x> <Plug>vem_nop-
