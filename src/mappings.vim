@@ -58,6 +58,7 @@ map <Plug>vem_alt-z <Plug>vem_scroll_to_bottom-
 
 map w <Plug>vem_switch_buffer-
 map <C-t> <Plug>vem_fuzzy_finder-
+map !! <Plug>vem_new_buffer-
 map <C-a> <Plug>vem_new_buffer-
 
 nmap W <Plug>vem_file_browser-
@@ -368,7 +369,7 @@ xmap $ <Plug>vem_goto_eol-
 nmap % <Plug>vem_goto_matching_pair-
 xmap % <Plug>vem_goto_matching_pair-
 
-nmap * <Plug>vem_changed_text_end-
+nmap <Plug>vem_jump-<Space> <Plug>vem_changed_text_end-
 
 nmap R <Plug>vem_jump_history_back-
 xmap R <Plug>vem_jump_history_back-
