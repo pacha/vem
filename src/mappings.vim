@@ -24,10 +24,10 @@ nmap <silent> <Space> <Plug>vem_jump-
 xmap <silent> <Space> <Plug>vem_jump-
 nmap <silent> ! <Plug>vem_alt-
 xmap <silent> ! <Plug>vem_alt-
-nmap B <Plug>vem_z_prefix-
-xmap B <Plug>vem_z_prefix-
-nmap <C-b> <Plug>vem_g_prefix-
-xmap <C-b> <Plug>vem_g_prefix-
+nmap b <Plug>vem_z_prefix-
+xmap b <Plug>vem_z_prefix-
+nmap B <Plug>vem_g_prefix-
+xmap B <Plug>vem_g_prefix-
 
 
 """ Undo
@@ -56,16 +56,15 @@ map <Plug>vem_alt-z <Plug>vem_scroll_to_bottom-
 """ Buffers
 """""""""""
 
-map w <Plug>vem_switch_buffer-
-map <C-t> <Plug>vem_fuzzy_finder-
-map !! <Plug>vem_new_buffer-
 map <C-a> <Plug>vem_new_buffer-
 
+map w <Plug>vem_fuzzy_finder-
 nmap W <Plug>vem_file_browser-
 xmap W <Plug>vem_file_browser-
 map <Plug>vem_alt-w <Plug>vem_mru-
 map <Plug>vem_alt-_ <Plug>vem_open_file_under_cursor-
 
+map <C-t> <Plug>vem_switch_buffer-
 nmap t <Plug>vem_goto_next_buffer-
 xmap t <Plug>vem_goto_next_buffer-
 nmap T <Plug>vem_goto_prev_buffer-
@@ -149,10 +148,10 @@ nmap e <Plug>vem_copy-
 xmap e <Plug>vem_copy-
 nmap E <Plug>vem_copy_aux-
 xmap E <Plug>vem_copy_aux-
-nmap c <Plug>vem_cut-
-xmap c <Plug>vem_cut-
-nmap C <Plug>vem_cut_aux-
-xmap C <Plug>vem_cut_aux-
+nmap d <Plug>vem_cut-
+xmap d <Plug>vem_cut-
+nmap D <Plug>vem_cut_aux-
+xmap D <Plug>vem_cut_aux-
 
 
 """ Replace
@@ -167,8 +166,8 @@ map <Plug>vem_alt-r <Plug>vem_replace_mode-
 """ Delete and change
 """""""""""""""""""""
 
-nmap d <Plug>vem_delete_line-
-xmap d <Plug>vem_delete-
+nmap c <Plug>vem_delete_line-
+xmap c <Plug>vem_delete-
 
 nmap <DEL> <Plug>vem_delete-
 xmap <DEL> <Plug>vem_delete-
@@ -191,11 +190,14 @@ xmap O <Plug>vem_delete-
 """"""""""
 
 nmap g <Plug>vem_inner_select_word-
+xmap g <Plug>vem_inner_reselect_non_whitespace-
 nmap G <Plug>vem_start_char_selection-
-xmap g <Plug>vem_toggle_selection_end-
+xmap G <Plug>vem_inner_select_line-
+nmap <C-b> <Plug>vem_start_block_selection-
+xmap <C-b> <Plug>vem_start_block_selection-
 
-xmap b <Plug>vem_change_selection_mode-
-xmap B <Plug>vem_change_selection_mode-
+xmap i <Plug>vem_change_selection_mode-
+xmap o <Plug>vem_toggle_selection_end-
 
 map <C-g> <Plug>vem_increase_selection-
 

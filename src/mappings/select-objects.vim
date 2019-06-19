@@ -13,6 +13,7 @@ vnoremap <Plug>vem_outer_select_word- aw
 " Select non-whitespace characters
 nnoremap <Plug>vem_inner_select_non_whitespace- viW
 vnoremap <Plug>vem_inner_select_non_whitespace- iW
+vnoremap <Plug>vem_inner_reselect_non_whitespace- <Esc>viW
 nnoremap <Plug>vem_outer_select_non_whitespace- vaW
 vnoremap <Plug>vem_outer_select_non_whitespace- aW
 
