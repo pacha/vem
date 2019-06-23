@@ -4,6 +4,12 @@
 noremap <silent> <Plug>vem_add_line_above- :<C-u>set paste<CR>mxO<Esc>`x:set nopaste<CR>
 noremap <silent> <Plug>vem_add_line_below- :<C-u>set paste<CR>mxo<Esc>`x:set nopaste<CR>
 
+" Add space left/right
+nnoremap <silent> <Plug>vem_add_space_left- i<Space><Esc>l
+vnoremap <silent> <Plug>vem_add_space_left- <Esc>i<Space><Esc>l
+nnoremap <silent> <Plug>vem_add_space_right- a<Space><Esc>h
+vnoremap <silent> <Plug>vem_add_space_right- <Esc>a<Space><Esc>h
+
 " Join lines
 noremap <Plug>vem_join_lines- J
 

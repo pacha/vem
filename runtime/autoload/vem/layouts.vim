@@ -2,46 +2,48 @@
 
 let s:layout_mappings = {
     \   "qwerty": {
-    \       "y": {
-    \           "n": "\<Plug>vem_add_line_above-",
-    \           "x": "\<Plug>vem_add_line_above-",
-    \       },
-    \       "Y": {
-    \           "n": "\<Plug>vem_quickfix_prev_result-",
-    \           "x": "\<Plug>vem_quickfix_prev_result-",
-    \       },
-    \       "z": {
-    \           "n": "\<Plug>vem_bottom-",
-    \           "x": "\<Plug>vem_bottom-",
-    \       },
-    \       "Z": {
-    \           "n": "\<Plug>vem_scroll_down-",
-    \           "x": "\<Plug>vem_scroll_down-",
-    \       },
+    \       "q": "\<Plug>vem_undo-",
+    \       "Q": "\<Plug>vem_redo-",
+    \       "a": "\<Plug>vem_top-",
+    \       "A": "\<Plug>vem_add-",
+    \       "z": "\<Plug>vem_bottom-",
+    \       "Z": "\<Plug>vem_sub-",
+    \       "w": "\<Plug>vem_fuzzy_finder-",
+    \       "W": "\<Plug>vem_file_browser-",
+    \       "W": "\<Plug>vem_file_browser-",
+    \       "<Plug>vem_alt-w": "\<Plug>vem_file_browser-",
+    \       "y": "\<Plug>vem_add_line_above-",
+    \       "Y": "\<Plug>vem_quickfix_prev_result-",
     \   },
     \   "qwertz": {
-    \       "y": {
-    \           "n": "\<Plug>vem_bottom-",
-    \           "x": "\<Plug>vem_bottom-",
-    \       },
-    \       "Y": {
-    \           "n": "\<Plug>vem_scroll_down-",
-    \           "x": "\<Plug>vem_scroll_down-",
-    \       },
-    \       "z": {
-    \           "n": "\<Plug>vem_add_line_above-",
-    \           "x": "\<Plug>vem_add_line_above-",
-    \       },
-    \       "Z": {
-    \           "n": "\<Plug>vem_quickfix_prev_result-",
-    \           "x": "\<Plug>vem_quickfix_prev_result-",
-    \       },
+    \       "q": "\<Plug>vem_undo-",
+    \       "Q": "\<Plug>vem_redo-",
+    \       "a": "\<Plug>vem_top-",
+    \       "A": "\<Plug>vem_add-",
+    \       "y": "\<Plug>vem_bottom-",
+    \       "Y": "\<Plug>vem_sub-",
+    \       "w": "\<Plug>vem_fuzzy_finder-",
+    \       "W": "\<Plug>vem_file_browser-",
+    \       "z": "\<Plug>vem_add_line_above-",
+    \       "Z": "\<Plug>vem_quickfix_prev_result-",
+    \   },
+    \   "azerty": {
+    \       "a": "\<Plug>vem_undo-",
+    \       "A": "\<Plug>vem_redo-",
+    \       "q": "\<Plug>vem_top-",
+    \       "Q": "\<Plug>vem_add-",
+    \       "w": "\<Plug>vem_bottom-",
+    \       "W": "\<Plug>vem_sub-",
+    \       "z": "\<Plug>vem_fuzzy_finder-",
+    \       "Z": "\<Plug>vem_file_browser-",
+    \       "y": "\<Plug>vem_add_line_above-",
+    \       "Y": "\<Plug>vem_quickfix_prev_result-",
     \   },
     \ }
 
 " Return mapping (as string) for the given keypress in the given layout
 " (only used for keys that change across the supported layouts)
-function! vem#layouts#dispatch(layout, keypress, mode) abort
+function! vem#layouts#dispatch(layout, keypress) abort
 
     " get mapping for current layout
     try
@@ -54,10 +56,10 @@ function! vem#layouts#dispatch(layout, keypress, mode) abort
     endtry
 
     " get mapping for keypress
-    let keypress_mapping = layout_mapping[a:keypress]
+    let action = layout_mapping[a:keypress]
 
     " return action according to mode
-    return keypress_mapping[a:mode]
+    return action
 
 endfunction
 
