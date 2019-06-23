@@ -31,6 +31,9 @@ noremap <silent> <Plug>vem_alternate_buffer- :<C-u>b#<CR>
 " Smart close
 noremap <silent> <Plug>vem_smart_close- :<C-U>call vem#buffers#smart_close()<CR>
 
+" Close but keep window
+noremap <silent> <Plug>vem_close_keep_window- :<C-u>Sayonara!<CR>
+
 " Exit
 noremap <silent> <Plug>vem_exit- :confirm qall<CR>
 

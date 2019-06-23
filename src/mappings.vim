@@ -57,7 +57,7 @@ nmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 nmap <expr> W vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> W vem#layouts#dispatch(g:vem_layout, 'w')
-map <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, '<Plug>vem_mru-')
+map <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
 map <Plug>vem_alt-_ <Plug>vem_open_file_under_cursor-
 
 map <C-t> <Plug>vem_switch_buffer-
@@ -78,6 +78,8 @@ xmap s <Plug>vem_save-
 
 nmap x <Plug>vem_smart_close-
 xmap x <Plug>vem_smart_close-
+nmap <C-x> <Plug>vem_close_keep_window-
+xmap <C-x> <Plug>vem_close_keep_window-
 map <Plug>vem_alt-x <Plug>vem_exit-
 
 
@@ -356,6 +358,7 @@ nmap <expr> a vem#layouts#dispatch(g:vem_layout, 'a')
 xmap <expr> a vem#layouts#dispatch(g:vem_layout, 'a')
 nmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z')
 xmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z')
+map <expr> <Plug>vem_alt-z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-z")
 
 nmap 0 <Plug>vem_goto_first_column-
 xmap 0 <Plug>vem_goto_first_column-
@@ -622,7 +625,4 @@ xmap ! <Plug>vem_nop-
 " shift
 nmap C <Plug>vem_nop-
 xmap C <Plug>vem_nop-
-
-" ctrl
-nmap <C-x> <Plug>vem_nop-
 
