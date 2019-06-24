@@ -295,8 +295,8 @@ xmap V <Plug>vem_block_comment-
 """ Marks
 """""""""
 
-nmap <C-v> <Plug>vem_set_mark-
-xmap <C-v> <Plug>vem_set_mark-
+nmap ! <Plug>vem_set_mark-
+xmap ! <Plug>vem_set_mark-
 nmap ` <Plug>vem_goto_mark-
 xmap ` <Plug>vem_goto_mark-
 nmap ' <Plug>vem_goto_mark_line-
@@ -634,8 +634,6 @@ nmap " <Plug>vem_nop-
 xmap " <Plug>vem_nop-
 nmap # <Plug>vem_nop-
 xmap # <Plug>vem_nop-
-nmap ! <Plug>vem_nop-
-xmap ! <Plug>vem_nop-
 
 " shift
 nmap C <Plug>vem_nop-
