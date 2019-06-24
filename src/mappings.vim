@@ -51,7 +51,20 @@ map ~ <Plug>vem_scroll_to_middle-
 """ Buffers
 """""""""""
 
-map <C-a> <Plug>vem_new_buffer-
+map <C-a><Space> <Plug>vem_new_buffer-
+map <C-a>h <Plug>vem_new_win_left-
+map <C-a><C-h> <Plug>vem_new_win_left-
+map <C-a>j <Plug>vem_new_win_down-
+map <C-a><C-j> <Plug>vem_new_win_down-
+map <C-a>_ <Plug>vem_new_win_down-
+map <C-a>k <Plug>vem_new_win_up-
+map <C-a><C-k> <Plug>vem_new_win_up-
+map <C-a>l <Plug>vem_new_win_right-
+map <C-a><C-l> <Plug>vem_new_win_right-
+map <C-a>v <Plug>vem_new_win_right-
+map <C-a><C-v> <Plug>vem_new_win_right-
+map <C-a>t <Plug>vem_new_tab_and_buffer-
+map <C-a><C-t> <Plug>vem_new_tab_and_buffer-
 
 nmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
@@ -70,8 +83,8 @@ xmap { <Plug>vem_shift_buffer_left-
 nmap } <Plug>vem_shift_buffer_right-
 xmap } <Plug>vem_shift_buffer_right-
 
-nmap <BS> <Plug>vem_alternate_buffer-
-xmap <BS> <Plug>vem_alternate_buffer-
+nmap <Plug>vem_alt-t <Plug>vem_alternate_buffer-
+xmap <Plug>vem_alt-t <Plug>vem_alternate_buffer-
 
 nmap s <Plug>vem_save-
 xmap s <Plug>vem_save-
@@ -523,6 +536,8 @@ xmap & <Plug>vem_join_lines-
 
 nmap < <Plug>vem_unindent-
 xmap < <Plug>vem_unindent-
+nmap <BS> <Plug>vem_unindent-
+xmap <BS> <Plug>vem_unindent-
 nmap <S-Tab> <Plug>vem_unindent-
 xmap <S-Tab> <Plug>vem_unindent-
 

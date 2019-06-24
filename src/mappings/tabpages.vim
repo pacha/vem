@@ -3,6 +3,9 @@
 " New tab
 noremap <silent> <Plug>vem_new_tab- :<C-U>tab split<CR>
 
+" New buffer in new tab
+noremap <silent> <Plug>vem_new_tab_and_buffer- :<C-U>tabnew<CR>
+
 " Previous tab
 noremap <silent> <Plug>vem_prev_tab- :<C-U>tabp<CR>
 
