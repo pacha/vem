@@ -68,8 +68,8 @@ map <C-a><C-t> <Plug>vem_new_tab_and_buffer-
 
 nmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
-nmap <expr> W vem#layouts#dispatch(g:vem_layout, 'w')
-xmap <expr> W vem#layouts#dispatch(g:vem_layout, 'w')
+nmap <expr> W vem#layouts#dispatch(g:vem_layout, 'W')
+xmap <expr> W vem#layouts#dispatch(g:vem_layout, 'W')
 map <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
 map <Plug>vem_alt-_ <Plug>vem_open_file_under_cursor-
 
