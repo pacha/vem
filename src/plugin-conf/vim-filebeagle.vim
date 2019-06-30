@@ -14,7 +14,7 @@ let g:filebeagle_buffer_normal_key_maps = {
     \ 'FileBeagleBufferCloseWindow': '<C-x>',
     \ 'FileBeagleBufferFocusOnParent': '<C-u>',
     \ 'FileBeagleBufferFocusOnPrevious': '<BS>',
-    \ 'FileBeagleBufferCreateNewFile': '<C-a>',
+    \ 'FileBeagleBufferCreateNewFile': '<C-a><Space>',
     \ 'FileBeagleBufferVisitTarget': '<C-b>',
     \ 'FileBeagleBufferBgVisitTarget': '<C-p><CR>',
     \ 'FileBeagleBufferSplitVerticalVisitTarget': '<C-v>',

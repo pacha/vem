@@ -22,6 +22,7 @@
 
 nmap <silent> <Space> <Plug>vem_alt-
 xmap <silent> <Space> <Plug>vem_alt-
+nmap b <Plug>vem_z_prefix-
 xmap b <Plug>vem_z_prefix-
 nmap <C-b> <Plug>vem_g_prefix-
 xmap <C-b> <Plug>vem_g_prefix-
@@ -114,7 +115,6 @@ map <Plug>vem_win-k <Plug>vem_clone_win_left-
 map <Plug>vem_win-j <Plug>vem_clone_win_down-
 map <Plug>vem_win-l <Plug>vem_clone_win_right-
 
-map <Plug>vem_win-o <Plug>vem_only_window-
 map <Plug>vem_win-<Space> <Plug>vem_only_window-
 
 map <Plug>vem_win-+ <Plug>vem_increase_win_height-
