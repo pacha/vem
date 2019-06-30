@@ -145,6 +145,10 @@ set sidescrolloff=0
 " don't use include files
 set complete-=i
 
+""" Formatting
+""""""""""""""
+
+set nojoinspaces
 
 """ Filetypes
 """""""""""""
