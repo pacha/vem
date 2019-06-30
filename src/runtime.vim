@@ -1,25 +1,37 @@
 " Vem: set runtime directories
 
 " add Vem directory to runtime
+" (this is the first step so vim-pathogen is available for the next steps)
 let &runtimepath = &runtimepath . ',' . g:vem_dir . 'runtime/'
 
-" remove Vim directories from the runtime path
-let s:current_runtimepath = pathogen#split(&runtimepath)
-let s:new_runtimepath = []
-for directory in s:current_runtimepath
-    if directory !~# '\.vim'
-        let s:new_runtimepath += [directory]
-    endif
-endfor
-let &runtimepath = pathogen#join(s:new_runtimepath)
+" remove directories from a string with a comma separated list of them
+function! s:removeFromPath(path, pattern)
+    let current_path = pathogen#split(a:path)
+    let new_path = []
+    for directory in current_path
+        if directory !~# a:pattern
+            let new_path += [directory]
+        endif
+    endfor
+    return pathogen#join(new_path)
+endfunction
 
-" set Vem plugin directory
+" remove Vim user directories from the runtime and package paths
+let &runtimepath = <SID>removeFromPath(&runtimepath, '\.vim')
+if has('packages')
+    let &packpath = <SID>removeFromPath(&packpath, '\.vim')
+endif
+
+" set internal Vem plugin directory
 let s:vem_plugin_dir = g:vem_dir . 'plugins/'
-exec pathogen#infect(s:vem_plugin_dir . '{}')
 
-" append user directory to the beginning of the runtimepath
+" user configuration directory
 let &runtimepath = g:vem_user_dir . ',' . &runtimepath
-
-" append 'after' user directory to the end of the runtimepath
 let &runtimepath = &runtimepath . ',' . g:vem_user_dir . 'after/'
+if has('packages')
+    let &packpath = g:vem_user_dir . ',' . &packpath
+endif
+
+" set plugin directories (with support for Vim 8 packages structure for Vim 7 too)
+exec pathogen#infect(s:vem_plugin_dir . '{}', g:vem_user_dir . 'pack/{}/start/{}')
 

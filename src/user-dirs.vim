@@ -18,6 +18,7 @@ endif
 call <SID>createDir(g:vem_user_dir)
 call <SID>createDir(g:vem_user_dir . 'colors/')
 call <SID>createDir(g:vem_user_dir . 'spell/')
+call <SID>createDir(g:vem_user_dir . 'pack/')
 
 """ user cache directory
 """"""""""""""""""""""""
