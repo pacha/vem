@@ -1,4 +1,13 @@
 
+" Count the number of windows which display the given buffer
+function! s:win_countbuf(buffer_nr) abort
+    let win_count = 0
+    for tabpage_nr in range(1, tabpagenr('$'))
+        let win_count += len(filter(tabpagebuflist(tabpage_nr), 'v:val==a:buffer_nr'))
+    endfor
+    return win_count
+endfunction
+
 " close current buffer/window/tabpage
 function! vem#buffers#smart_close() abort
     " buffer to act upon
@@ -15,7 +24,11 @@ function! vem#buffers#smart_close() abort
     endif
 
     " if shown in more than one window, close
-    let num_windows = len(win_findbuf(current_buffer))
+    if exists("*win_findbuf")
+        let num_windows = len(win_findbuf(current_buffer))
+    else
+        let num_windows = s:win_countbuf(current_buffer)
+    endif
     if num_windows > 1
         close
         return
