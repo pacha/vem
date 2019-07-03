@@ -24,6 +24,7 @@ if &t_Co == 256
     let s:intense_red = '160'
     let s:fg = '255'
     let s:bg = '235'
+    let s:line_fg = 'none'
     let s:linenr_bg = '233'
     let s:linenr_fg = '246'
     let s:visual_bg = '238'
@@ -59,6 +60,7 @@ elseif &t_Co == 16
     let s:intense_red = '9'
     let s:fg = '15'
     let s:bg = '0'
+    let s:line_fg = '15'
     let s:linenr_bg = '0'
     let s:linenr_fg = '3'
     let s:visual_bg = '8'
@@ -94,6 +96,7 @@ else
     let s:intense_red = '1'
     let s:fg = '7'
     let s:bg = '0'
+    let s:line_fg = '0'
     let s:linenr_bg = '0'
     let s:linenr_fg = '3'
     let s:visual_bg = '3'
@@ -149,8 +152,8 @@ exec "highlight WildMenu       term=bold cterm=none ctermfg=". s:black ." ctermb
 exec "highlight MatchParen     term=reverse cterm=bold ctermfg=". s:red ." ctermbg=NONE guifg=#e5786d guibg=NONE gui=bold"
 
 " Current line & column
-exec "highlight CursorLine     term=underline cterm=none ctermfg=NONE ctermbg=". s:visual_bg ." guifg=NONE guibg=#404040 gui=none"
-exec "highlight ColorColumn    term=reverse cterm=none ctermfg=NONE ctermbg=". s:visual_bg ." guifg=NONE guibg=#404040 gui=none"
+exec "highlight CursorLine     term=reverse cterm=none ctermfg=" . s:line_fg . " ctermbg=". s:visual_bg ." guifg=NONE guibg=#404040 gui=none"
+exec "highlight ColorColumn    term=reverse cterm=none ctermfg=" . s:line_fg . " ctermbg=". s:visual_bg ." guifg=NONE guibg=#404040 gui=none"
 exec "highlight CursorColumn   term=underline cterm=none ctermfg=NONE ctermbg=". s:visual_bg ." guifg=NONE guibg=#404040 gui=none"
 exec "highlight QuickFixLine   term=underline cterm=none ctermfg=". s:white ." ctermbg=". s:visual_bg ." guifg=#ffffff guibg=#444444 gui=none"
 
