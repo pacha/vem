@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:pacha/vem-dark.git
 	branch = master
-	commit = a52e795d0dbf7969d79aa64b0b67dd912756ce31
-	parent = 5a85e43faf643c3127faf014b50f7135b4d0128e
+	commit = 8b131ecfda06acc58f089daea224df0103a4d2c1
+	parent = 63af18b8ed7e9646bda88d33d32baab88799653c
 	method = merge
 	cmdver = 0.4.0
