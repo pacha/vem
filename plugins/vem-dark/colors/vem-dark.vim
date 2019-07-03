@@ -22,6 +22,7 @@ if &t_Co == 256
     let s:blue = '117'
     let s:yellow = '192'
     let s:intense_red = '160'
+    let s:fg = '255'
     let s:bg = '235'
     let s:linenr_bg = '233'
     let s:linenr_fg = '246'
@@ -47,7 +48,7 @@ if &t_Co == 256
     let s:hi_orange = '179'
     let s:diffdelete_fg = '236'
     let s:diffdelete_bg = '236'
-else
+elseif &t_Co == 16
     let s:black = '0'
     let s:red = '1'
     let s:white = '15'
@@ -56,14 +57,15 @@ else
     let s:blue = '6'
     let s:yellow = '3'
     let s:intense_red = '9'
+    let s:fg = '15'
     let s:bg = '0'
     let s:linenr_bg = '0'
     let s:linenr_fg = '3'
     let s:visual_bg = '8'
     let s:visual_fg = '15'
     let s:borders = '8'
-    let s:statusline_nc_fg = '8'
-    let s:statusline_nc_bg = '0'
+    let s:statusline_nc_fg = '7'
+    let s:statusline_nc_bg = '8'
     let s:tabline_fg = '15'
     let s:tabline_bg = '8'
     let s:tabline_location = '0'
@@ -81,6 +83,41 @@ else
     let s:hi_orange = '3'
     let s:diffdelete_fg = '8'
     let s:diffdelete_bg = '0'
+else
+    let s:black = '0'
+    let s:red = '1'
+    let s:white = '7'
+    let s:green = '2'
+    let s:grey = '7'
+    let s:blue = '6'
+    let s:yellow = '3'
+    let s:intense_red = '1'
+    let s:fg = '7'
+    let s:bg = '0'
+    let s:linenr_bg = '0'
+    let s:linenr_fg = '3'
+    let s:visual_bg = '3'
+    let s:visual_fg = '0'
+    let s:borders = '0'
+    let s:statusline_nc_fg = '8'
+    let s:statusline_nc_bg = '0'
+    let s:tabline_fg = '7'
+    let s:tabline_bg = '0'
+    let s:tabline_location = '0'
+    let s:terminal_bg = '0'
+    let s:special = '3'
+    let s:non_text_fg = '4'
+    let s:non_text_bg = '0'
+    let s:comment = '2'
+    let s:fold_fg = '7'
+    let s:fold_bg = '4'
+    let s:hi_fg = '7'
+    let s:hi_green = '2'
+    let s:hi_yellow = '3'
+    let s:hi_blue = '6'
+    let s:hi_orange = '3'
+    let s:diffdelete_fg = '4'
+    let s:diffdelete_bg = '0'
 endif
 
 " Enable/Disable italic
@@ -91,7 +128,7 @@ let s:italic = get(g:, 'vem_colors_italic', has('gui_running')) ? 'italic' : 'no
 """ Set colors
 
 " Normal text
-exec "highlight Normal         term=none cterm=none ctermfg=". s:white ." ctermbg=". s:bg ." guifg=#f6f3e8 guibg=#242424 gui=none"
+exec "highlight Normal         term=none cterm=none ctermfg=". s:fg ." ctermbg=". s:bg ." guifg=#f6f3e8 guibg=#242424 gui=none"
 
 " Cursor
 exec "highlight Cursor         term=none cterm=none ctermfg=". s:white ." ctermbg=". s:intense_red ." guifg=#ffffff guibg=#c00000 gui=none"
@@ -119,15 +156,15 @@ exec "highlight QuickFixLine   term=underline cterm=none ctermfg=". s:white ." c
 
 " Windows, Tabline, Statusline
 exec "highlight VertSplit      term=none cterm=none ctermfg=". s:borders ." ctermbg=". s:borders ." guifg=#373737 guibg=#373737 gui=none"
-exec "highlight StatusLine     term=none cterm=none ctermfg=". s:white ." ctermbg=". s:borders ." guifg=#e6e3d8 guibg=#373737 gui=none"
+exec "highlight StatusLine     term=reverse cterm=none ctermfg=". s:white ." ctermbg=". s:borders ." guifg=#e6e3d8 guibg=#373737 gui=none"
 exec "highlight StatusLineNC   term=none cterm=". s:italic ." ctermfg=". s:statusline_nc_fg ." ctermbg=". s:statusline_nc_bg ." guifg=#857b6f guibg=#404040 gui=" . s:italic
 exec "highlight TabLine        term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
-exec "highlight TabLineSel     term=underline cterm=bold ctermfg=". s:tabline_fg ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
+exec "highlight TabLineSel     term=none cterm=bold ctermfg=". s:tabline_fg ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
 exec "highlight TabLineFill    term=reverse cterm=none ctermfg=". s:white ." ctermbg=". s:tabline_bg ." guifg=#e6e3d8 guibg=#404040 gui=" . s:italic
 
 " Terminal
-exec "highlight StatusLineTerm   term=none cterm=none ctermfg=". s:white ." ctermbg=". s:borders ." guifg=#e6e3d8 guibg=#373737 gui=none"
-exec "highlight StatusLineTermNC term=none cterm=". s:italic ." ctermfg=". s:statusline_nc_fg ." ctermbg=". s:statusline_nc_bg ." guifg=#857b6f guibg=#444444 gui=" . s:italic
+exec "highlight StatusLineTerm   term=reverse cterm=none ctermfg=". s:white ." ctermbg=". s:borders ." guifg=#e6e3d8 guibg=#373737 gui=none"
+exec "highlight StatusLineTermNC term=reverse cterm=". s:italic ." ctermfg=". s:statusline_nc_fg ." ctermbg=". s:statusline_nc_bg ." guifg=#857b6f guibg=#444444 gui=" . s:italic
 exec "highlight Terminal         term=none cterm=none ctermfg=". s:white ." ctermbg=". s:terminal_bg ." guifg=#f6f3e8 guibg=#303030 gui=none"
 
 " Pmenu
@@ -223,24 +260,24 @@ exec "highlight TODO           term=bold cterm=none ctermfg=". s:black ." ctermb
 """ set plugin specific colors
 
 " vem-statusline
-exec "highlight VemStatusLineMode          term=bold cterm=bold ctermfg=". s:yellow ." ctermbg=". s:borders ." guifg=#cae682 guibg=#373737 gui=bold"
-exec "highlight VemStatusLineModeInsert    term=bold cterm=bold ctermfg=". s:yellow ." ctermbg=". s:borders ." guifg=#cae682 guibg=#373737 gui=bold"
-exec "highlight VemStatusLineBranch        term=none cterm=none ctermfg=". s:grey   ." ctermbg=". s:borders ." guifg=#999999 guibg=#373737 gui=none"
-exec "highlight VemStatusLineFileModified  term=bold cterm=bold ctermfg=". s:yellow ." ctermbg=". s:borders ." guifg=#cae682 guibg=#373737 gui=bold"
-exec "highlight VemStatusLineFileRO        term=bold cterm=bold ctermfg=". s:red    ." ctermbg=". s:borders ." guifg=#e5786d guibg=#373737 gui=bold"
-exec "highlight VemStatusLineSeparator     term=none cterm=none ctermfg=". s:grey   ." ctermbg=". s:borders ." guifg=#999999 guibg=#373737 gui=none"
-exec "highlight VemStatusLinePosition      term=bold cterm=bold ctermfg=". s:white  ." ctermbg=". s:borders ." guifg=#f6f3e8 guibg=#373737 gui=bold"
+exec "highlight VemStatusLineMode          term=reverse cterm=bold ctermfg=". s:yellow ." ctermbg=". s:borders ." guifg=#cae682 guibg=#373737 gui=bold"
+exec "highlight VemStatusLineModeInsert    term=reverse cterm=bold ctermfg=". s:yellow ." ctermbg=". s:borders ." guifg=#cae682 guibg=#373737 gui=bold"
+exec "highlight VemStatusLineBranch        term=reverse cterm=none ctermfg=". s:grey   ." ctermbg=". s:borders ." guifg=#999999 guibg=#373737 gui=none"
+exec "highlight VemStatusLineFileModified  term=reverse cterm=bold ctermfg=". s:yellow ." ctermbg=". s:borders ." guifg=#cae682 guibg=#373737 gui=bold"
+exec "highlight VemStatusLineFileRO        term=reverse cterm=bold ctermfg=". s:red    ." ctermbg=". s:borders ." guifg=#e5786d guibg=#373737 gui=bold"
+exec "highlight VemStatusLineSeparator     term=reverse cterm=none ctermfg=". s:grey   ." ctermbg=". s:borders ." guifg=#999999 guibg=#373737 gui=none"
+exec "highlight VemStatusLinePosition      term=reverse cterm=bold ctermfg=". s:white  ." ctermbg=". s:borders ." guifg=#f6f3e8 guibg=#373737 gui=bold"
 
 " vem-tabline
 exec "highlight VemTablineNormal           term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
 exec "highlight VemTablineLocation         term=reverse cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:tabline_bg ." guifg=#666666 guibg=#cdcdcd gui=none"
-exec "highlight VemTablineSelected         term=underline cterm=bold ctermfg=". s:black ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
-exec "highlight VemTablineLocationSelected term=underline cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:white ." guifg=#666666 guibg=#ffffff gui=bold"
+exec "highlight VemTablineSelected         term=bold cterm=bold ctermfg=". s:black ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
+exec "highlight VemTablineLocationSelected term=bold cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:white ." guifg=#666666 guibg=#ffffff gui=bold"
 exec "highlight VemTablineShown            term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
 exec "highlight VemTablineLocationShown    term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#666666 guibg=#cdcdcd gui=none"
 exec "highlight VemTablineSeparator        term=reverse cterm=none ctermfg=". s:grey ." ctermbg=". s:tabline_bg ." guifg=#e6e3d8 guibg=#404040 gui=" . s:italic
 exec "highlight VemTablineTabNormal        term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
-exec "highlight VemTablineTabSelected      term=underline cterm=bold ctermfg=". s:tabline_fg ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
+exec "highlight VemTablineTabSelected      term=bold cterm=bold ctermfg=". s:black ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
 
 " ctrl-p
 exec "highlight CtrlPStatusline            term=bold cterm=bold ctermfg=". s:grey ." ctermbg=NONE guifg=#999999 guibg=NONE gui=none"
