@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pacha/vem-dark.git
+	branch = master
+	commit = 954a339d364f52225bdc9a2533b1235972fdf350
+	parent = 12340f6310881b7800770d7ba6676b7a924f2935
+	method = merge
+	cmdver = 0.4.0
