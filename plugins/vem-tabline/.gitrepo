@@ -4,7 +4,7 @@
 ; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
 ;
 [subrepo]
-	remote = https://github.com/pacha/vem-tabline.git
+	remote = git@github.com:pacha/vem-tabline.git
 	branch = master
 	commit = 9ad67ada6d5af26bc0107fa6b35b925855fe801a
 	parent = a601bac34b8e4fe2d5f43cd97b76abdc9a1b1ad2
