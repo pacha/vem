@@ -14,7 +14,7 @@ let g:filebeagle_buffer_normal_key_maps = {
     \ 'FileBeagleBufferCloseWindow': '<C-x>',
     \ 'FileBeagleBufferFocusOnParent': '<C-u>',
     \ 'FileBeagleBufferFocusOnPrevious': '<BS>',
-    \ 'FileBeagleBufferCreateNewFile': '<C-a><Space>',
+    \ 'FileBeagleBufferCreateNewFile': '',
     \ 'FileBeagleBufferVisitTarget': '<C-b>',
     \ 'FileBeagleBufferBgVisitTarget': '<C-p><CR>',
     \ 'FileBeagleBufferSplitVerticalVisitTarget': '<C-v>',
@@ -45,9 +45,8 @@ let g:filebeagle_buffer_visual_key_maps = {
     \ 'FileBeagleScrollUp': 'A'
     \ }
 
-" Unmap keys that modify the buffer
-function! s:filebeable_unmap_modifier_keys()
-    " Disabling of unused modification keys
+" Disable keys that modify the buffer
+function! s:filebeable_disable_keys()
     for key in ["q", "Q", "d", "c", "r", "f", "F", "<C-f>", "v", "y", "n",
             \ "<C-j>", "<C-k>", "<C-l>", "<C-u>", "<C-p>", "M"]
         try
@@ -59,7 +58,12 @@ endfunction
 
 augroup filebeagle_config
     autocmd!
-    autocmd FileType filebeagle call s:filebeable_unmap_modifier_keys()
+
+    autocmd FileType filebeagle call s:filebeable_disable_keys()
+
+    " map <C-a> manually since it needs the <nowait> modifier to not collide
+    " with the global <C-a> mappings
+    autocmd FileType filebeagle nmap <buffer> <nowait> <C-a> <Plug>(FileBeagleBufferCreateNewFile)
 augroup END
 
 " Re-map movement actions in the filebeagle buffer
