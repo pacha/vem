@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:pacha/vem-tabline.git
 	branch = master
-	commit = 9ad67ada6d5af26bc0107fa6b35b925855fe801a
-	parent = a601bac34b8e4fe2d5f43cd97b76abdc9a1b1ad2
+	commit = 02f505b31e7398e21d29d5928c29b3ed5ffdc71b
+	parent = 66f7d2d45fe1cbe62d87e3d9769ed473ad64855f
 	method = merge
 	cmdver = 0.4.0
