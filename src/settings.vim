@@ -176,8 +176,16 @@ let &undodir = g:vem_cache_dir . 'undo//,' . &undodir
 let &directory = g:vem_cache_dir . 'swap//,' . &directory
 let &backupdir = g:vem_cache_dir . 'backup//,' . &backupdir
 
+" don't interfere with Vim's viminfo file
+" (don't create one unless we can create one separate from the official file)
 if isdirectory(g:vem_cache_dir)
-    let &viminfofile = g:vem_cache_dir . 'veminfo'
+    try
+        let &viminfofile = g:vem_cache_dir . 'veminfo'
+    catch /E355:/
+        set viminfo=
+    endtry
+else
+    set viminfo=
 endif
 
 
