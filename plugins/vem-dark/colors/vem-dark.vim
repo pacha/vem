@@ -283,7 +283,8 @@ exec "highlight VemTablineTabNormal        term=reverse cterm=none ctermfg=". s:
 exec "highlight VemTablineTabSelected      term=bold cterm=bold ctermfg=". s:black ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
 
 " ctrl-p
-exec "highlight CtrlPStatusline            term=bold cterm=bold ctermfg=". s:grey ." ctermbg=NONE guifg=#999999 guibg=NONE gui=none"
-exec "highlight CtrlPBufferNr              term=none cterm=none ctermfg=". s:blue ." ctermbg=NONE guifg=#8ac6f2 guibg=NONE gui=none"
-exec "highlight CtrlPNoEntries             term=none cterm=none ctermfg=". s:intense_red ." ctermbg=NONE guifg=#ee0000 guibg=NONE gui=none"
+exec "highlight CtrlPStatusline            term=bold cterm=bold ctermfg=". s:grey ." ctermbg=" . s:bg . " guifg=#999999 guibg=NONE gui=none"
+exec "highlight CtrlPBufferNr              term=none cterm=none ctermfg=". s:blue ." ctermbg=" . s:bg . " guifg=#8ac6f2 guibg=NONE gui=none"
+exec "highlight CtrlPNoEntries             term=none cterm=none ctermfg=". s:intense_red ." ctermbg=" . s:bg . " guifg=#ee0000 guibg=NONE gui=none"
+exec "highlight CtrlPMatch                 term=bold cterm=none ctermfg=". s:yellow ." ctermbg=" . s:bg . " guifg=#ee0000 guibg=NONE gui=none"
 
