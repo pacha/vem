@@ -24,8 +24,8 @@ nmap <silent> <Space> <Plug>vem_alt-
 xmap <silent> <Space> <Plug>vem_alt-
 nmap b <Plug>vem_z_prefix-
 xmap b <Plug>vem_z_prefix-
-nmap <C-b> <Plug>vem_g_prefix-
-xmap <C-b> <Plug>vem_g_prefix-
+nmap B <Plug>vem_g_prefix-
+xmap B <Plug>vem_g_prefix-
 
 
 """ Undo
@@ -202,9 +202,7 @@ xmap O <Plug>vem_delete-
 nmap g <Plug>vem_inner_select_word-
 xmap g <Plug>vem_inner_reselect_non_whitespace-
 nmap G <Plug>vem_start_char_selection-
-xmap G <Plug>vem_inner_select_line-
-nmap B <Plug>vem_start_block_selection-
-xmap B <Plug>vem_start_block_selection-
+xmap G <Plug>vem_change_selection_mode-
 
 xmap i <Plug>vem_change_selection_mode-
 xmap o <Plug>vem_toggle_selection_end-
