@@ -389,8 +389,6 @@ nmap R <Plug>vem_jump_history_back-
 xmap R <Plug>vem_jump_history_back-
 nmap <Plug>vem_alt-r <Plug>vem_jump_history_forward-
 xmap <Plug>vem_alt-r <Plug>vem_jump_history_forward-
-nmap <Plug>vem_alt-R <Plug>vem_jump_history_forward-
-xmap <Plug>vem_alt-R <Plug>vem_jump_history_forward-
 
 nmap U <Plug>vem_page_up-
 xmap U <Plug>vem_page_up-
@@ -431,15 +429,17 @@ xmap <Plug>vem_alt-- <Plug>vem_goto_win_middle-
 nmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 xmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 
-nmap ; <Plug>vem_goto_eow-
-xmap ; <Plug>vem_goto_eow-
+nmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
+xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
+
 nmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 xmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 
 nmap , <Plug>vem_goto_bol-
 xmap , <Plug>vem_goto_bol-
-nmap . <Plug>vem_goto_eol-
-xmap . <Plug>vem_goto_eol-
+
+nmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
+xmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
 
 
 """ Modes
@@ -447,6 +447,8 @@ xmap . <Plug>vem_goto_eol-
 
 nmap i <Plug>vem_insert_left-
 nmap o <Plug>vem_insert_right-
+
+nmap <Insert> <Plug>vem_replace_mode-
 
 map <C-h> <Plug>vem_insert_start-
 map <C-l> <Plug>vem_insert_end-
@@ -534,15 +536,11 @@ xmap = <Plug>vem_format_code-
 nmap & <Plug>vem_join_lines-
 xmap & <Plug>vem_join_lines-
 
-nmap < <Plug>vem_unindent-
-xmap < <Plug>vem_unindent-
 nmap <BS> <Plug>vem_unindent-
 xmap <BS> <Plug>vem_unindent-
 nmap <S-Tab> <Plug>vem_unindent-
 xmap <S-Tab> <Plug>vem_unindent-
 
-nmap > <Plug>vem_indent-
-xmap > <Plug>vem_indent-
 nmap <Tab> <Plug>vem_indent-
 xmap <Tab> <Plug>vem_indent-
 
@@ -634,8 +632,14 @@ nmap " <Plug>vem_nop-
 xmap " <Plug>vem_nop-
 nmap # <Plug>vem_nop-
 xmap # <Plug>vem_nop-
+nmap * <Plug>vem_nop-
+xmap * <Plug>vem_nop-
+nmap < <Plug>vem_nop-
+xmap < <Plug>vem_nop-
+nmap > <Plug>vem_nop-
+xmap > <Plug>vem_nop-
 
-" shift
+" uppercase letters
 nmap C <Plug>vem_nop-
 xmap C <Plug>vem_nop-
 

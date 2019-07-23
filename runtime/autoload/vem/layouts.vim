@@ -14,6 +14,8 @@ let s:layout_mappings = {
     \       "\<Plug>vem_alt-z": "\<Plug>vem_nop-",
     \       "y": "\<Plug>vem_add_line_above-",
     \       "Y": "\<Plug>vem_quickfix_prev_result-",
+    \       ".": "\<Plug>vem_goto_eol-",
+    \       ";": "\<Plug>vem_goto_eow-",
     \   },
     \   "qwertz": {
     \       "q": "\<Plug>vem_undo-",
@@ -28,6 +30,8 @@ let s:layout_mappings = {
     \       "\<Plug>vem_alt-z": "\<Plug>vem_nop-",
     \       "z": "\<Plug>vem_add_line_above-",
     \       "Z": "\<Plug>vem_quickfix_prev_result-",
+    \       ".": "\<Plug>vem_goto_eol-",
+    \       ";": "\<Plug>vem_goto_eow-",
     \   },
     \   "azerty": {
     \       "a": "\<Plug>vem_undo-",
@@ -42,6 +46,8 @@ let s:layout_mappings = {
     \       "\<Plug>vem_alt-z": "\<Plug>vem_mru-",
     \       "y": "\<Plug>vem_add_line_above-",
     \       "Y": "\<Plug>vem_quickfix_prev_result-",
+    \       ";": "\<Plug>vem_goto_eol-",
+    \       ".": "\<Plug>vem_goto_eow-",
     \   },
     \ }
 

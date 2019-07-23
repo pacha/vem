@@ -150,6 +150,12 @@ set complete-=i
 
 set nojoinspaces
 
+""" Encoding
+""""""""""""
+
+" always use utf-8 internally
+set encoding=utf-8
+
 """ Filetypes
 """""""""""""
 

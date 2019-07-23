@@ -4,6 +4,9 @@
 noremap <Plug>vem_normal_mode- <Esc>
 noremap! <Plug>vem_normal_mode- <Esc>
 
+" Replace mode
+noremap <Plug>vem_replace_mode- R
+
 " Exit command line
 cnoremap <Plug>vem_exit_command_line- <C-c>
 
