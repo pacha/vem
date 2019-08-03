@@ -2,3 +2,15 @@ Vem is written and maintained by
 
 Andrés Sopeña Pérez (Pacha) <asopena@ehmm.org>
 
+Vem uses code from the following projects and authors:
+
+* vim-pathogen by Tim Pope
+* vim-filebeagle by Jeet Sukumaran
+* vim-smartword by Kana Natsuno
+* vim-enhancedjumps by Ingo Karkat
+* wildfire.vim by Giacomo Comitti
+* vim-surround by Tim Pope
+* ctrlp.vim originally by @kien, maintained by @mattn
+* NERD Commenter by Martin Grenfell
+* vim-sayonara by Marco Hinz
+
