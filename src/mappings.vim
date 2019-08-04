@@ -212,6 +212,7 @@ map <C-g> <Plug>vem_increase_selection-
 xmap <Space> <Plug>vem_deselect-
 xmap <S-Space> <Plug>vem_deselect-
 nmap <Space>g <Plug>vem_reselect-
+nmap <Space>G <Plug>vem_reselect-
 nmap <Plug>vem_alt-<Space> <Plug>vem_select_last_pasted_text-
 nmap <Space>a <Plug>vem_select_all-
 
