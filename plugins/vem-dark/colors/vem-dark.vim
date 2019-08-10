@@ -70,7 +70,7 @@ elseif &t_Co == 16
     let s:statusline_nc_bg = '8'
     let s:tabline_fg = '15'
     let s:tabline_bg = '8'
-    let s:tabline_location = '0'
+    let s:tabline_location = '15'
     let s:terminal_bg = '0'
     let s:special = '7'
     let s:non_text_fg = '8'
@@ -274,12 +274,16 @@ exec "highlight VemStatusLinePosition      term=reverse cterm=bold ctermfg=". s:
 " vem-tabline
 exec "highlight VemTablineNormal           term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
 exec "highlight VemTablineLocation         term=reverse cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:tabline_bg ." guifg=#666666 guibg=#cdcdcd gui=none"
+exec "highlight VemTablineNumber           term=reverse cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:tabline_bg ." guifg=#666666 guibg=#cdcdcd gui=none"
 exec "highlight VemTablineSelected         term=bold cterm=bold ctermfg=". s:black ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
 exec "highlight VemTablineLocationSelected term=bold cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:white ." guifg=#666666 guibg=#ffffff gui=bold"
+exec "highlight VemTablineNumberSelected   term=bold cterm=none ctermfg=". s:tabline_location ." ctermbg=". s:white ." guifg=#666666 guibg=#ffffff gui=bold"
 exec "highlight VemTablineShown            term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
 exec "highlight VemTablineLocationShown    term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#666666 guibg=#cdcdcd gui=none"
-exec "highlight VemTablineSeparator        term=reverse cterm=none ctermfg=". s:grey ." ctermbg=". s:tabline_bg ." guifg=#e6e3d8 guibg=#404040 gui=" . s:italic
-exec "highlight VemTablineTabNormal        term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#242424 guibg=#cdcdcd gui=none"
+exec "highlight VemTablineNumberShown      term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#666666 guibg=#cdcdcd gui=none"
+exec "highlight VemTablineSeparator        term=reverse cterm=none ctermfg=". s:grey ." ctermbg=". s:tabline_bg ." guifg=#888888 guibg=#cdcdcd gui=" . s:italic
+exec "highlight VemTablinePartialName      term=reverse cterm=none ctermfg=". s:grey ." ctermbg=". s:tabline_bg ." guifg=#888888 guibg=#cdcdcd gui=" . s:italic
+exec "highlight VemTablineTabNormal        term=reverse cterm=none ctermfg=". s:tabline_fg ." ctermbg=". s:tabline_bg ." guifg=#cdcdcd guibg=#4a4a4a gui=none"
 exec "highlight VemTablineTabSelected      term=bold cterm=bold ctermfg=". s:black ." ctermbg=". s:white ." guifg=#242424 guibg=#ffffff gui=bold"
 
 " ctrl-p
