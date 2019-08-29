@@ -11,6 +11,7 @@ noremap <Plug>vem_open_file_under_cursor- gf
 
 " Save buffer
 noremap <expr> <Plug>vem_save- empty(bufname('%')) ? ":<C-u>w " . fnamemodify(getcwd(), ':p'): ":<C-u>w\<CR>"
+noremap <silent> <Plug>vem_save_all- :<C-u>wall<CR>
 
 " Switch buffer
 noremap <silent> <Plug>vem_switch_buffer- :<C-u>CtrlPBuffer<CR>

@@ -40,13 +40,12 @@ xmap <expr> Q vem#layouts#dispatch(g:vem_layout, 'Q')
 """ Scroll
 """"""""""
 
-nmap <C-e> <Plug>vem_scroll_up-
-xmap <C-e> <Plug>vem_scroll_up-
-nmap <C-d> <Plug>vem_scroll_down-
-xmap <C-d> <Plug>vem_scroll_down-
-map <Plug>vem_alt-e <Plug>vem_scroll_to_top-
-map <Plug>vem_alt-d <Plug>vem_scroll_to_bottom-
-map ~ <Plug>vem_scroll_to_middle-
+map <C-e> <Plug>vem_scroll_up-
+map <C-d> <Plug>vem_scroll_down-
+nmap <Plug>vem_alt-e <Plug>vem_scroll_to_top-
+nmap <Plug>vem_alt-d <Plug>vem_scroll_to_bottom-
+nmap ~ <Plug>vem_scroll_to_middle-
+xmap ~ <Plug>vem_scroll_to_middle-
 
 
 """ Buffers
@@ -84,17 +83,18 @@ xmap { <Plug>vem_shift_buffer_left-
 nmap } <Plug>vem_shift_buffer_right-
 xmap } <Plug>vem_shift_buffer_right-
 
-nmap <Plug>vem_alt-t <Plug>vem_alternate_buffer-
-xmap <Plug>vem_alt-t <Plug>vem_alternate_buffer-
+nmap # <Plug>vem_alternate_buffer-
+xmap # <Plug>vem_alternate_buffer-
 
 nmap s <Plug>vem_save-
 xmap s <Plug>vem_save-
+nmap <Plug>vem_alt-s <Plug>vem_save_all-
 
 nmap x <Plug>vem_smart_close-
 xmap x <Plug>vem_smart_close-
 nmap <C-x> <Plug>vem_close_keep_window-
 xmap <C-x> <Plug>vem_close_keep_window-
-map <Plug>vem_alt-x <Plug>vem_exit-
+nmap <Plug>vem_alt-x <Plug>vem_exit-
 
 
 """ Windows
@@ -629,8 +629,6 @@ cmap <S-Tab> <Plug>vem_wildmenu_prev-
 " symbols
 nmap " <Plug>vem_nop-
 xmap " <Plug>vem_nop-
-nmap # <Plug>vem_nop-
-xmap # <Plug>vem_nop-
 nmap * <Plug>vem_nop-
 xmap * <Plug>vem_nop-
 nmap < <Plug>vem_nop-
