@@ -9,10 +9,10 @@ vnoremap <expr> <Plug>vem_bottom- vem#move#selection_started() ? 'VG' : 'G'
 
 " Go up/down
 nnoremap <Plug>vem_up- gk
-vnoremap <expr> <Plug>vem_up- vem#move#selection_started() ? 'Vgk' : 'gk'
+vnoremap <expr> <Plug>vem_up- vem#move#selection_started() ? 'V' : 'gk'
 
 nnoremap <Plug>vem_down- gj
-vnoremap <expr> <Plug>vem_down- vem#move#selection_started() ? 'Vgj' : 'gj'
+vnoremap <expr> <Plug>vem_down- vem#move#selection_started() ? 'V' : 'gj'
 
 " Go left/right
 noremap <Plug>vem_left- h

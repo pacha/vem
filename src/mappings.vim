@@ -379,6 +379,11 @@ xmap ^ <Plug>vem_goto_bol-
 nmap $ <Plug>vem_goto_eol-
 xmap $ <Plug>vem_goto_eol-
 
+nmap , <Plug>vem_goto_bol-
+xmap , <Plug>vem_goto_bol-
+nmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
+xmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
+
 nmap % <Plug>vem_goto_matching_pair-
 xmap % <Plug>vem_goto_matching_pair-
 
@@ -386,8 +391,8 @@ nmap <Plug>vem_alt-p <Plug>vem_changed_text_end-
 
 nmap R <Plug>vem_jump_history_back-
 xmap R <Plug>vem_jump_history_back-
-nmap <Plug>vem_alt-r <Plug>vem_jump_history_forward-
-xmap <Plug>vem_alt-r <Plug>vem_jump_history_forward-
+nmap <C-]> <Plug>vem_jump_history_forward-
+xmap <C-]> <Plug>vem_jump_history_forward-
 
 nmap U <Plug>vem_page_up-
 xmap U <Plug>vem_page_up-
@@ -406,10 +411,10 @@ xmap j <Plug>vem_down-
 nmap k <Plug>vem_up-
 xmap k <Plug>vem_up-
 
-map  <Left> <Plug>vem_left-
-map  <Right> <Plug>vem_right-
-map  <Up> <Plug>vem_up-
-map  <Down> <Plug>vem_down-
+map <Left> <Plug>vem_left-
+map <Right> <Plug>vem_right-
+map <Up> <Plug>vem_up-
+map <Down> <Plug>vem_down-
 
 nmap H <Plug>vem_word_left-
 nmap L <Plug>vem_word_right-
@@ -434,12 +439,6 @@ xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 nmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 xmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 
-nmap , <Plug>vem_goto_bol-
-xmap , <Plug>vem_goto_bol-
-
-nmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
-xmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
-
 
 """ Modes
 """""""""
@@ -447,7 +446,7 @@ xmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
 nmap i <Plug>vem_insert_left-
 nmap o <Plug>vem_insert_right-
 
-nmap <Insert> <Plug>vem_replace_mode-
+nmap <Plug>vem_alt-r <Plug>vem_replace_mode-
 
 map <C-h> <Plug>vem_insert_start-
 map <C-l> <Plug>vem_insert_end-
