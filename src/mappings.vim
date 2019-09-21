@@ -115,6 +115,7 @@ map <Plug>vem_win-k <Plug>vem_clone_win_left-
 map <Plug>vem_win-j <Plug>vem_clone_win_down-
 map <Plug>vem_win-l <Plug>vem_clone_win_right-
 
+map <Plug>vem_win-x <Plug>vem_close_window-
 map <Plug>vem_win-<Space> <Plug>vem_only_window-
 
 map <Plug>vem_win-+ <Plug>vem_increase_win_height-
