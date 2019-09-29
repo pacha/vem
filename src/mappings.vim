@@ -126,10 +126,11 @@ map <Plug>vem_win-< <Plug>vem_decrease_win_width-
 map <Plug>vem_win-r <Plug>vem_rotate_window_up-
 map <Plug>vem_win-R <Plug>vem_rotate_window_down-
 
-map <Plug>vem_win-a <Plug>vem_move_win_top-
-map <Plug>vem_win-z <Plug>vem_move_win_bottom-
+map <Plug>vem_win-u <Plug>vem_move_win_top-
+map <Plug>vem_win-m <Plug>vem_move_win_bottom-
 map <Plug>vem_win-, <Plug>vem_move_win_left-
 map <Plug>vem_win-. <Plug>vem_move_win_right-
+map <Plug>vem_win-; <Plug>vem_move_win_right-
 
 
 """ Macros
@@ -214,7 +215,7 @@ xmap <Space> <Plug>vem_deselect-
 xmap <S-Space> <Plug>vem_deselect-
 nmap <Space>g <Plug>vem_reselect-
 nmap <Space>G <Plug>vem_reselect-
-nmap <Plug>vem_alt-<Space> <Plug>vem_select_last_pasted_text-
+nmap <Space>p <Plug>vem_select_last_pasted_text-
 nmap <Space>a <Plug>vem_select_all-
 
 xmap H <Plug>vem_increase_word_selection_left-
@@ -301,6 +302,10 @@ nmap ` <Plug>vem_goto_mark-
 xmap ` <Plug>vem_goto_mark-
 nmap ' <Plug>vem_goto_mark_line-
 xmap ' <Plug>vem_goto_mark_line-
+
+nmap <Plug>vem_alt-<Space> <Plug>vem_set_z_mark-
+nmap <BS> <Plug>vem_goto_z_mark-
+xmap <BS> <Plug>vem_goto_z_mark-
 
 
 """ Misc
@@ -535,8 +540,6 @@ xmap = <Plug>vem_format_code-
 nmap & <Plug>vem_join_lines-
 xmap & <Plug>vem_join_lines-
 
-nmap <BS> <Plug>vem_unindent-
-xmap <BS> <Plug>vem_unindent-
 nmap <S-Tab> <Plug>vem_unindent-
 xmap <S-Tab> <Plug>vem_unindent-
 
