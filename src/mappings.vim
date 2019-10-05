@@ -84,7 +84,6 @@ nmap } <Plug>vem_shift_buffer_right-
 xmap } <Plug>vem_shift_buffer_right-
 
 nmap # <Plug>vem_alternate_buffer-
-xmap # <Plug>vem_alternate_buffer-
 
 nmap s <Plug>vem_save-
 xmap s <Plug>vem_save-
@@ -206,9 +205,6 @@ xmap g <Plug>vem_inner_reselect_non_whitespace-
 nmap G <Plug>vem_start_char_selection-
 xmap G <Plug>vem_change_selection_mode-
 
-xmap i <Plug>vem_change_selection_mode-
-xmap o <Plug>vem_toggle_selection_end-
-
 map <C-g> <Plug>vem_increase_selection-
 
 xmap <Space> <Plug>vem_deselect-
@@ -226,6 +222,9 @@ vmap <S-Right> <Plug>vem_increase_word_selection_right-
 
 """ Select objects
 """"""""""""""""""
+
+xmap ii <Plug>vem_nop-
+xmap oo <Plug>vem_nop-
 
 xmap ia <Plug>vem_select_all-
 xmap oa <Plug>vem_select_all-
@@ -393,8 +392,6 @@ xmap <expr> . vem#layouts#dispatch(g:vem_layout, '.')
 nmap % <Plug>vem_goto_matching_pair-
 xmap % <Plug>vem_goto_matching_pair-
 
-nmap <Plug>vem_alt-p <Plug>vem_changed_text_end-
-
 nmap R <Plug>vem_jump_history_back-
 xmap R <Plug>vem_jump_history_back-
 nmap <C-]> <Plug>vem_jump_history_forward-
@@ -444,6 +441,8 @@ xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 
 nmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 xmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
+
+xmap # <Plug>vem_toggle_selection_end-
 
 
 """ Modes
@@ -630,16 +629,12 @@ cmap <S-Tab> <Plug>vem_wildmenu_prev-
 """"""""""
 
 " symbols
-nmap " <Plug>vem_nop-
-xmap " <Plug>vem_nop-
 nmap * <Plug>vem_nop-
 xmap * <Plug>vem_nop-
+nmap " <Plug>vem_nop-
+xmap " <Plug>vem_nop-
 nmap < <Plug>vem_nop-
 xmap < <Plug>vem_nop-
 nmap > <Plug>vem_nop-
 xmap > <Plug>vem_nop-
-
-" uppercase letters
-nmap C <Plug>vem_nop-
-xmap C <Plug>vem_nop-
 
