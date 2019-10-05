@@ -32,4 +32,5 @@ call <SID>createDir(g:vem_cache_dir)
 call <SID>createDir(g:vem_cache_dir . 'swap/')
 call <SID>createDir(g:vem_cache_dir . 'undo/')
 call <SID>createDir(g:vem_cache_dir . 'backup/')
+call <SID>createDir(g:vem_cache_dir . 'views/')
 

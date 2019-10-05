@@ -181,6 +181,7 @@ augroup END
 let &undodir = g:vem_cache_dir . 'undo//,' . &undodir
 let &directory = g:vem_cache_dir . 'swap//,' . &directory
 let &backupdir = g:vem_cache_dir . 'backup//,' . &backupdir
+let &viewdir = g:vem_cache_dir . 'views//'
 
 " don't interfere with Vim's viminfo file
 " (don't create one unless we can create one separate from the official file)
