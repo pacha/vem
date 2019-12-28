@@ -96,7 +96,7 @@ if has('clipboard')
     endif
 else
     "don't use system clipboard
-    let g:vem_main_clipboard = '"'
+    let g:vem_main_clipboard = 'y'
 endif
 let g:vem_aux_clipboard = 'x'
 
