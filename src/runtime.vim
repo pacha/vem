@@ -25,13 +25,12 @@ endif
 " set internal Vem plugin directory
 let s:vem_plugin_dir = g:vem_dir . 'plugins/'
 
+" set plugin directories (with support for Vim 8 packages structure for Vim 7 too)
+exec pathogen#infect(s:vem_plugin_dir . '{}', g:vem_user_dir . 'pack/{}/start/{}')
+
 " user configuration directory
-let &runtimepath = g:vem_user_dir . ',' . &runtimepath
-let &runtimepath = &runtimepath . ',' . g:vem_user_dir . 'after/'
+let &runtimepath = g:vem_user_dir . ',' . &runtimepath . ',' . g:vem_user_dir . 'after/'
 if has('packages')
     let &packpath = g:vem_user_dir . ',' . &packpath
 endif
-
-" set plugin directories (with support for Vim 8 packages structure for Vim 7 too)
-exec pathogen#infect(s:vem_plugin_dir . '{}', g:vem_user_dir . 'pack/{}/start/{}')
 
