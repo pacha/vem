@@ -187,7 +187,11 @@ let &viewdir = g:vem_cache_dir . 'views//'
 " (don't create one unless we can create one separate from the official file)
 if isdirectory(g:vem_cache_dir)
     try
-        let &viminfofile = g:vem_cache_dir . 'veminfo'
+        if has('nvim')
+            let &shadafile = g:vem_cache_dir . 'main.shada'
+        else
+            let &viminfofile = g:vem_cache_dir . 'veminfo'
+        endif
     catch /E355:/
         set viminfo=
     endtry
