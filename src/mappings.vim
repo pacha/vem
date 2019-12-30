@@ -51,20 +51,20 @@ xmap ~ <Plug>vem_scroll_to_middle-
 """ Buffers
 """""""""""
 
-map <C-a><Space> <Plug>vem_new_buffer-
-map <C-a>h <Plug>vem_new_win_left-
-map <C-a><C-h> <Plug>vem_new_win_left-
-map <C-a>j <Plug>vem_new_win_down-
-map <C-a><C-j> <Plug>vem_new_win_down-
-map <C-a>_ <Plug>vem_new_win_down-
-map <C-a>k <Plug>vem_new_win_up-
-map <C-a><C-k> <Plug>vem_new_win_up-
-map <C-a>l <Plug>vem_new_win_right-
-map <C-a><C-l> <Plug>vem_new_win_right-
-map <C-a>v <Plug>vem_new_win_right-
-map <C-a><C-v> <Plug>vem_new_win_right-
-map <C-a>t <Plug>vem_new_tab_and_buffer-
-map <C-a><C-t> <Plug>vem_new_tab_and_buffer-
+map <C-a> <Plug>vem_new_buffer-
+" map <C-a>h <Plug>vem_new_win_left-
+" map <C-a><C-h> <Plug>vem_new_win_left-
+" map <C-a>j <Plug>vem_new_win_down-
+" map <C-a><C-j> <Plug>vem_new_win_down-
+" map <C-a>_ <Plug>vem_new_win_down-
+" map <C-a>k <Plug>vem_new_win_up-
+" map <C-a><C-k> <Plug>vem_new_win_up-
+" map <C-a>l <Plug>vem_new_win_right-
+" map <C-a><C-l> <Plug>vem_new_win_right-
+" map <C-a>v <Plug>vem_new_win_right-
+" map <C-a><C-v> <Plug>vem_new_win_right-
+" map <C-a>t <Plug>vem_new_tab_and_buffer-
+" map <C-a><C-t> <Plug>vem_new_tab_and_buffer-
 
 nmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
@@ -320,19 +320,15 @@ nmap <expr> Y vem#layouts#dispatch(g:vem_layout, 'Y')
 xmap <expr> Y vem#layouts#dispatch(g:vem_layout, 'Y')
 nmap N <Plug>vem_quickfix_next_result-
 xmap N <Plug>vem_quickfix_next_result-
-nmap <C-y> <Plug>vem_location_prev_result-
-nmap <C-y> <Plug>vem_location_prev_result-
-nmap <C-n> <Plug>vem_location_next_result-
-xmap <C-n> <Plug>vem_location_next_result-
+map <C-y> <Plug>vem_location_prev_result-
+map <C-n> <Plug>vem_location_next_result-
 
 
 """ Spelling
 """"""""""""
 
-nmap <Plug>vem_alt-y <Plug>vem_prev_spell-
-xmap <Plug>vem_alt-y <Plug>vem_prev_spell-
-nmap <Plug>vem_alt-n <Plug>vem_next_spell-
-xmap <Plug>vem_alt-n <Plug>vem_next_spell-
+map <expr> <Plug>vem_alt-y vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-y")
+map <Plug>vem_alt-n <Plug>vem_next_spell-
 
 map <Plug>vem_alt-? <Plug>vem_suggest_spell-
 
@@ -431,8 +427,8 @@ map  <S-Up> <Plug>vem_paragraph_up-
 
 nmap <Plug>vem_alt-u <Plug>vem_goto_win_top-
 xmap <Plug>vem_alt-u <Plug>vem_goto_win_top-
-nmap <Plug>vem_alt-- <Plug>vem_goto_win_middle-
-xmap <Plug>vem_alt-- <Plug>vem_goto_win_middle-
+nmap <Plug>vem_alt-= <Plug>vem_goto_win_middle-
+xmap <Plug>vem_alt-= <Plug>vem_goto_win_middle-
 nmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 xmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 
@@ -442,8 +438,10 @@ xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 nmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 xmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 
+nmap # <Plug>vem_last_selected_text_end-
 xmap # <Plug>vem_toggle_selection_end-
 
+nmap " <Plug>vem_last_edited_text_end-
 
 """ Modes
 """""""""
@@ -485,8 +483,12 @@ xmap p <Plug>vem_paste_after-
 nmap P <Plug>vem_paste_after_aux-
 xmap P <Plug>vem_paste_after_aux-
 
-nmap <C-p>h <Plug>vem_paste_bol-
-nmap <C-p>H <Plug>vem_paste_bol_aux-
+nmap <C-p>, <Plug>vem_paste_bol-
+nmap <C-p>. <Plug>vem_paste_eol-
+nmap <C-p>; <Plug>vem_paste_eol-
+
+nmap <C-p>h <Plug>vem_paste_before-
+nmap <C-p>H <Plug>vem_paste_before_aux-
 
 nmap <C-p>j <Plug>vem_paste_below-
 nmap <C-p>J <Plug>vem_paste_below_aux-
@@ -496,11 +498,12 @@ nmap <C-p><C-p>J <Plug>vem_paste_indenting_below_aux-
 nmap <C-p>k <Plug>vem_paste_above-
 nmap <C-p>K <Plug>vem_paste_above_aux-
 nmap <C-p><C-p>k <Plug>vem_paste_indenting_above-
-nmap <C-p><Space> <Plug>vem_paste_indenting_above-
 nmap <C-p><C-p>K <Plug>vem_paste_indenting_above_aux-
 
-nmap <C-p>l <Plug>vem_paste_eol-
-nmap <C-p>L <Plug>vem_paste_eol_aux-
+nmap <C-p><Space> <Plug>vem_paste_indenting_below-
+
+nmap <C-p>l <Plug>vem_paste_after-
+nmap <C-p>L <Plug>vem_paste_after_aux-
 
 cmap <C-p> <Plug>vem_paste_cmd-
 
@@ -605,7 +608,7 @@ imap <Right> <Plug>vem_right-
 imap <C-y> <Plug>vem_clone_char_above-
 imap <C-e> <Plug>vem_clone_char_below-
 
-map! <C-z> <Plug>vem_insert_digraph-
+map! <C-]> <Plug>vem_insert_digraph-
 imap <C-c> <Plug>vem_exec_normal_command-
 
 imap <C-p> <Plug>vem_autocomplete_prev-
@@ -631,8 +634,6 @@ cmap <S-Tab> <Plug>vem_wildmenu_prev-
 " symbols
 nmap * <Plug>vem_nop-
 xmap * <Plug>vem_nop-
-nmap " <Plug>vem_nop-
-xmap " <Plug>vem_nop-
 nmap < <Plug>vem_nop-
 xmap < <Plug>vem_nop-
 nmap > <Plug>vem_nop-

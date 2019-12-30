@@ -7,11 +7,20 @@ function! vem#move#selection_started() abort
 endfunction
 
 " jump to the beginning/end of the last edited text
-function! vem#move#jump_to_changed_text_end() abort
+function! vem#move#jump_to_last_edited_text_end() abort
     let prev_pos = getpos(".")
-    normal! ']
+    normal! `]
     if prev_pos == getpos(".")
-        normal! '[
+        normal! `[
+    endif
+endfunction
+
+" jump to the beginning/end of the last selected text
+function! vem#move#jump_to_last_selected_text_end() abort
+    let prev_pos = getpos(".")
+    normal! `>
+    if prev_pos == getpos(".")
+        normal! `<
     endif
 endfunction
 

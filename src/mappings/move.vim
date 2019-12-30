@@ -44,7 +44,8 @@ nnoremap <Plug>vem_paragraph_down- }
 vnoremap <expr> <Plug>vem_paragraph_down- vem#move#selection_started() ? 'V}' : '}'
 
 " Alternate sides of a pasted or changed text
-nnoremap <silent> <Plug>vem_changed_text_end- :call vem#move#jump_to_changed_text_end()<CR>
+nnoremap <silent> <Plug>vem_last_edited_text_end- :call vem#move#jump_to_last_edited_text_end()<CR>
+nnoremap <silent> <Plug>vem_last_selected_text_end- :call vem#move#jump_to_last_selected_text_end()<CR>
 
 " Go to last editing place
 noremap <Plug>vem_goto_last_edit- `.
