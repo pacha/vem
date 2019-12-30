@@ -38,7 +38,6 @@ if &t_Co == 256
     let s:terminal_bg = '236'
     let s:special = '252'
     let s:non_text_fg = '244'
-    let s:non_text_bg = '236'
     let s:comment = '246'
     let s:fold_fg = '23'
     let s:fold_bg = '7'
@@ -74,7 +73,6 @@ elseif &t_Co == 16
     let s:terminal_bg = '0'
     let s:special = '7'
     let s:non_text_fg = '8'
-    let s:non_text_bg = '0'
     let s:comment = '8'
     let s:fold_fg = '7'
     let s:fold_bg = '8'
@@ -110,7 +108,6 @@ else
     let s:terminal_bg = '0'
     let s:special = '3'
     let s:non_text_fg = '4'
-    let s:non_text_bg = '0'
     let s:comment = '2'
     let s:fold_fg = '7'
     let s:fold_bg = '4'
@@ -147,7 +144,7 @@ exec "highlight VisualNOS      term=reverse cterm=none ctermfg=". s:visual_fg ."
 
 " Search
 exec "highlight Search         term=bold cterm=none ctermfg=". s:black ." ctermbg=". s:yellow ." guifg=#101010 guibg=#d7ff87 gui=none"
-exec "highlight IncSearch      term=bold cterm=none ctermfg=". s:black ." ctermbg=". s:yellow ." guifg=#101010 guibg=#d7ff87 gui=none"
+exec "highlight IncSearch      term=bold cterm=none ctermfg=". s:black ." ctermbg=". s:white ." guifg=#101010 guibg=#ffffff gui=none"
 exec "highlight WildMenu       term=bold cterm=none ctermfg=". s:black ." ctermbg=". s:yellow ." guifg=#101010 guibg=#d7ff87 gui=bold"
 exec "highlight MatchParen     term=reverse cterm=bold ctermfg=". s:red ." ctermbg=NONE guifg=#e5786d guibg=NONE gui=bold"
 
@@ -204,17 +201,23 @@ exec "highlight ModeMsg        term=none cterm=none ctermfg=". s:yellow ." cterm
 exec "highlight ErrorMsg       term=none cterm=none ctermfg=". s:intense_red ." ctermbg=NONE guifg=#ee0000 guibg=NONE gui=none"
 exec "highlight WarningMsg     term=none cterm=none ctermfg=". s:red ." ctermbg=NONE guifg=#e5786d guibg=NONE gui=none"
 
-" NonText: eol, extends, precedes
-exec "highlight NonText        term=none cterm=none ctermfg=". s:non_text_fg ." ctermbg=". s:non_text_bg ." guifg=#808080 guibg=#303030 gui=none"
-exec "highlight EndOfBuffer    term=none cterm=none ctermfg=". s:non_text_fg ." ctermbg=". s:non_text_bg ." guifg=#808080 guibg=#303030 gui=none"
+" Special character groups
+" Whitespace: tabs, trailing spaces, nbsp (only in NeoVim -points to NonText by default)
+" NonText: eol, extends, precedes (not real characters but markers in the text - low contrast)
+" SpecialKey: Non representable characters like ^M (unfortunately it includes tab in Vim - high contrast if possible)
 
-" SpecialKey: nbsp, tab, trail
-exec "highlight SpecialKey     term=none cterm=none ctermfg=". s:grey ." ctermbg=NONE guifg=#666666 guibg=NONE gui=none"
+exec "highlight NonText        term=none cterm=none ctermfg=". s:non_text_fg ." ctermbg=NONE guifg=#5e5a55 guibg=NONE gui=none"
+if has('nvim')
+    exec "highlight SpecialKey     term=none cterm=bold ctermfg=". s:blue ." ctermbg=NONE guifg=#8ac6f2 guibg=NONE gui=bold"
+else
+    exec "highlight SpecialKey     term=none cterm=none ctermfg=". s:non_text_fg ." ctermbg=NONE guifg=#5e5a55 guibg=NONE gui=none"
+endif
+exec "highlight EndOfBuffer    term=none cterm=none ctermfg=". s:non_text_fg ." ctermbg=NONE guifg=#b1aaa1 guibg=#303030 gui=none"
 
 " Text
 exec "highlight Directory      term=none cterm=none ctermfg=". s:yellow ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=none"
 
-exec "highlight Comment        term=" . s:italic . " cterm=" . s:italic . " ctermfg=". s:comment ." ctermbg=NONE guifg=#99968b guibg=NONE gui=" . s:italic
+exec "highlight Comment        term=" . s:italic . " cterm=" . s:italic . " ctermfg=". s:comment ." ctermbg=NONE guifg=#b1aaa1 guibg=NONE gui=" . s:italic
 
 exec "highlight Constant       term=none cterm=none ctermfg=". s:red ." ctermbg=NONE guifg=#e5786d guibg=NONE gui=none"
 exec "highlight Character      term=none cterm=none ctermfg=". s:red ." ctermbg=NONE guifg=#e5786d guibg=NONE gui=none"
@@ -245,12 +248,12 @@ exec "highlight StorageClass   term=none cterm=none ctermfg=". s:yellow ." cterm
 exec "highlight Structure      term=none cterm=none ctermfg=". s:yellow ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=none"
 exec "highlight Typedef        term=none cterm=none ctermfg=". s:yellow ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=none"
 
-exec "highlight Special        term=none cterm=none ctermfg=". s:special ." ctermbg=NONE guifg=#d2d2d2 guibg=NONE gui=bold"
-exec "highlight SpecialChar    term=none cterm=none ctermfg=". s:special ." ctermbg=NONE guifg=#d2d2d2 guibg=NONE gui=bold"
-exec "highlight Tag            term=none cterm=none ctermfg=". s:special ." ctermbg=NONE guifg=#d2d2d2 guibg=NONE gui=bold"
-exec "highlight Delimiter      term=none cterm=none ctermfg=". s:special ." ctermbg=NONE guifg=#d2d2d2 guibg=NONE gui=bold"
-exec "highlight Debug          term=none cterm=none ctermfg=". s:special ." ctermbg=NONE guifg=#d2d2d2 guibg=NONE gui=bold"
-exec "highlight SpecialComment term=none cterm=none ctermfg=". s:special ." ctermbg=NONE guifg=#d2d2d2 guibg=NONE gui=bold"
+exec "highlight Special        term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
+exec "highlight SpecialChar    term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
+exec "highlight Tag            term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
+exec "highlight Delimiter      term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
+exec "highlight Debug          term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
+exec "highlight SpecialComment term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
 
 exec "highlight Underlined     term=underline cterm=underline ctermfg=". s:blue ." ctermbg=NONE guifg=#8ac6f2 guibg=NONE gui=underline"
 
