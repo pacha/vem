@@ -28,3 +28,6 @@ vnoremap <Plug>vem_deselect- <Esc>
 " Select last pasted or inserted text
 noremap <expr> <Plug>vem_select_last_pasted_text- "`[" . strpart(getregtype(), 0, 1) . "`]"
 
+" Select camel case
+noremap <Plug>vem_vim_v- v
+map <Plug>vem_camelcase_select- <Plug>vem_vim_v-<Plug>CamelCaseMotion_ie

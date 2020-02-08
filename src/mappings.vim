@@ -175,6 +175,7 @@ xmap <DEL> <Plug>vem_delete-
 nmap f <Plug>vem_change_word-
 nmap F <Plug>vem_change_eol-
 nmap <C-f> <Plug>vem_change_surrounded_text-
+nmap <Plug>vem_alt-f <Plug>vem_camelcase_change-
 
 xmap f <Plug>vem_change-
 xmap F <Plug>vem_change-
@@ -198,7 +199,8 @@ map <C-g> <Plug>vem_increase_selection-
 
 xmap <Space> <Plug>vem_deselect-
 xmap <S-Space> <Plug>vem_deselect-
-nmap <Plug>vem_alt-g <Plug>vem_reselect-
+nmap <Plug>vem_alt-<Space> <Plug>vem_reselect-
+nmap <Plug>vem_alt-g <Plug>vem_camelcase_select-
 nmap <Plug>vem_alt-G <Plug>vem_inner_select_line-
 nmap <Plug>vem_alt-p <Plug>vem_select_last_pasted_text-
 nmap <Plug>vem_alt-a <Plug>vem_select_all-
@@ -432,6 +434,12 @@ nmap * <Plug>vem_last_selected_text_end-
 xmap * <Plug>vem_toggle_selection_end-
 
 nmap " <Plug>vem_last_edited_text_end-
+
+nmap > <Plug>vem_camelcase_next-
+xmap > <Plug>vem_camelcase_next-
+nmap < <Plug>vem_camelcase_prev-
+xmap < <Plug>vem_camelcase_prev-
+
 
 """ Modes
 """""""""

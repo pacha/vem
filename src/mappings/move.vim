@@ -74,3 +74,7 @@ noremap <Plug>vem_goto_win_top- H
 noremap <Plug>vem_goto_win_middle- M
 noremap <Plug>vem_goto_win_bottom- L
 
+" Camel case movements
+map <Plug>vem_camelcase_next- <Plug>CamelCaseMotion_w
+map <Plug>vem_camelcase_prev- <Plug>CamelCaseMotion_b
+
