@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/bkad/CamelCaseMotion.git
+	branch = master
+	commit = de439d7c06cffd0839a29045a103fe4b44b15cdc
+	parent = 197aeba6bdacb8dec2f315ebc8c55c8502264af1
+	method = merge
+	cmdver = 0.4.0
