@@ -11,6 +11,8 @@ nnoremap <expr> <Plug>vem_cut- '"' . g:vem_main_clipboard . 'dd'
 vnoremap <expr> <Plug>vem_cut- '"' . g:vem_main_clipboard . 'd'
 nnoremap <expr> <Plug>vem_cut_aux- '"' . g:vem_aux_clipboard . 'dd'
 vnoremap <expr> <Plug>vem_cut_aux- '"' . g:vem_aux_clipboard . 'd'
+nnoremap <expr> <Plug>vem_cut_and_insert- '"' . g:vem_main_clipboard . 'yy^C'
+vnoremap <expr> <Plug>vem_cut_and_insert- '"' . g:vem_main_clipboard . 'di'
 
 " Paste
 noremap <expr> <Plug>vem_paste_before- '"' . g:vem_main_clipboard . 'P'

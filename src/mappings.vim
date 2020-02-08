@@ -40,40 +40,28 @@ xmap <expr> Q vem#layouts#dispatch(g:vem_layout, 'Q')
 """ Scroll
 """"""""""
 
-map <C-e> <Plug>vem_scroll_up-
-map <C-d> <Plug>vem_scroll_down-
-nmap <Plug>vem_alt-e <Plug>vem_scroll_to_top-
-nmap <Plug>vem_alt-d <Plug>vem_scroll_to_bottom-
-nmap ~ <Plug>vem_scroll_to_middle-
-xmap ~ <Plug>vem_scroll_to_middle-
+map <C-q> <Plug>vem_scroll_up-
+map <C-a> <Plug>vem_scroll_down-
+nmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
+xmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
+nmap <Plug>vem_alt-M <Plug>vem_scroll_to_bottom-
+xmap <Plug>vem_alt-M <Plug>vem_scroll_to_bottom-
+nmap <Plug>vem_alt-C <Plug>vem_scroll_to_middle-
+xmap <Plug>vem_alt-C <Plug>vem_scroll_to_middle-
 
 
 """ Buffers
 """""""""""
-
-map <C-a> <Plug>vem_new_buffer-
-" map <C-a>h <Plug>vem_new_win_left-
-" map <C-a><C-h> <Plug>vem_new_win_left-
-" map <C-a>j <Plug>vem_new_win_down-
-" map <C-a><C-j> <Plug>vem_new_win_down-
-" map <C-a>_ <Plug>vem_new_win_down-
-" map <C-a>k <Plug>vem_new_win_up-
-" map <C-a><C-k> <Plug>vem_new_win_up-
-" map <C-a>l <Plug>vem_new_win_right-
-" map <C-a><C-l> <Plug>vem_new_win_right-
-" map <C-a>v <Plug>vem_new_win_right-
-" map <C-a><C-v> <Plug>vem_new_win_right-
-" map <C-a>t <Plug>vem_new_tab_and_buffer-
-" map <C-a><C-t> <Plug>vem_new_tab_and_buffer-
 
 nmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 nmap <expr> W vem#layouts#dispatch(g:vem_layout, 'W')
 xmap <expr> W vem#layouts#dispatch(g:vem_layout, 'W')
 map <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
+map <expr> <Plug>vem_alt-W vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-W")
 map <Plug>vem_alt-_ <Plug>vem_open_file_under_cursor-
 
-map <C-t> <Plug>vem_switch_buffer-
+map <C-t> <Plug>vem_new_buffer-
 nmap t <Plug>vem_goto_next_buffer-
 xmap t <Plug>vem_goto_next_buffer-
 nmap T <Plug>vem_goto_prev_buffer-
@@ -164,6 +152,7 @@ nmap d <Plug>vem_cut-
 xmap d <Plug>vem_cut-
 nmap D <Plug>vem_cut_aux-
 xmap D <Plug>vem_cut_aux-
+map <C-d> <Plug>vem_cut_and_insert-
 
 
 """ Replace
@@ -209,10 +198,10 @@ map <C-g> <Plug>vem_increase_selection-
 
 xmap <Space> <Plug>vem_deselect-
 xmap <S-Space> <Plug>vem_deselect-
-nmap <Space>g <Plug>vem_reselect-
-nmap <Space>G <Plug>vem_reselect-
-nmap <Space>p <Plug>vem_select_last_pasted_text-
-nmap <Space>a <Plug>vem_select_all-
+nmap <Plug>vem_alt-g <Plug>vem_reselect-
+nmap <Plug>vem_alt-G <Plug>vem_inner_select_line-
+nmap <Plug>vem_alt-p <Plug>vem_select_last_pasted_text-
+nmap <Plug>vem_alt-a <Plug>vem_select_all-
 
 xmap H <Plug>vem_increase_word_selection_left-
 xmap L <Plug>vem_increase_word_selection_right-
@@ -302,9 +291,9 @@ xmap ` <Plug>vem_goto_mark-
 nmap ' <Plug>vem_goto_mark_line-
 xmap ' <Plug>vem_goto_mark_line-
 
-nmap <Plug>vem_alt-<Space> <Plug>vem_set_z_mark-
-nmap <BS> <Plug>vem_goto_z_mark-
-xmap <BS> <Plug>vem_goto_z_mark-
+nmap C <Plug>vem_set_quick_mark-
+nmap <BS> <Plug>vem_goto_quick_mark-
+xmap <BS> <Plug>vem_goto_quick_mark-
 
 
 """ Misc
@@ -372,6 +361,7 @@ xmap <expr> a vem#layouts#dispatch(g:vem_layout, 'a')
 nmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z')
 xmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z')
 map <expr> <Plug>vem_alt-z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-z")
+map <expr> <Plug>vem_alt-Z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-Z")
 
 nmap 0 <Plug>vem_goto_first_column-
 xmap 0 <Plug>vem_goto_first_column-
@@ -422,13 +412,13 @@ xmap J <Plug>vem_paragraph_down-
 nmap K <Plug>vem_paragraph_up-
 xmap K <Plug>vem_paragraph_up-
 
-map  <S-Down> <Plug>vem_paragraph_down-
-map  <S-Up> <Plug>vem_paragraph_up-
+map <S-Down> <Plug>vem_paragraph_down-
+map <S-Up> <Plug>vem_paragraph_up-
 
 nmap <Plug>vem_alt-u <Plug>vem_goto_win_top-
 xmap <Plug>vem_alt-u <Plug>vem_goto_win_top-
-nmap <Plug>vem_alt-= <Plug>vem_goto_win_middle-
-xmap <Plug>vem_alt-= <Plug>vem_goto_win_middle-
+nmap <Plug>vem_alt-c <Plug>vem_goto_win_middle-
+xmap <Plug>vem_alt-c <Plug>vem_goto_win_middle-
 nmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 xmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 
@@ -438,8 +428,8 @@ xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 nmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 xmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
 
-nmap # <Plug>vem_last_selected_text_end-
-xmap # <Plug>vem_toggle_selection_end-
+nmap * <Plug>vem_last_selected_text_end-
+xmap * <Plug>vem_toggle_selection_end-
 
 nmap " <Plug>vem_last_edited_text_end-
 
@@ -500,8 +490,6 @@ nmap <C-p>K <Plug>vem_paste_above_aux-
 nmap <C-p><C-p>k <Plug>vem_paste_indenting_above-
 nmap <C-p><C-p>K <Plug>vem_paste_indenting_above_aux-
 
-nmap <C-p><Space> <Plug>vem_paste_indenting_below-
-
 nmap <C-p>l <Plug>vem_paste_after-
 nmap <C-p>L <Plug>vem_paste_after_aux-
 
@@ -509,13 +497,20 @@ cmap <C-p> <Plug>vem_paste_cmd-
 
 nmap <C-p><Esc> <Plug>vem_nop-
 
+nmap <Plug>vem_alt-<Tab> <Plug>vem_paste_indenting_below-
 
 """ Surround
 """"""""""""
 
 xmap s <Plug>vem_surround-
-nmap <Plug>vem_alt-c <Plug>vem_change_surround-
-nmap <Plug>vem_alt-f <Plug>vem_delete_surround-
+nmap <Plug>vem_alt-R <Plug>vem_change_surround-
+nmap <Plug>vem_alt-d{ <Plug>vem_delete_surround-{
+nmap <Plug>vem_alt-d[ <Plug>vem_delete_surround-[
+nmap <Plug>vem_alt-d( <Plug>vem_delete_surround-(
+nmap <Plug>vem_alt-d< <Plug>vem_delete_surround-<
+nmap <Plug>vem_alt-d` <Plug>vem_delete_surround-`
+nmap <Plug>vem_alt-d' <Plug>vem_delete_surround-'
+nmap <Plug>vem_alt-d" <Plug>vem_delete_surround-"
 
 nmap <Plug>vem_alt-{ <Plug>vem_change_{-
 nmap <Plug>vem_alt-} <Plug>vem_change_}-
@@ -631,11 +626,5 @@ cmap <S-Tab> <Plug>vem_wildmenu_prev-
 """ Unused
 """"""""""
 
-" symbols
-nmap * <Plug>vem_nop-
-xmap * <Plug>vem_nop-
-nmap < <Plug>vem_nop-
-xmap < <Plug>vem_nop-
-nmap > <Plug>vem_nop-
-xmap > <Plug>vem_nop-
+map <C-e> <Plug>vem_nop-
 

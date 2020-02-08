@@ -24,11 +24,12 @@ vnoremap <Plug>vem_indent- >><Esc>gv
 nnoremap <silent> <Plug>vem_enter- i<CR><Esc>^
 
 " Format lines
-nnoremap <Plug>vem_format_text- gqip
-vnoremap <Plug>vem_format_text- Jgvgq
+nnoremap <Plug>vem_format_text- gqq
+vnoremap <Plug>vem_format_text- gq
 
 " Format code
-noremap <Plug>vem_format_code- =
+nnoremap <Plug>vem_format_code- gg=G
+vnoremap <Plug>vem_format_code- =
 
 " Toggle case
 noremap <Plug>vem_toggle_case- ~

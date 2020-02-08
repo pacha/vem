@@ -11,6 +11,6 @@ noremap <Plug>vem_goto_mark_line- '
 noremap <Plug>vem_prev_mark- [`
 noremap <Plug>vem_next_mark- ]`
 
-" Z mark
-noremap <Plug>vem_set_z_mark- mC
-noremap <Plug>vem_goto_z_mark- `C
+" Quick mark
+noremap <Plug>vem_set_quick_mark- mC
+noremap <Plug>vem_goto_quick_mark- `C
