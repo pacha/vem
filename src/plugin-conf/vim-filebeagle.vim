@@ -12,43 +12,43 @@ let g:filebeagle_buffer_normal_key_maps = {
     \ 'FileBeagleBufferToggleHiddenAndIgnored': '<C-h>',
     \ 'FileBeagleBufferQuit': 'x',
     \ 'FileBeagleBufferCloseWindow': '<C-x>',
-    \ 'FileBeagleBufferFocusOnParent': '<C-u>',
+    \ 'FileBeagleBufferFocusOnParent': 'h',
     \ 'FileBeagleBufferFocusOnPrevious': '<BS>',
-    \ 'FileBeagleBufferCreateNewFile': '',
-    \ 'FileBeagleBufferVisitTarget': '<C-b>',
-    \ 'FileBeagleBufferBgVisitTarget': '<C-p><CR>',
-    \ 'FileBeagleBufferSplitVerticalVisitTarget': '<C-v>',
-    \ 'FileBeagleBufferBgSplitVerticalVisitTarget': '<C-p><C-v>',
+    \ 'FileBeagleBufferCreateNewFile': '<C-t>',
+    \ 'FileBeagleBufferVisitTarget': '<CR>',
+    \ 'FileBeagleBufferBgVisitTarget': '<Space><CR>',
+    \ 'FileBeagleBufferSplitVerticalVisitTarget': '<C-]>',
+    \ 'FileBeagleBufferBgSplitVerticalVisitTarget': '<Space><C-]>',
     \ 'FileBeagleBufferSplitVisitTarget': '<C-_>',
-    \ 'FileBeagleBufferBgSplitVisitTarget': '<C-p><C-_>',
-    \ 'FileBeagleBufferTabVisitTarget': '<C-t>',
-    \ 'FileBeagleBufferBgTabVisitTarget': '<C-p><C-t>',
+    \ 'FileBeagleBufferBgSplitVisitTarget': '<Space><C-_>',
+    \ 'FileBeagleBufferTabVisitTarget': '<C-^>',
+    \ 'FileBeagleBufferBgTabVisitTarget': '<Space><C-^>',
     \ 'FileBeagleGotoBufferTop': 'a',
     \ 'FileBeagleGotoEOL': '.',
     \ 'FileBeaglePageUp': 'U',
-    \ 'FileBeagleScrollUp': 'A'
+    \ 'FileBeagleScrollUp': '<C-a>'
     \ }
 
 " Mappings for visual mode
 let g:filebeagle_buffer_visual_key_maps = {
-    \ 'FileBeagleBufferVisitTarget': '<C-b>',
-    \ 'FileBeagleBufferBgVisitTarget': '<C-p><CR>',
-    \ 'FileBeagleBufferSplitVerticalVisitTarget': '<C-v>',
-    \ 'FileBeagleBufferBgSplitVerticalVisitTarget': '<C-p><C-v>',
+    \ 'FileBeagleBufferVisitTarget': '<CR>',
+    \ 'FileBeagleBufferBgVisitTarget': '<Space><CR>',
+    \ 'FileBeagleBufferSplitVerticalVisitTarget': '<C-]>',
+    \ 'FileBeagleBufferBgSplitVerticalVisitTarget': '<Space><C-]>',
     \ 'FileBeagleBufferSplitVisitTarget': '<C-_>',
-    \ 'FileBeagleBufferBgSplitVisitTarget': '<C-p><C-_>',
-    \ 'FileBeagleBufferTabVisitTarget': '<C-t>',
-    \ 'FileBeagleBufferBgTabVisitTarget': '<C-p><C-t>',
+    \ 'FileBeagleBufferBgSplitVisitTarget': '<Space><C-_>',
+    \ 'FileBeagleBufferTabVisitTarget': '<C-^>',
+    \ 'FileBeagleBufferBgTabVisitTarget': '<Space><C-^>',
     \ 'FileBeagleGotoBufferTop': 'a',
     \ 'FileBeagleGotoEOL': '.',
     \ 'FileBeaglePageUp': 'U',
-    \ 'FileBeagleScrollUp': 'A'
+    \ 'FileBeagleScrollUp': '<C-a>'
     \ }
 
 " Disable keys that modify the buffer
 function! s:filebeable_disable_keys()
     for key in ["q", "Q", "d", "c", "r", "f", "F", "<C-f>", "v", "y", "n",
-            \ "<C-j>", "<C-k>", "<C-l>", "<C-u>", "<C-p>", "M"]
+            \ "<C-j>", "<C-k>", "<C-l>", "<C-u>", "<C-p>"]
         try
             execute "nnoremap <buffer> " . key . " <NOP>"
         catch //

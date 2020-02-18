@@ -4,7 +4,7 @@
 """"""""""""
 
 let g:ctrlp_prompt_mappings = {
-    \ 'PrtBS()':              ['<bs>', '<c-]>'],
+    \ 'PrtBS()':              ['<bs>'],
     \ 'PrtDelete()':          ['<del>'],
     \ 'PrtDeleteWord()':      ['<c-f>'],
     \ 'PrtClear()':           ['<c-u>'],
@@ -18,8 +18,8 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtHistory(1)':        ['<c-y>'],
     \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
     \ 'AcceptSelection("h")': ['<c-_>', '<c-cr>'],
-    \ 'AcceptSelection("t")': ['<c-t>'],
-    \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
+    \ 'AcceptSelection("t")': ['<c-^>'],
+    \ 'AcceptSelection("v")': ['<c-]>', '<c-v>', '<RightMouse>'],
     \ 'ToggleFocus()':        ['<c-w>'],
     \ 'ToggleRegex()':        ['<c-x>'],
     \ 'ToggleByFname()':      ['<c-d>'],
@@ -28,16 +28,16 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtExpandDir()':       ['<tab>'],
     \ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
     \ 'PrtInsert()':          ['<c-\>'],
-    \ 'PrtCurStart()':        ['<c-b>'],
+    \ 'PrtCurStart()':        ['<c-a>'],
     \ 'PrtCurEnd()':          ['<c-e>'],
-    \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+    \ 'PrtCurLeft()':         ['<c-h>', '<left>'],
     \ 'PrtCurRight()':        ['<c-l>', '<right>'],
     \ 'PrtClearCache()':      ['<c-r>', '<F5>'],
     \ 'PrtDeleteEnt()':       ['<F7>'],
-    \ 'CreateNewFile()':      ['<c-a>'],
+    \ 'CreateNewFile()':      ['<c-t>'],
     \ 'MarkToOpen()':         ['<c-g>'],
     \ 'OpenMulti()':          ['<c-p>'],
-    \ 'YankLine()':           [],
+    \ 'YankLine()':           ['<c-b>'],
     \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-o>'],
     \ }
 
