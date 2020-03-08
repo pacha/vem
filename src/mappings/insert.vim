@@ -21,8 +21,9 @@ inoremap <Plug>vem_autocomplete_next- <C-n>
 " execute a single command in normal mode
 inoremap <Plug>vem_exec_normal_command- <C-o>
 
-" insert digraph
+" insert special chars
 noremap! <Plug>vem_insert_digraph- <C-k>
+noremap! <Plug>vem_insert_tab- <Tab>
 
 " Space
 noremap! <Plug>vem_space- <Space>

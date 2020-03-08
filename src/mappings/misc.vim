@@ -12,6 +12,7 @@ nnoremap <silent> <Plug>vem_redraw- :nohlsearch<C-R>=has('diff')?'<Bar>diffupdat
 " Vim escape
 noremap <Plug>vem_g_prefix- g
 noremap <Plug>vem_z_prefix- z
+noremap <Plug>vem_ctrlx_prefix- <C-x>
 
 " Add/Substract one unit to the value under cursor
 noremap <Plug>vem_add- <C-a>

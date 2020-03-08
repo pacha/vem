@@ -26,6 +26,7 @@ nmap b <Plug>vem_z_prefix-
 xmap b <Plug>vem_z_prefix-
 nmap B <Plug>vem_g_prefix-
 xmap B <Plug>vem_g_prefix-
+map <C-e> <Plug>vem_ctrlx_prefix-
 
 
 """ Undo
@@ -615,13 +616,13 @@ imap <Right> <Plug>vem_right-
 imap <C-y> <Plug>vem_clone_char_above-
 imap <C-e> <Plug>vem_clone_char_below-
 
-map! <C-]> <Plug>vem_insert_digraph-
+map! <C-d> <Plug>vem_insert_digraph-
+map! <C-]> <Plug>vem_insert_tab-
 imap <C-c> <Plug>vem_exec_normal_command-
 
+" Tab/S-Tab mappings added by supertab plugin
 imap <C-p> <Plug>vem_autocomplete_prev-
 imap <C-n> <Plug>vem_autocomplete_next-
-imap <S-Tab> <Plug>vem_autocomplete_prev-
-imap <C-Tab> <Plug>vem_autocomplete_next-
 
 map! <S-Space> <Plug>vem_space-
 map! <C-Space> <Plug>vem_space-
@@ -644,6 +645,5 @@ cmap <C-z> <Plug>vem_paste_cmd-
 """ Unused
 """"""""""
 
-map <C-e> <Plug>vem_nop-
 map ~ <Plug>vem_nop-
 
