@@ -31,7 +31,6 @@ noremap! <Plug>vem_space- <Space>
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <Plug>vem_delete_to_eol- <C-G>u<C-U>
 
-" wildmenu control
-cnoremap <Plug>vem_wildmenu_next- <C-n>
-cnoremap <Plug>vem_wildmenu_prev- <C-p>
+" Vim compatibility
+cnoremap <Plug>vem_insert_matching_names- <C-a>
 

@@ -505,8 +505,6 @@ nmap <C-p><C-p>K <Plug>vem_paste_indenting_above_aux-
 nmap <C-p>l <Plug>vem_paste_after-
 nmap <C-p>L <Plug>vem_paste_after_aux-
 
-cmap <C-p> <Plug>vem_paste_cmd-
-
 nmap <C-p><Esc> <Plug>vem_nop-
 
 nmap <Plug>vem_alt-<Tab> <Plug>vem_paste_indenting_below-
@@ -536,6 +534,26 @@ nmap <Plug>vem_alt-` <Plug>vem_change_`-
 nmap <Plug>vem_alt-' <Plug>vem_change_'-
 nmap <Plug>vem_alt-" <Plug>vem_change_"-
 
+""" White-Space
+"""""""""""""""
+
+nmap <Tab> <Plug>vem_indent-
+xmap <Tab> <Plug>vem_indent-
+nmap <S-Tab> <Plug>vem_unindent-
+xmap <S-Tab> <Plug>vem_unindent-
+
+nmap <expr> y vem#layouts#dispatch(g:vem_layout, 'y')
+xmap <expr> y vem#layouts#dispatch(g:vem_layout, 'y')
+nmap n <Plug>vem_add_line_below-
+
+nmap ( <Plug>vem_add_space_left-
+xmap ( <Plug>vem_add_space_left-
+nmap ) <Plug>vem_add_space_right-
+xmap ) <Plug>vem_add_space_right-
+
+nmap <Enter> <Plug>vem_enter-
+vmap <Enter> <Plug>vem_nop-
+
 
 """ Format
 """"""""""
@@ -548,19 +566,6 @@ xmap = <Plug>vem_format_code-
 
 nmap & <Plug>vem_join_lines-
 xmap & <Plug>vem_join_lines-
-
-nmap <S-Tab> <Plug>vem_unindent-
-xmap <S-Tab> <Plug>vem_unindent-
-
-nmap <Tab> <Plug>vem_indent-
-xmap <Tab> <Plug>vem_indent-
-
-nmap <expr> y vem#layouts#dispatch(g:vem_layout, 'y')
-xmap <expr> y vem#layouts#dispatch(g:vem_layout, 'y')
-nmap n <Plug>vem_add_line_below-
-
-nmap <Enter> <Plug>vem_enter-
-vmap <Enter> <Plug>vem_nop-
 
 map <C-u> <Plug>vem_toggle_case-
 
@@ -592,11 +597,6 @@ nmap 8 <Plug>vem_goto_tab_8-
 xmap 8 <Plug>vem_goto_tab_8-
 nmap 9 <Plug>vem_goto_tab_9-
 xmap 9 <Plug>vem_goto_tab_9-
-
-nmap ( <Plug>vem_add_space_left-
-xmap ( <Plug>vem_add_space_left-
-nmap ) <Plug>vem_add_space_right-
-xmap ) <Plug>vem_add_space_right-
 
 
 """ Insert and command line mode
@@ -631,12 +631,19 @@ map! <C-Space> <Plug>vem_space-
 inoremap <silent> <C-^> <C-o>:set paste!<CR>
 set pastetoggle=<C-^>
 
-cmap <C-Tab> <Plug>vem_wildmenu_next-
-cmap <S-Tab> <Plug>vem_wildmenu_prev-
+" wildmode
+set wildcharm=<Tab>
+cnoremap <C-p> <S-Tab>
+cnoremap <C-n> <Tab>
+
+cmap <C-A> <Plug>vem_goto_bol-
+cmap <C-B> <Plug>vem_insert_matching_names-
+cmap <C-z> <Plug>vem_paste_cmd-
 
 
 """ Unused
 """"""""""
 
 map <C-e> <Plug>vem_nop-
+map ~ <Plug>vem_nop-
 

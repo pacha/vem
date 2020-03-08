@@ -62,6 +62,7 @@ vnoremap <Plug>vem_goto_eol- $h
 
 " Go to beginning of line (first non-blank)
 noremap <Plug>vem_goto_bol- ^
+cnoremap <Plug>vem_goto_bol- <C-b>
 
 " Go to column 0
 noremap <Plug>vem_goto_first_column- 0
