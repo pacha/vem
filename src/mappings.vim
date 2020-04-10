@@ -102,6 +102,10 @@ map <Plug>vem_win-<Esc> <Plug>vem_nop-
 
 map <C-w><C-w> <Plug>vem_last_accessed_window-
 
+nmap <Plug>vem_win-<C-^> <Plug>vem_new_tab_and_buffer-
+nmap <Plug>vem_win-<C-]> <Plug>vem_new_win_right-
+nmap <Plug>vem_win-<C-_> <Plug>vem_new_win_down-
+
 map <Plug>vem_win-u <Plug>vem_clone_win_up-
 map <Plug>vem_win-k <Plug>vem_clone_win_left-
 map <Plug>vem_win-j <Plug>vem_clone_win_down-
