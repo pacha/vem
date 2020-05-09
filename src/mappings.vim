@@ -444,6 +444,7 @@ nmap * <Plug>vem_last_selected_text_end-
 xmap * <Plug>vem_toggle_selection_end-
 
 nmap " <Plug>vem_last_edited_text_end-
+xmap " <Plug>vem_last_edited_text_end-
 
 nmap > <Plug>vem_camelcase_next-
 xmap > <Plug>vem_camelcase_next-
