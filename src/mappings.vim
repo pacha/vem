@@ -4,17 +4,17 @@
 " <C-h>: same as <BS> (can be remapped in normal mode only)
 " <C-m>: same as <Enter>
 " <C-i>: same as <Tab>
-" <C-j>: same as LineFeed (very few terminals still use it)
+" <C-j>: same as LineFeed <NL> (very few terminals still use it)
 " <C-[>: same as <Esc>
-" <C-@>: same as <C-Space>
+" <C-@>: same as <C-Space> (both are <Nul>)
+" <C-6>: same as <C-^>
 " <C-\>: sends SIGQUIT by default)
-" <C-?>: same as <Backspace> or <Del> (depending)
+" <C-?>: same as <Backspace> or <Del>
 " <C-a>: Screen shortcut
 " <C-b>: Tmux shortcut
-" <C-c>: Interrupt current command
+" <C-z>: Send process to background
 " <C-c>: Interrupt current command
 " \ used as <leader>
-" ´ (plugin escapes)
 
 
 """ Prefixes
@@ -41,8 +41,8 @@ xmap <expr> Q vem#layouts#dispatch(g:vem_layout, 'Q')
 """ Scroll
 """"""""""
 
-map <C-q> <Plug>vem_scroll_up-
-map <C-a> <Plug>vem_scroll_down-
+map <expr> <C-q> vem#layouts#dispatch(g:vem_layout, "\<C-q>")
+map <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
 nmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
 xmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
 nmap <Plug>vem_alt-M <Plug>vem_scroll_to_bottom-
@@ -106,24 +106,24 @@ nmap <Plug>vem_win-<C-^> <Plug>vem_new_tab_and_buffer-
 nmap <Plug>vem_win-<C-]> <Plug>vem_new_win_right-
 nmap <Plug>vem_win-<C-_> <Plug>vem_new_win_down-
 
-map <Plug>vem_win-u <Plug>vem_clone_win_up-
-map <Plug>vem_win-k <Plug>vem_clone_win_left-
+map <Plug>vem_win-h <Plug>vem_clone_win_left-
 map <Plug>vem_win-j <Plug>vem_clone_win_down-
+map <Plug>vem_win-k <Plug>vem_clone_win_up-
 map <Plug>vem_win-l <Plug>vem_clone_win_right-
 
 map <Plug>vem_win-x <Plug>vem_close_window-
 map <Plug>vem_win-<Space> <Plug>vem_only_window-
 
-map <Plug>vem_win-+ <Plug>vem_increase_win_height-
-map <Plug>vem_win-- <Plug>vem_decrease_win_height-
-map <Plug>vem_win-> <Plug>vem_increase_win_width-
-map <Plug>vem_win-< <Plug>vem_decrease_win_width-
+" map <Plug>vem_win-+ <Plug>vem_increase_win_height-
+" map <Plug>vem_win-- <Plug>vem_decrease_win_height-
+" map <Plug>vem_win-> <Plug>vem_increase_win_width-
+" map <Plug>vem_win-< <Plug>vem_decrease_win_width-
 
 map <Plug>vem_win-r <Plug>vem_rotate_window_up-
 map <Plug>vem_win-R <Plug>vem_rotate_window_down-
 
-map <Plug>vem_win-u <Plug>vem_move_win_top-
-map <Plug>vem_win-m <Plug>vem_move_win_bottom-
+map <Plug>vem_win-a <Plug>vem_move_win_top-
+map <Plug>vem_win-z <Plug>vem_move_win_bottom-
 map <Plug>vem_win-, <Plug>vem_move_win_left-
 map <Plug>vem_win-. <Plug>vem_move_win_right-
 map <Plug>vem_win-; <Plug>vem_move_win_right-
@@ -347,6 +347,7 @@ nmap ? <Plug>vem_search_backward-
 xmap ? <Plug>vem_search_backward-
 
 nmap u <Plug>vem_search_prev-
+
 xmap u <Plug>vem_search_prev-
 nmap m <Plug>vem_search_next-
 xmap m <Plug>vem_search_next-
@@ -557,7 +558,7 @@ nmap ) <Plug>vem_add_space_right-
 xmap ) <Plug>vem_add_space_right-
 
 nmap <Enter> <Plug>vem_enter-
-vmap <Enter> <Plug>vem_nop-
+xmap <Enter> <Plug>vem_nop-
 
 
 """ Format
