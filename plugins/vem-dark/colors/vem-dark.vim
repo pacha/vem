@@ -131,7 +131,7 @@ let s:italic = get(g:, 'vem_colors_italic', has('gui_running')) ? 'italic' : 'no
 exec "highlight Normal         term=none cterm=none ctermfg=". s:fg ." ctermbg=". s:bg ." guifg=#f6f3e8 guibg=#242424 gui=none"
 
 " Cursor
-exec "highlight Cursor         term=none cterm=none ctermfg=". s:white ." ctermbg=". s:intense_red ." guifg=#ffffff guibg=#c00000 gui=none"
+exec "highlight Cursor         term=none cterm=none ctermfg=". s:white ." ctermbg=". s:intense_red ." guifg=#000000 guibg=#ffffff gui=none"
 exec "highlight CursorIM       term=none cterm=none ctermfg=". s:white ." ctermbg=". s:yellow ." guifg=#555555 guibg=#cae682 gui=none"
 
 " Line numbers
