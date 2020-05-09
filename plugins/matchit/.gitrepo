@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/chrisbra/matchit.git
+	branch = master
+	commit = 2db9c041a4cad58b437dab7741f05c6269c845ab
+	parent = 027c44d91b36d2f6201ef8ccaf969274fe6aef8c
+	method = merge
+	cmdver = 0.4.0
