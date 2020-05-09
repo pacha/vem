@@ -1,0 +1,47 @@
+#!/bin/bash
+
+if [[ $# -gt 2 ]]; then
+    echo "Usage: $0 [<command>] [<test-name>]"
+    exit 2
+fi
+
+COMMAND=$1
+TESTNAME=$2
+TESTDIR=$(dirname "$(readlink -f "$0")")
+SCRIPTS=$(ls $TESTDIR/script/${TESTNAME:-*})
+if [ -z "$COMMAND" ]; then
+    declare -a EXECUTABLES=("vem -X" "gvem -f")
+else
+    declare -a EXECUTABLES=("$COMMAND")
+fi
+
+for EXECUTABLE in "${EXECUTABLES[@]}";
+do
+    echo "=== Running tests for $EXECUTABLE ==="
+    for FILE in $SCRIPTS;
+    do
+
+        TESTNAME=$(basename $FILE)
+        echo "$TESTNAME"
+
+        INPUT="$TESTDIR/input/$TESTNAME"
+        SCRIPT="$TESTDIR/script/$TESTNAME"
+        OUTPUT="$TESTDIR/output/$TESTNAME"
+        EXPECTED="$TESTDIR/expected/$TESTNAME"
+
+        # clean previous run
+        cp $INPUT $OUTPUT
+
+        # apply script over output file
+        $EXECUTABLE -s $SCRIPT $OUTPUT
+
+        # compare result
+        diff $OUTPUT $EXPECTED
+        if [ $? -ne 0 ]; then
+            echo "Error"
+        else
+            echo "Ok"
+        fi
+    done
+done
+
