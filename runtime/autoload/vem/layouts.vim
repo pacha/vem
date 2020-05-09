@@ -4,8 +4,10 @@ let s:layout_mappings = {
     \   "qwerty": {
     \       "q": "\<Plug>vem_undo-",
     \       "Q": "\<Plug>vem_redo-",
+    \       "\<C-q>": "\<Plug>vem_scroll_up-",
     \       "a": "\<Plug>vem_top-",
     \       "A": "\<Plug>vem_add-",
+    \       "\<C-a>": "\<Plug>vem_scroll_down-",
     \       "z": "\<Plug>vem_bottom-",
     \       "Z": "\<Plug>vem_sub-",
     \       "w": "\<Plug>vem_switch_buffer-",
@@ -22,8 +24,10 @@ let s:layout_mappings = {
     \   "qwertz": {
     \       "q": "\<Plug>vem_undo-",
     \       "Q": "\<Plug>vem_redo-",
+    \       "\<C-q>": "\<Plug>vem_scroll_up-",
     \       "a": "\<Plug>vem_top-",
     \       "A": "\<Plug>vem_add-",
+    \       "\<C-a>": "\<Plug>vem_scroll_down-",
     \       "y": "\<Plug>vem_bottom-",
     \       "Y": "\<Plug>vem_sub-",
     \       "w": "\<Plug>vem_switch_buffer-",
@@ -40,8 +44,10 @@ let s:layout_mappings = {
     \   "azerty": {
     \       "a": "\<Plug>vem_undo-",
     \       "A": "\<Plug>vem_redo-",
+    \       "\<C-a>": "\<Plug>vem_scroll_up-",
     \       "q": "\<Plug>vem_top-",
     \       "Q": "\<Plug>vem_add-",
+    \       "\<C-q>": "\<Plug>vem_scroll_down-",
     \       "w": "\<Plug>vem_bottom-",
     \       "W": "\<Plug>vem_sub-",
     \       "z": "\<Plug>vem_switch_buffer-",
