@@ -16,7 +16,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
     \ 'PrtHistory(-1)':       ['<c-n>'],
     \ 'PrtHistory(1)':        ['<c-y>'],
-    \ 'AcceptSelection("e")': ['<c-c>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("e")': ['<enter>', '<2-LeftMouse>'],
     \ 'AcceptSelection("h")': ['<c-_>'],
     \ 'AcceptSelection("t")': ['<c-^>'],
     \ 'AcceptSelection("v")': ['<c-]>', '<RightMouse>'],
