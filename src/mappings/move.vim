@@ -68,7 +68,8 @@ cnoremap <Plug>vem_goto_bol- <C-b>
 noremap <Plug>vem_goto_first_column- 0
 
 " Go to matching surrounding pair
-noremap <Plug>vem_goto_matching_pair- %
+nmap <Plug>vem_goto_matching_pair- <Plug>(MatchitNormalForward)
+vmap <Plug>vem_goto_matching_pair- <Plug>(MatchitVisualForward)
 
 " Move within window
 noremap <Plug>vem_goto_win_top- H
