@@ -41,8 +41,10 @@ xmap <expr> Q vem#layouts#dispatch(g:vem_layout, 'Q')
 """ Scroll
 """"""""""
 
-map <expr> <C-q> vem#layouts#dispatch(g:vem_layout, "\<C-q>")
-map <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
+nmap <expr> <C-q> vem#layouts#dispatch(g:vem_layout, "\<C-q>")
+xmap <expr> <C-q> vem#layouts#dispatch(g:vem_layout, "\<C-q>")
+nmap <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
+xmap <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
 nmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
 xmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
 nmap <Plug>vem_alt-M <Plug>vem_scroll_to_bottom-
@@ -58,9 +60,12 @@ nmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 xmap <expr> w vem#layouts#dispatch(g:vem_layout, 'w')
 nmap <expr> W vem#layouts#dispatch(g:vem_layout, 'W')
 xmap <expr> W vem#layouts#dispatch(g:vem_layout, 'W')
-map <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
-map <expr> <Plug>vem_alt-W vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-W")
-map <Plug>vem_alt-* <Plug>vem_open_file_under_cursor-
+nmap <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
+xmap <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
+nmap <expr> <Plug>vem_alt-W vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-W")
+xmap <expr> <Plug>vem_alt-W vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-W")
+nmap <Plug>vem_alt-* <Plug>vem_open_file_under_cursor-
+xmap <Plug>vem_alt-* <Plug>vem_open_file_under_cursor-
 
 map <C-t> <Plug>vem_new_buffer-
 nmap <Plug>vem_alt-<C-^> <Plug>vem_new_tab_and_buffer-
@@ -169,7 +174,8 @@ map <C-d> <Plug>vem_cut_and_insert-
 
 nmap r <Plug>vem_replace_char-
 xmap r <Plug>vem_replace_char-
-map <Plug>vem_alt-r <Plug>vem_replace_mode-
+nmap <Plug>vem_alt-r <Plug>vem_replace_mode-
+xmap <Plug>vem_alt-r <Plug>vem_replace_mode-
 
 
 """ Delete and change
@@ -327,13 +333,18 @@ map <C-n> <Plug>vem_location_next_result-
 """ Spelling
 """"""""""""
 
-map <expr> <Plug>vem_alt-y vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-y")
-map <Plug>vem_alt-n <Plug>vem_next_spell-
+nmap <expr> <Plug>vem_alt-y vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-y")
+xmap <expr> <Plug>vem_alt-y vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-y")
+nmap <Plug>vem_alt-n <Plug>vem_next_spell-
+xmap <Plug>vem_alt-n <Plug>vem_next_spell-
 
-map <Plug>vem_alt-? <Plug>vem_suggest_spell-
+nmap <Plug>vem_alt-? <Plug>vem_suggest_spell-
+xmap <Plug>vem_alt-? <Plug>vem_suggest_spell-
 
-map <Plug>vem_alt-+ <Plug>vem_add_spell-
-map <Plug>vem_alt-- <Plug>vem_remove_spell-
+nmap <Plug>vem_alt-+ <Plug>vem_add_spell-
+xmap <Plug>vem_alt-+ <Plug>vem_add_spell-
+nmap <Plug>vem_alt-- <Plug>vem_remove_spell-
+xmap <Plug>vem_alt-- <Plug>vem_remove_spell-
 
 
 """ Search
@@ -359,8 +370,8 @@ xmap <C-_> <Plug>vem_search_word_under_cursor_backwards-
 
 nmap <Plug>vem_alt-, <Plug>vem_search_char_backward-
 xmap <Plug>vem_alt-, <Plug>vem_search_char_backward-
-nmap <Plug>vem_alt-. <Plug>vem_search_char_forward-
-xmap <Plug>vem_alt-. <Plug>vem_search_char_forward-
+nmap <expr> <Plug>vem_alt-. vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-.")
+xmap <expr> <Plug>vem_alt-. vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-.")
 nmap <C-v> <Plug>vem_repeat_search_char-
 xmap <C-v> <Plug>vem_repeat_search_char-
 
@@ -372,8 +383,8 @@ nmap <expr> a vem#layouts#dispatch(g:vem_layout, 'a')
 xmap <expr> a vem#layouts#dispatch(g:vem_layout, 'a')
 nmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z')
 xmap <expr> z vem#layouts#dispatch(g:vem_layout, 'z')
-map <expr> <Plug>vem_alt-z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-z")
-map <expr> <Plug>vem_alt-Z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-Z")
+nmap <expr> <Plug>vem_alt-z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-z")
+xmap <expr> <Plug>vem_alt-Z vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-Z")
 
 nmap 0 <Plug>vem_goto_first_column-
 xmap 0 <Plug>vem_goto_first_column-
@@ -433,12 +444,18 @@ nmap <Plug>vem_alt-c <Plug>vem_goto_win_middle-
 xmap <Plug>vem_alt-c <Plug>vem_goto_win_middle-
 nmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 xmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
+nmap ~u <Plug>vem_goto_win_top-
+xmap ~u <Plug>vem_goto_win_top-
+nmap ~c <Plug>vem_goto_win_middle-
+xmap ~c <Plug>vem_goto_win_middle-
+nmap ~m <Plug>vem_goto_win_bottom-
+xmap ~m <Plug>vem_goto_win_bottom-
 
 nmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
-
-nmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
-xmap <Plug>vem_alt-; <Plug>vem_goto_eonw-
+nmap <expr> <Plug>vem_alt-; vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-;")
+nmap <expr> ~; vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-;")
+xmap <expr> ~; vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-;")
 
 nmap * <Plug>vem_last_selected_text_end-
 xmap * <Plug>vem_toggle_selection_end-
@@ -447,9 +464,9 @@ nmap " <Plug>vem_last_edited_text_end-
 xmap " <Plug>vem_last_edited_text_end-
 
 nmap > <Plug>vem_camelcase_next-
-xmap > <Plug>vem_camelcase_next-
+xmap > <Plug>vem_increase_camelcase_selection_right-
 nmap < <Plug>vem_camelcase_prev-
-xmap < <Plug>vem_camelcase_prev-
+xmap < <Plug>vem_increase_camelcase_selection_left-
 
 
 """ Modes
@@ -646,10 +663,4 @@ cnoremap <C-n> <Tab>
 cmap <C-A> <Plug>vem_goto_bol-
 cmap <C-B> <Plug>vem_insert_matching_names-
 cmap <C-z> <Plug>vem_paste_cmd-
-
-
-""" Unused
-""""""""""
-
-map ~ <Plug>vem_nop-
 

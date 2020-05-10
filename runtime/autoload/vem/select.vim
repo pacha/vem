@@ -11,10 +11,18 @@ function! vem#select#change_selection_mode() abort
 endfunction
 
 " increase the visual selection jumping to word boundaries
-function! vem#select#increase_word_selection(direction) abort
+function! vem#select#increase_word_selection(direction, camelcase) abort
 
     " restore select mode
     normal! gv
+
+    if a:camelcase
+        let prefix = "\<Plug>CamelCaseMotion_"
+        let suffix = ""
+    else
+        let prefix = "\<Plug>(smartword-"
+        let suffix = ")"
+    endif
 
     " get selection and cursor positions
     let start_selection_offset = line2byte(line("'<")) + col("'<")
@@ -24,26 +32,26 @@ function! vem#select#increase_word_selection(direction) abort
     " make selection
     if a:direction == 'left'
         if cursor_offset == start_selection_offset
-            exec "normal \<Plug>(smartword-b)"
+            exec "normal " . prefix . "b" . suffix
         else
-            exec "normal \<Plug>(smartword-ge)"
+            exec "normal " . prefix . "ge" . suffix
 
             " correct position if the left boundary has been surpassed
             let new_cursor_offset = line2byte(line(".")) + col(".")
             if new_cursor_offset < start_selection_offset
-                exec "normal \<Plug>(smartword-w)"
+                exec "normal " . prefix . "w" . suffix
             endif
         endif
     else
         if cursor_offset == end_selection_offset
-            exec "normal \<Plug>(smartword-e)"
+            exec "normal " . prefix . "e" . suffix
         else
-            exec "normal \<Plug>(smartword-w)"
+            exec "normal " . prefix . "w" . suffix
 
             " correct position if the right boundary has been surpassed
             let new_cursor_offset = line2byte(line(".")) + col(".")
             if new_cursor_offset > end_selection_offset
-                exec "normal \<Plug>(smartword-ge)"
+                exec "normal " . prefix . "ge" . suffix
             endif
         endif
     endif
