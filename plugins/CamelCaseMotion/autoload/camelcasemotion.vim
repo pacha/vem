@@ -160,7 +160,9 @@ function! camelcasemotion#Motion(direction, count, mode)
       " counter-intuitive results. (See github issues #28 and #31.) The
       " appended 'h' is needed in that case as well. Possibly for 'v' mode
       " too.
-      normal! h
+
+      " Vem: is it needed?
+      " normal! h
     endif
   endif
   if &foldopen =~# 'hor\|all'

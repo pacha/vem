@@ -444,18 +444,10 @@ nmap <Plug>vem_alt-c <Plug>vem_goto_win_middle-
 xmap <Plug>vem_alt-c <Plug>vem_goto_win_middle-
 nmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
 xmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
-nmap ~u <Plug>vem_goto_win_top-
-xmap ~u <Plug>vem_goto_win_top-
-nmap ~c <Plug>vem_goto_win_middle-
-xmap ~c <Plug>vem_goto_win_middle-
-nmap ~m <Plug>vem_goto_win_bottom-
-xmap ~m <Plug>vem_goto_win_bottom-
 
 nmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 nmap <expr> <Plug>vem_alt-; vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-;")
-nmap <expr> ~; vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-;")
-xmap <expr> ~; vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-;")
 
 nmap * <Plug>vem_last_selected_text_end-
 xmap * <Plug>vem_toggle_selection_end-
@@ -664,3 +656,8 @@ cmap <C-A> <Plug>vem_goto_bol-
 cmap <C-B> <Plug>vem_insert_matching_names-
 cmap <C-z> <Plug>vem_paste_cmd-
 
+
+""" Unused
+""""""""""
+
+map ~ <Plug>vem_nop-
