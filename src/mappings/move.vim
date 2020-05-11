@@ -44,8 +44,9 @@ nnoremap <Plug>vem_paragraph_down- }
 vnoremap <expr> <Plug>vem_paragraph_down- vem#move#selection_started() ? 'V}' : '}'
 
 " Alternate sides of a pasted or changed text
-nnoremap <silent> <Plug>vem_last_edited_text_end- :call vem#move#jump_to_last_edited_text_end()<CR>
-nnoremap <silent> <Plug>vem_last_selected_text_end- :call vem#move#jump_to_last_selected_text_end()<CR>
+nnoremap <expr> <Plug>vem_last_edited_text_end- vem#move#jump_to_last_edited_text_end()
+vnoremap <expr> <Plug>vem_last_edited_text_end- vem#move#jump_to_last_edited_text_end()
+nnoremap <expr> <Plug>vem_last_selected_text_end- vem#move#jump_to_last_selected_text_end()
 
 " Go to last editing place
 noremap <Plug>vem_goto_last_edit- `.
@@ -62,12 +63,15 @@ vnoremap <Plug>vem_goto_eol- $h
 
 " Go to beginning of line (first non-blank)
 noremap <Plug>vem_goto_bol- ^
+cnoremap <Plug>vem_goto_bol- <C-b>
+cnoremap <Plug>vem_goto_eol- <C-e>
 
 " Go to column 0
 noremap <Plug>vem_goto_first_column- 0
 
 " Go to matching surrounding pair
-noremap <Plug>vem_goto_matching_pair- %
+nmap <Plug>vem_goto_matching_pair- <Plug>(MatchitNormalForward)
+vmap <Plug>vem_goto_matching_pair- <Plug>(MatchitVisualForward)
 
 " Move within window
 noremap <Plug>vem_goto_win_top- H
@@ -75,6 +79,6 @@ noremap <Plug>vem_goto_win_middle- M
 noremap <Plug>vem_goto_win_bottom- L
 
 " Camel case movements
-map <Plug>vem_camelcase_next- <Plug>CamelCaseMotion_w
-map <Plug>vem_camelcase_prev- <Plug>CamelCaseMotion_b
+nmap <Plug>vem_camelcase_next- <Plug>CamelCaseMotion_w
+nmap <Plug>vem_camelcase_prev- <Plug>CamelCaseMotion_b
 

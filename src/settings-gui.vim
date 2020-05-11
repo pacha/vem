@@ -32,5 +32,8 @@ if has('gui_running')
     set guioptions-=A
     set guioptions-=P
 
+    " don't show dialog windows but use the statusline
+    set guioptions+=c
+
 endif
 

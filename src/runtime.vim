@@ -16,10 +16,11 @@ function! s:removeFromPath(path, pattern)
     return pathogen#join(new_path)
 endfunction
 
-" remove Vim user directories from the runtime and package paths
-let &runtimepath = <SID>removeFromPath(&runtimepath, '\.vim')
+" remove Vim/Neovim user directories from the runtime and package paths
+let s:dirs_to_remove = '^\(\/home\/\|\~\).\+\(vim\|nvim\)'
+let &runtimepath = <SID>removeFromPath(&runtimepath, s:dirs_to_remove)
 if has('packages')
-    let &packpath = <SID>removeFromPath(&packpath, '\.vim')
+    let &packpath = <SID>removeFromPath(&packpath, s:dirs_to_remove)
 endif
 
 " set internal Vem plugin directory

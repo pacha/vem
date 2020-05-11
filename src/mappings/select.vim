@@ -16,8 +16,10 @@ vnoremap <Plug>vem_toggle_selection_end- o
 vnoremap <expr> <Plug>vem_change_selection_mode- vem#select#change_selection_mode()
 
 " Increase word selection
-vnoremap <silent> <Plug>vem_increase_word_selection_left- :<C-U>call vem#select#increase_word_selection('left')<CR>
-vnoremap <silent> <Plug>vem_increase_word_selection_right- :<C-U>call vem#select#increase_word_selection('right')<CR>
+vnoremap <silent> <Plug>vem_increase_word_selection_left- :<C-U>call vem#select#increase_word_selection('left', 0)<CR>
+vnoremap <silent> <Plug>vem_increase_word_selection_right- :<C-U>call vem#select#increase_word_selection('right', 0)<CR>
+vnoremap <silent> <Plug>vem_increase_camelcase_selection_left- :<C-U>call vem#select#increase_word_selection('left', 1)<CR>
+vnoremap <silent> <Plug>vem_increase_camelcase_selection_right- :<C-U>call vem#select#increase_word_selection('right', 1)<CR>
 
 " Reselect last selection
 nnoremap <Plug>vem_reselect- gv

@@ -21,8 +21,9 @@ inoremap <Plug>vem_autocomplete_next- <C-n>
 " execute a single command in normal mode
 inoremap <Plug>vem_exec_normal_command- <C-o>
 
-" insert digraph
+" insert special chars
 noremap! <Plug>vem_insert_digraph- <C-k>
+noremap! <Plug>vem_insert_tab- <Tab>
 
 " Space
 noremap! <Plug>vem_space- <Space>
@@ -31,7 +32,6 @@ noremap! <Plug>vem_space- <Space>
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <Plug>vem_delete_to_eol- <C-G>u<C-U>
 
-" wildmenu control
-cnoremap <Plug>vem_wildmenu_next- <C-n>
-cnoremap <Plug>vem_wildmenu_prev- <C-p>
+" Vim compatibility
+cnoremap <Plug>vem_insert_matching_names- <C-a>
 

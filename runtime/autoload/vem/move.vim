@@ -8,19 +8,19 @@ endfunction
 
 " jump to the beginning/end of the last edited text
 function! vem#move#jump_to_last_edited_text_end() abort
-    let prev_pos = getpos(".")
-    normal! `]
-    if prev_pos == getpos(".")
-        normal! `[
+    if getpos(".") == getpos("']")
+        return "`["
+    else
+        return "`]"
     endif
 endfunction
 
 " jump to the beginning/end of the last selected text
 function! vem#move#jump_to_last_selected_text_end() abort
-    let prev_pos = getpos(".")
-    normal! `>
-    if prev_pos == getpos(".")
-        normal! `<
+    if getpos(".") == getpos("'>")
+        return "`<"
+    else
+        return "`>"
     endif
 endfunction
 

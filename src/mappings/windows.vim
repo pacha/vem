@@ -31,10 +31,11 @@ nnoremap <silent> <Plug>vem_rotate_window_up- <C-w>r
 nnoremap <silent> <Plug>vem_rotate_window_down- <C-w>R
 
 " Change size
-noremap <silent> <Plug>vem_increase_win_height- <C-w>+
-noremap <silent> <Plug>vem_decrease_win_height- <C-w>-
-noremap <silent> <Plug>vem_increase_win_width- <C-w>>
-noremap <silent> <Plug>vem_decrease_win_width- <C-w><
+nnoremap <silent> <Plug>vem_increase_win_height- :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Plug>vem_decrease_win_height- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Plug>vem_increase_win_width- :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Plug>vem_decrease_win_width- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
 
 " Set the current window like the only one in current tabpage
 noremap <silent> <Plug>vem_only_window- <C-w>o

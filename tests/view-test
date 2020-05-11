@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <test-name>"
+    exit 2
+fi
+
+TESTNAME=$1
+TESTDIR=$(dirname "$(readlink -f "$0")")
+INPUT="$TESTDIR/input/$TESTNAME"
+SCRIPT="$TESTDIR/script/$TESTNAME"
+EXPECTED="$TESTDIR/expected/$TESTNAME"
+OUTPUT="$TESTDIR/output/$TESTNAME"
+
+echo "=== input ==="
+cat $INPUT
+echo "=== script ==="
+hexdump -c $SCRIPT
+echo "=== expected ==="
+cat $EXPECTED
+echo "=== output ==="
+cat $OUTPUT
+echo "=== diff ==="
+diff $EXPECTED $OUTPUT
+

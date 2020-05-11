@@ -2,15 +2,15 @@
 
 " Undo
 nnoremap <Plug>vem_undo- u
-vnoremap <Plug>vem_undo- <Esc>ugv
+vnoremap <Plug>vem_undo- <Esc>u
 
 " Undo line
 nnoremap <Plug>vem_undo_line- U
-vnoremap <Plug>vem_undo_line- <Esc>Ugv
+vnoremap <Plug>vem_undo_line- <Esc>U
 
 " Redo
 nnoremap <Plug>vem_redo- <C-r>
-vnoremap <Plug>vem_redo- <Esc><C-r>gv
+vnoremap <Plug>vem_redo- <Esc><C-r>
 
 " Undo all changes (changes in the last 24 hours)
 noremap <silent> <Plug>vem_undo_all- :<C-u>earlier 24h<CR>

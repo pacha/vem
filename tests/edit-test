@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <test-name>"
+    exit 2
+fi
+
+TESTNAME=$1
+TESTDIR=$(dirname "$(readlink -f "$0")")
+INPUT="$TESTDIR/input/$TESTNAME"
+EXPECTED="$TESTDIR/expected/$TESTNAME"
+SCRIPT="$TESTDIR/script/$TESTNAME"
+
+# create input file
+vem $INPUT
+
+# create expected and script files by modifying the input
+cp $INPUT $EXPECTED
+vem -W $SCRIPT $EXPECTED
+
