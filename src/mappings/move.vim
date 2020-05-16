@@ -63,6 +63,9 @@ vnoremap <Plug>vem_goto_eol- $h
 
 " Go to beginning of line (first non-blank)
 noremap <Plug>vem_goto_bol- ^
+
+inoremap <Plug>vem_goto_bol- <C-o>0
+inoremap <Plug>vem_goto_eol- <C-o>$
 cnoremap <Plug>vem_goto_bol- <C-b>
 cnoremap <Plug>vem_goto_eol- <C-e>
 

@@ -63,8 +63,8 @@ nmap <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w
 xmap <expr> <Plug>vem_alt-w vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-w")
 nmap <expr> <Plug>vem_alt-W vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-W")
 xmap <expr> <Plug>vem_alt-W vem#layouts#dispatch(g:vem_layout, "\<Plug>vem_alt-W")
-nmap <Plug>vem_alt-* <Plug>vem_open_file_under_cursor-
-xmap <Plug>vem_alt-* <Plug>vem_open_file_under_cursor-
+nmap <Plug>vem_alt-_ <Plug>vem_open_file_under_cursor-
+xmap <Plug>vem_alt-_ <Plug>vem_open_file_under_cursor-
 
 map <C-t> <Plug>vem_new_buffer-
 
@@ -642,11 +642,13 @@ imap <Left> <Plug>vem_left-
 imap <Right> <Plug>vem_right-
 
 imap <C-y> <Plug>vem_clone_char_above-
-imap <C-e> <Plug>vem_clone_char_below-
+imap <C-n> <Plug>vem_clone_char_below-
 
 map! <C-d> <Plug>vem_insert_digraph-
 map! <C-]> <Plug>vem_insert_tab-
 imap <C-c> <Plug>vem_exec_normal_command-
+map! <C-a> <Plug>vem_goto_bol-
+map! <C-e> <Plug>vem_goto_eol-
 
 " Tab/S-Tab mappings added by supertab plugin
 " imap <C-p> <Plug>vem_autocomplete_prev-
@@ -662,11 +664,7 @@ set pastetoggle=<C-^>
 
 " wildmode
 set wildcharm=<Tab>
-" cnoremap <C-p> <S-Tab>
-" cnoremap <C-n> <Tab>
 
-cmap <C-a> <Plug>vem_goto_bol-
-cmap <C-e> <Plug>vem_goto_eol-
 cmap <C-b> <Plug>vem_insert_matching_names-
 cmap <C-p> <Plug>vem_paste_cmd-
 
