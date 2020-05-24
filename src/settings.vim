@@ -278,3 +278,8 @@ set shortmess-=s
 " don't give the ATTENTION message for swap files
 set shortmess+=A
 
+" show signs in the number column instead of its own if possible
+if has("patch-8.1.1564")
+  set signcolumn=number
+endif
+
