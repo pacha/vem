@@ -44,6 +44,8 @@ nmap <expr> <C-q> vem#layouts#dispatch(g:vem_layout, "\<C-q>")
 xmap <expr> <C-q> vem#layouts#dispatch(g:vem_layout, "\<C-q>")
 nmap <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
 xmap <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
+nmap <C-e> <Plug>vem_scroll_up-
+xmap <C-e> <Plug>vem_scroll_up-
 nmap <Plug>vem_alt-u <Plug>vem_scroll_to_top-
 xmap <Plug>vem_alt-u <Plug>vem_scroll_to_top-
 nmap <Plug>vem_alt-m <Plug>vem_scroll_to_bottom-
@@ -134,10 +136,9 @@ map <Plug>vem_win-r <Plug>vem_rotate_window_up-
 map <Plug>vem_win-R <Plug>vem_rotate_window_down-
 map <Plug>vem_win-<C-r> <Plug>vem_rotate_window_up-
 
-map <Plug>vem_win-a <Plug>vem_move_win_top-
-map <Plug>vem_win-z <Plug>vem_move_win_bottom-
-map <Plug>vem_win-<C-a> <Plug>vem_move_win_top-
-map <Plug>vem_win-<C-z> <Plug>vem_move_win_bottom-
+map <Plug>vem_win-u <Plug>vem_move_win_top-
+map <Plug>vem_win-m <Plug>vem_move_win_bottom-
+map <Plug>vem_win-<C-u> <Plug>vem_move_win_top-
 map <Plug>vem_win-, <Plug>vem_move_win_left-
 map <Plug>vem_win-. <Plug>vem_move_win_right-
 map <Plug>vem_win-; <Plug>vem_move_win_right-
