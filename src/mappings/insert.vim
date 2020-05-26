@@ -17,6 +17,7 @@ inoremap <Plug>vem_clone_char_below- <C-e>
 " Autocomplete
 inoremap <Plug>vem_autocomplete_prev- <C-p>
 inoremap <Plug>vem_autocomplete_next- <C-n>
+inoremap <Plug>vem_cancel_completion- <C-e>
 
 " execute a single command in normal mode
 inoremap <Plug>vem_exec_normal_command- <C-o>

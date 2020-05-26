@@ -649,7 +649,7 @@ map! <C-d> <Plug>vem_insert_digraph-
 map! <C-]> <Plug>vem_insert_tab-
 imap <C-c> <Plug>vem_exec_normal_command-
 map! <C-a> <Plug>vem_goto_bol-
-map! <C-e> <Plug>vem_goto_eol-
+map! <expr> <C-e> pumvisible() ? "\<Plug>vem_cancel_completion-" : "\<Plug>vem_goto_eol-"
 
 " Tab/S-Tab mappings added by supertab plugin
 " imap <C-p> <Plug>vem_autocomplete_prev-
