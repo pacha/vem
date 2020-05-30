@@ -14,11 +14,6 @@ noremap! <Plug>vem_right- <Right>
 inoremap <Plug>vem_clone_char_above- <C-y>
 inoremap <Plug>vem_clone_char_below- <C-e>
 
-" Autocomplete
-inoremap <Plug>vem_autocomplete_prev- <C-p>
-inoremap <Plug>vem_autocomplete_next- <C-n>
-inoremap <Plug>vem_cancel_completion- <C-e>
-
 " execute a single command in normal mode
 inoremap <Plug>vem_exec_normal_command- <C-o>
 
@@ -35,4 +30,11 @@ inoremap <Plug>vem_delete_to_eol- <C-G>u<C-U>
 
 " Vim compatibility
 cnoremap <Plug>vem_insert_matching_names- <C-a>
+
+" Autocomplete
+noremap! <Plug>vem_autocomplete_prev- <C-p>
+noremap! <Plug>vem_autocomplete_next- <C-n>
+noremap! <Plug>vem_cancel_completion- <C-e>
+inoremap <expr> <Plug>vem_smarttab_next- vem#insert#smarttab('next')
+inoremap <expr> <Plug>vem_smarttab_prev- vem#insert#smarttab('prev')
 

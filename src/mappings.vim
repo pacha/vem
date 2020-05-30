@@ -651,9 +651,8 @@ imap <C-c> <Plug>vem_exec_normal_command-
 map! <C-a> <Plug>vem_goto_bol-
 map! <expr> <C-e> pumvisible() ? "\<Plug>vem_cancel_completion-" : "\<Plug>vem_goto_eol-"
 
-" Tab/S-Tab mappings added by supertab plugin
-" imap <C-p> <Plug>vem_autocomplete_prev-
-" imap <C-n> <Plug>vem_autocomplete_next-
+imap <Tab> <Plug>vem_smarttab_next-
+imap <S-Tab> <Plug>vem_smarttab_prev-
 
 map! <S-Space> <Plug>vem_space-
 map! <C-Space> <Plug>vem_space-
