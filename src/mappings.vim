@@ -252,7 +252,8 @@ xmap <S-Space> <Plug>vem_deselect-
 nmap <Plug>vem_alt-<Space> <Plug>vem_reselect-
 nmap <Plug>vem_alt-g <Plug>vem_camelcase_select-
 nmap <Plug>vem_alt-G <Plug>vem_inner_select_line-
-nmap <Plug>vem_alt-p <Plug>vem_select_last_pasted_text-
+nmap <Plug>vem_alt-p <Plug>vem_inner_select_paragraph-
+nmap <Plug>vem_alt-P <Plug>vem_select_last_pasted_text-
 nmap <Plug>vem_alt-a <Plug>vem_select_all-
 
 
