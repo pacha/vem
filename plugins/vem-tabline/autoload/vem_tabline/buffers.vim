@@ -114,9 +114,14 @@ function! vem_tabline#buffers#section.generate_labels_without_tagnr() abort
             let self.current_buffer_index = buffer_index
         endif
 
+        " get flags
+        if buffer_item.modified
+            let buffer_item.flags = '*'
+        endif
+
         " empty name
         if path_parts_count == 0
-            let buffer_item.name = '[No Name]'
+            let buffer_item.name = g:vem_unnamed_buffer_label
             continue
         endif
 
@@ -134,7 +139,7 @@ function! vem_tabline#buffers#section.generate_labels_without_tagnr() abort
         let buffer_item.name = buffer_item.path_parts[0]
 
         " get icon (support for vim-devicons)
-        if exists('*WebDevIconsGetFileTypeSymbol')
+        if exists('*WebDevIconsGetFileTypeSymbol') && g:vem_tabline_show_icon
             let buffer_item.icon = WebDevIconsGetFileTypeSymbol(buffer_item.name) . ' '
         endif
 
@@ -145,10 +150,6 @@ function! vem_tabline#buffers#section.generate_labels_without_tagnr() abort
             let buffer_item.discriminator = g:vem_tabline_location_symbol . dirname
         endif
 
-        " get flags
-        if buffer_item.modified
-            let buffer_item.flags = '*'
-        endif
     endfor
 
 endfunction
