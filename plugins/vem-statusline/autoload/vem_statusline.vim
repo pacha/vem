@@ -59,7 +59,7 @@ function! vem_statusline#render()
     if s:show_indent
         let statusline .= "%{vem_statusline#show_indent(". active_window .")}"
         if s:show_encoding || s:show_newline
-            let statusline .= "%#VemStatusLineSeparator#%{". active_window ." == winnr() ? '|' : ''}%*"
+            let statusline .= "%#VemStatusLineSeparator#%{". active_window ." == winnr() ? g:vem_statusline_right_separator : ''}%*"
         endif
     endif
 
@@ -67,7 +67,7 @@ function! vem_statusline#render()
     if s:show_encoding
         let statusline .= "%{vem_statusline#show_encoding(". active_window .")}"
         if s:show_newline
-            let statusline .= "%#VemStatusLineSeparator#%{". active_window ." == winnr() ? '|' : ''}%*"
+            let statusline .= "%#VemStatusLineSeparator#%{". active_window ." == winnr() ? g:vem_statusline_right_separator : ''}%*"
         endif
     endif
 
@@ -156,7 +156,7 @@ function! vem_statusline#show_filename(active_window, show_filename)
         if filename != ''
             return filename
         else
-            return "[No Name]"
+            return g:vem_unnamed_buffer_label
         endif
     else
         return ''

@@ -10,7 +10,7 @@ It displays:
 
 * Current active mode
 
-* Current Git branch (requires [vim-gitbranch](https://github.com/itchyny/vim-gitbranch))
+* Current Git branch (requires [vim-gitbranch](https://github.com/itchyny/vim-gitbranch)
   or [fugitive.vim](https://github.com/tpope/vim-fugitive))
 
 * Filename (absolute, relative or relative to the root of the repository)
@@ -46,9 +46,9 @@ enable/disable any element in the statusline and you can also define custom
 colors (see the *Colors* and *Configuration* sections).
 
 *Note*: Vem Statusline is a component of a bigger Vim configuration setup named
-Vem -still in the works-. Hence the plugin name. In any case, Vem Statusline
-can be used totally independently from the Vem project. Other components of the
-project are:
+[Vem](https://www.vem-editor.org/). Hence the plugin name. In any case, Vem
+Statusline can be used totally independently from the Vem project. Other
+components of the project are:
 
 * [Vem Tabline](https://github.com/pacha/vem-tabline): A plugin to show the
   list of buffers in the tabline.

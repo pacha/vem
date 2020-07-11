@@ -19,6 +19,7 @@ let g:vem_statusline_branch_function = get(g:, 'vem_statusline_branch_function',
 let g:vem_statusline_mode_separator = get(g:, 'vem_statusline_mode_separator', '  ~ ')
 let g:vem_statusline_branch_separator = get(g:, 'vem_statusline_branch_separator', ':')
 let g:vem_statusline_right_separator = get(g:, 'vem_statusline_right_separator', '|')
+let g:vem_unnamed_buffer_label = get(g:, 'vem_unnamed_buffer_label', '[No Name]')
 
 " Syntax highlighting
 highlight default link VemStatusLineSeparator StatusLine
