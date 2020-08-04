@@ -12,5 +12,5 @@ noremap <Plug>vem_prev_mark- [`
 noremap <Plug>vem_next_mark- ]`
 
 " Quick mark
-noremap <Plug>vem_set_quick_mark- mC
-noremap <Plug>vem_goto_quick_mark- `C
+noremap <Plug>vem_set_quick_mark- mQ
+noremap <Plug>vem_goto_quick_mark- `Q

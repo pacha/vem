@@ -36,7 +36,7 @@ if &t_Co == 256
     let s:tabline_bg = '251'
     let s:tabline_location = '239'
     let s:terminal_bg = '236'
-    let s:special = '252'
+    let s:special = '192'
     let s:non_text_fg = '244'
     let s:comment = '246'
     let s:fold_fg = '23'
@@ -248,12 +248,12 @@ exec "highlight StorageClass   term=none cterm=none ctermfg=". s:yellow ." cterm
 exec "highlight Structure      term=none cterm=none ctermfg=". s:yellow ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=none"
 exec "highlight Typedef        term=none cterm=none ctermfg=". s:yellow ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=none"
 
-exec "highlight Special        term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
-exec "highlight SpecialChar    term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
-exec "highlight Tag            term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
-exec "highlight Delimiter      term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
-exec "highlight Debug          term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
-exec "highlight SpecialComment term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#f6f3e8 guibg=NONE gui=bold"
+exec "highlight Special        term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=bold"
+exec "highlight SpecialChar    term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=bold"
+exec "highlight Tag            term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=bold"
+exec "highlight Delimiter      term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=bold"
+exec "highlight Debug          term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=bold"
+exec "highlight SpecialComment term=none cterm=bold ctermfg=". s:special ." ctermbg=NONE guifg=#cae682 guibg=NONE gui=bold"
 
 exec "highlight Underlined     term=underline cterm=underline ctermfg=". s:blue ." ctermbg=NONE guifg=#8ac6f2 guibg=NONE gui=underline"
 
