@@ -199,11 +199,6 @@ else
     set viminfo=
 endif
 
-""" Mouse
-"""""""""
-
-set mouse=a
-
 
 """ UI
 """"""
