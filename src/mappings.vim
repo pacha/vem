@@ -47,12 +47,14 @@ xmap <expr> <C-a> vem#layouts#dispatch(g:vem_layout, "\<C-a>")
 nmap <C-e> <Plug>vem_scroll_up-
 xmap <C-e> <Plug>vem_scroll_up-
 
-nmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
-xmap <Plug>vem_alt-U <Plug>vem_scroll_to_top-
-nmap <Plug>vem_alt-. <Plug>vem_scroll_to_middle-
-xmap <Plug>vem_alt-. <Plug>vem_scroll_to_middle-
-nmap <Plug>vem_alt-M <Plug>vem_scroll_to_bottom-
-xmap <Plug>vem_alt-M <Plug>vem_scroll_to_bottom-
+nmap <expr> "y vem#layouts#dispatch(g:vem_layout, '"y')
+xmap <expr> "y vem#layouts#dispatch(g:vem_layout, '"y')
+nmap <expr> "z vem#layouts#dispatch(g:vem_layout, '"z')
+xmap <expr> "z vem#layouts#dispatch(g:vem_layout, '"z')
+nmap ", <Plug>vem_scroll_to_middle-
+xmap ", <Plug>vem_scroll_to_middle-
+nmap "n <Plug>vem_scroll_to_bottom-
+xmap "n <Plug>vem_scroll_to_bottom-
 
 
 """ Buffers
@@ -248,7 +250,7 @@ xmap G <Plug>vem_change_selection_mode-
 
 map <C-g> <Plug>vem_increase_selection-
 
-" xmap <Plug>vem_alt-<Space> <Plug>vem_deselect-
+xmap <Space> <Plug>vem_deselect-
 
 nmap <Plug>vem_alt-<Space> <Plug>vem_reselect-
 nmap <Plug>vem_alt-g <Plug>vem_camelcase_select-
@@ -468,12 +470,14 @@ vmap <S-Right> <Plug>vem_increase_word_selection_right-
 map <S-Down> <Plug>vem_paragraph_down-
 map <S-Up> <Plug>vem_paragraph_up-
 
-nmap <Plug>vem_alt-u <Plug>vem_goto_win_top-
-xmap <Plug>vem_alt-u <Plug>vem_goto_win_top-
-nmap <Plug>vem_alt-, <Plug>vem_goto_win_middle-
-xmap <Plug>vem_alt-, <Plug>vem_goto_win_middle-
-nmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
-xmap <Plug>vem_alt-m <Plug>vem_goto_win_bottom-
+nmap "u <Plug>vem_goto_win_top-
+xmap "u <Plug>vem_goto_win_top-
+nmap <expr> ". vem#layouts#dispatch(g:vem_layout, '".')
+xmap <expr> ". vem#layouts#dispatch(g:vem_layout, '".')
+nmap <expr> "; vem#layouts#dispatch(g:vem_layout, '";')
+xmap <expr> "; vem#layouts#dispatch(g:vem_layout, '";')
+nmap "m <Plug>vem_goto_win_bottom-
+xmap "m <Plug>vem_goto_win_bottom-
 
 nmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
 xmap <expr> ; vem#layouts#dispatch(g:vem_layout, ';')
@@ -652,7 +656,6 @@ cmap <C-p> <Plug>vem_paste_cmd-
 """ Unused
 """"""""""
 
-map " <Plug>vem_nop-
 map ~ <Plug>vem_nop-
 map C <Plug>vem_nop-
 
