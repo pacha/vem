@@ -554,19 +554,19 @@ nmap <C-p><Esc> <Plug>vem_nop-
 """ Surround
 """"""""""""
 
-xmap <Plug>vem_alt-{ <Plug>vem_add_surround-{
-xmap <Plug>vem_alt-} <Plug>vem_add_surround-}
-xmap <Plug>vem_alt-[ <Plug>vem_add_surround-[
-xmap <Plug>vem_alt-] <Plug>vem_add_surround-]
-xmap <Plug>vem_alt-( <Plug>vem_add_surround-(
-xmap <Plug>vem_alt-) <Plug>vem_add_surround-)
-xmap <Plug>vem_alt-< <Plug>vem_add_surround-<
-xmap <Plug>vem_alt-> <Plug>vem_add_surround->
-xmap <Plug>vem_alt-` <Plug>vem_add_surround-`
-xmap <Plug>vem_alt-' <Plug>vem_add_surround-'
-xmap <Plug>vem_alt-" <Plug>vem_add_surround-"
-xmap <Plug>vem_alt-t <Plug>vem_add_surround-t
-xmap <Plug>vem_alt-<C-t> <Plug>vem_add_surround-<C-t>
+xmap s{ <Plug>vem_add_surround-{
+xmap s} <Plug>vem_add_surround-}
+xmap s[ <Plug>vem_add_surround-[
+xmap s] <Plug>vem_add_surround-]
+xmap s( <Plug>vem_add_surround-(
+xmap s) <Plug>vem_add_surround-)
+xmap s< <Plug>vem_add_surround-<
+xmap s> <Plug>vem_add_surround->
+xmap s` <Plug>vem_add_surround-`
+xmap s' <Plug>vem_add_surround-'
+xmap s" <Plug>vem_add_surround-"
+xmap st <Plug>vem_add_surround-t
+xmap s<C-t> <Plug>vem_add_surround-<C-t>
 
 nmap <Plug>vem_alt-d <Plug>vem_delete_surround-
 nmap <Plug>vem_alt-c <Plug>vem_change_surround-
