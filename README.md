@@ -70,15 +70,15 @@ Credits
 Vem makes use of some Vim plugins to power some of its features. Many
 thanks to the authors of the following great projects:
 
-    * [vim-pathogen](https://github.com/tpope/vim-pathogen) by Tim Pope
-    * [vim-filebeagle](https://github.com/jeetsukumaran/vim-filebeagle) by Jeet Sukumaran
-    * [vim-smartword](https://github.com/kana/vim-smartword) by Kana Natsuno
-    * [vim-enhancedjumps](https://github.com/inkarkat/vim-EnhancedJumps) by Ingo Karkat
-    * [wildfire.vim](https://github.com/gcmt/wildfire.vim) by Giacomo Comitti
-    * [vim-surround](https://github.com/tpope/vim-surround) by Tim Pope
-    * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) originally by @kien, maintained by @mattn
-    * [NERD Commenter](https://github.com/scrooloose/nerdcommenter) by Martin Grenfell
-    * [vim-sayonara](https://github.com/mhinz/vim-sayonara) by Marco Hinz
+* [vim-pathogen](https://github.com/tpope/vim-pathogen) by Tim Pope
+* [vim-filebeagle](https://github.com/jeetsukumaran/vim-filebeagle) by Jeet Sukumaran
+* [vim-smartword](https://github.com/kana/vim-smartword) by Kana Natsuno
+* [vim-enhancedjumps](https://github.com/inkarkat/vim-EnhancedJumps) by Ingo Karkat
+* [wildfire.vim](https://github.com/gcmt/wildfire.vim) by Giacomo Comitti
+* [vim-surround](https://github.com/tpope/vim-surround) by Tim Pope
+* [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) originally by @kien, maintained by @mattn
+* [NERD Commenter](https://github.com/scrooloose/nerdcommenter) by Martin Grenfell
+* [vim-sayonara](https://github.com/mhinz/vim-sayonara) by Marco Hinz
 
 License
 -------
