@@ -14,7 +14,7 @@ set nocompatible
 let g:loaded_vem = 1
 
 " set keyboard layout. (possible values 'querty', 'qwertz', 'azerty')
-let g:vem_layout = system('setxkbmap -query | grep -o -E "(querty|quertz|azerty)$" || echo "querty"')[:-2]
+let g:vem_layout = system('asetxkbmap -query 2> /dev/null | grep -o -E "(querty|quertz|azerty)$" || echo "querty"')[:-2]
 
 " Vem directory
 let g:vem_dir = expand("<sfile>:p:h") . '/'
