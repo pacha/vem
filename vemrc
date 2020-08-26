@@ -13,8 +13,8 @@ set nocompatible
 " tell everybody Vem is being used
 let g:loaded_vem = 1
 
-" use querty by default (possible values 'querty', 'qwertz')
-let g:vem_layout = 'qwerty'
+" set keyboard layout. (possible values 'querty', 'qwertz', 'azerty')
+let g:vem_layout = system('setxkbmap -query | grep -o -E "(querty|quertz|azerty)$" || echo "querty"')[:-2]
 
 " Vem directory
 let g:vem_dir = expand("<sfile>:p:h") . '/'
@@ -73,4 +73,3 @@ exec 'source ' . s:vem_plugin_conf_dir . 'vim-surround.vim'
 exec 'source ' . s:vem_src_dir . 'custom-conf.vim'
 
 " And that's all!
-
