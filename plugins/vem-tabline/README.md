@@ -7,8 +7,11 @@ at the top of your screen using the editor's tabline.
 
 ![Vem Tabline - Screenshot](doc/screenshots/one-window.png)
 
-Vem tabline shows your tabs as numbered workspaces at the right of the top line
-of the screen and the list of open buffers to the left.
+Vem tabline shows the list of open buffers to the left of the top line
+of the screen and tabs as numbered workspaces to the right.
+
+Vem Tabline is a component of [Vem](https://www.vem-editor.org), an alternative
+command layout for Vim, but it can be used independently from the Vem project.
 
 Features
 --------
@@ -31,18 +34,6 @@ Features
 * Lightweight, performant and just focused on providing the tabline
   functionality.
 
-
-**Note**: Vem Tabline is a component of a bigger Vim configuration setup named
-[Vem](https://www.vem-editor.org). Hence the plugin name. Vem Tabline can be
-used independently from the Vem project though. Other components of Vem are:
-
-* [Vem Statusline](https://github.com/pacha/vem-statusline): A light
-  statusline for Vim.
-
-* [Vem Dark](https://github.com/pacha/vem-dark): A dark color scheme for
-  Vim based on Wombat.
-
-
 Installation
 ------------
 
@@ -59,7 +50,6 @@ set hidden
 ```
 in your `vimrc` file so you can switch buffers without having to save their
 changes before.
-
 
 Moving Buffers in Tabline
 -------------------------
@@ -84,6 +74,23 @@ nmap <leader>l <Plug>vem_move_buffer_right-
 nmap <leader>p <Plug>vem_prev_buffer-
 nmap <leader>n <Plug>vem_next_buffer-
 ```
+Where leader is typically set to `\` in Vim.
+
+### Deleting Buffers
+
+You can use any Vim command to delete or wipeout your buffers. However, if you
+have reordered them, you'll notice that the next buffer to be displayed is not
+the next in the tabline, which is not very intuitive. This is because Vim
+chooses the next buffer to display from its internal buffer list and not from
+the tabline reordered one. If you want to delete a buffer and get the next one
+in the tabline selected, use the following keymap:
+```
+nmap <leader>x <Plug>vem_delete_buffer-
+```
+If the current buffer has unsaved changes, you'll be prompted to confirm.
+
+Quick access to tabs
+--------------------
 
 You may also want to map the numbered keys to quickly access your tabs. To do
 so, use the following key mappings:
@@ -98,59 +105,6 @@ nnoremap <leader>7 :7tabnext<CR>
 nnoremap <leader>8 :8tabnext<CR>
 nnoremap <leader>9 :9tabnext<CR>
 ```
-
-Deleting Buffers
-----------------
-
-If you reorder the buffers in the tabline and then you delete one of them, Vim
-will choose a new buffer to display instead. This will usually be the next
-buffer in Vim's jump list and not necessarily the next one in the tabline. If
-you delete several of them in a row, you don't really know which buffer will be
-selected in the tabline and the resulting effect looks a bit random.
-
-If you want to have the next buffer in the tabline to be selected when you
-delete the current one, you can add something like this to your `vimrc`:
-```
-function! DeleteCurrentBuffer() abort
-    let current_buffer = bufnr('%')
-    let next_buffer = g:vem_tabline#tabline.get_replacement_buffer()
-    try
-        exec 'confirm ' . current_buffer . 'bdelete'
-        if next_buffer != 0
-            exec next_buffer . 'buffer'
-        endif
-    catch /E516:/
-       " If the operation is cancelled, do nothing
-    endtry
-endfunction
-nmap <leader>x :call DeleteCurrentBuffer()<CR>
-```
-With this, you can press `<leader>x` (typically `\x`), and the current buffer
-will be deleted, and the next one in the tabline selected. If the current
-buffer has unsaved changes, you'll be prompted to confirm.
-
-Of course, you can adapt the snippet to your needs (like using `bwipeout`
-instead of `bdelete`) or choose a different key mapping.
-
-
-Multiwindow mode
-----------------
-
-Vem Tabline offers a mode to show only relevant buffers depending on the layout
-of the current tabpage:
-
-* In tabs with only one window all buffers are listed.
-
-* In tabs with more than one window, only the buffers that are being displayed
-  are listed.
-
-This allows you to have a cleaner list of buffers depending on the tab that is
-active and goes well with Vim's philosophy of using tabs as workspaces to
-arrange windows in different configurations.
-
-To enable this mode, set `g:vem_tabline_multiwindow_mode` to 1 in your `vimrc`.
-See [Configuration](#configuration) for more information.
-
 
 Filetype icons
 --------------
@@ -207,6 +161,25 @@ highlight VemTablineTabNormal        term=reverse cterm=none ctermfg=0   ctermbg
 highlight VemTablineTabSelected      term=bold    cterm=bold ctermfg=0   ctermbg=255 guifg=#242424 guibg=#ffffff gui=bold
 ```
 
+Multiwindow mode
+----------------
+
+Vem Tabline offers a mode to show only relevant buffers depending on the layout
+of the current tabpage:
+
+* In tabs with only one window all buffers are listed.
+
+* In tabs with more than one window, only the buffers that are being displayed
+  are listed.
+
+This allows you to have a cleaner list of buffers depending on the tab that is
+active and goes well with Vim's philosophy of using tabs as workspaces to
+arrange windows in different configurations.
+
+To enable this mode, set `g:vem_tabline_multiwindow_mode` to 1 in your `vimrc`.
+See [Configuration](#configuration) for more information.
+
+
 Configuration
 -------------
 
@@ -260,4 +233,16 @@ is based on two very cool ones:
 [vim-buftabline](https://github.com/ap/vim-buftabline) and
 [WinTabs](https://github.com/zefei/vim-wintabs). It doesn't share code with
 them but many ideas come from their original authors.
+
+Related projects
+----------------
+
+* [Vem Text Editor](https://www.vem-editor.org): An alternative command layout
+  for Vim.
+
+* [Vem Statusline](https://github.com/pacha/vem-statusline): A light
+  statusline for Vim.
+
+* [Vem Dark](https://github.com/pacha/vem-dark): A dark color scheme for
+  Vim based on Wombat.
 
