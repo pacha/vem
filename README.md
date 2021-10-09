@@ -1,4 +1,12 @@
 
+<p align="center">
+  <img src="doc/img/vem-logo.png" alt="Vem Text Editor"/>
+</p>
+
+**Note:** To fix error E1208 when launching Vem using the latest versions of
+Vim, upgrade to the [latest Vem
+release](https://github.com/pacha/vem/releases/latest).
+
 Vem
 ===
 
