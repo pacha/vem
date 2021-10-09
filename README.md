@@ -1,13 +1,13 @@
 
-> **Note:** To fix error E1208 when launching Vem using the latest versions of
-> Vim, upgrade to the [latest Vem
-> release](https://github.com/pacha/vem/releases/latest).
-
 ![Vem Text Editor](doc/img/vem-logo.png)
 
 Vem is an alternative command layout for the Vim text editor. It provides full
 keyboard control over the editor while trying to be as simple and intuitive as
 possible.
+
+> **Note:** To fix error E1208 when launching Vem using the latest versions of
+> Vim, upgrade to the [latest Vem
+> release](https://github.com/pacha/vem/releases/latest).
 
 ![Vem Text Editor](doc/img/vem-main-screenshot.png)
 
