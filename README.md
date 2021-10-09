@@ -3,10 +3,6 @@
   <img src="doc/img/vem-logo.png" alt="Vem Text Editor"/>
 </p>
 
-**Note:** To fix error E1208 when launching Vem using the latest versions of
-Vim, upgrade to the [latest Vem
-release](https://github.com/pacha/vem/releases/latest).
-
 Vem
 ===
 
@@ -15,6 +11,10 @@ keyboard control over the editor while trying to be as simple and intuitive as
 possible.
 
 ![Vem Text Editor](doc/img/vem-main-screenshot.png)
+
+> **Note:** To fix error E1208 when launching Vem using the latest versions of
+> Vim, upgrade to the [latest Vem
+> release](https://github.com/pacha/vem/releases/latest).
 
 Vem is a set of configuration files for the Vim text editor that changes how you
 interact with it. While Vim is extremely expressive and provides hundreds of
