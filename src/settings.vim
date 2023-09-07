@@ -212,9 +212,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " use custom window/terminal title
-if $TERM != "contour"
-    set title
-endif
+set title
 
 " text of the custom title
 set titlestring=%t%(\ %M%)%(\ %r%)%(\ (%{expand(\"%:p:~:h\")})%)%(\ %h%)%(\ %a%)%(\ \-\ %)Vem
