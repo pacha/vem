@@ -17,7 +17,11 @@ function! s:removeFromPath(path, pattern)
 endfunction
 
 " remove Vim/Neovim user directories from the runtime and package paths
-let s:dirs_to_remove = '^\(\/home\/\|\~\).\+\(vim\|nvim\)'
+if empty($HOME)
+    let s:dirs_to_remove = '^\~.\+\(vim\|nvim\)'
+else
+    let s:dirs_to_remove = '^\(' . escape($HOME, '\/') . '\/\|\~\).\+\(vim\|nvim\)'
+endif
 let &runtimepath = <SID>removeFromPath(&runtimepath, s:dirs_to_remove)
 if has('packages')
     let &packpath = <SID>removeFromPath(&packpath, s:dirs_to_remove)
